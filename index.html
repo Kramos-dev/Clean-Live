@@ -1,220 +1,313 @@
-!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clean&Live - Control de Plagas Futurista</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
-      color: #f2f2f2;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header nav a {
-      margin: 0 1rem;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    header nav a:hover {
-      color: #00e0ff;
-    }
-    .social-icons a {
-      margin-left: 1rem;
-      color: white;
-      font-size: 1.2rem;
-    }
-    .hero {
-      text-align: center;
-      padding: 6rem 2rem;
-      background: linear-gradient(135deg, #1c1c1c, #111);
-      background-size: 400% 400%;
-      animation: heroGradient 20s ease infinite;
-    }
-    @keyframes heroGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #00e0ff, #00ff9f);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 4rem 2rem;
-      background: #121212;
-    }
-    .service {
-      background: #1e1e1e;
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-      transition: transform 0.5s, box-shadow 0.5s;
-      border: 1px solid #00e0ff3a;
-    }
-    .service:hover {
-      transform: translateY(-12px) scale(1.03);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-    }
-    .service h3 {
-      color: #00ffcc;
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-    }
-    .cta-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #00e0ff;
-      color: #000;
-      padding: 0.75rem 1.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: all 0.3s ease;
-    }
-    .cta-btn:hover {
-      background: #00ffb7;
-    }
-    .contact-form {
-      padding: 4rem 2rem;
-      background: #101010;
-      max-width: 700px;
-      margin: 0 auto;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-    .contact-form h2 {
-      margin-bottom: 2rem;
-      text-align: center;
-      font-size: 2rem;
-      color: #00e0ff;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 12px;
-      border: none;
-      background: #1a1a1a;
-      color: #f2f2f2;
-    }
-    .contact-form button {
-      background: #00e0ff;
-      color: #000;
-      padding: 1rem;
-      border: none;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
-    }
-    .floating-btn {
-      position: fixed;
-      bottom: 20px;
-      z-index: 999;
-      padding: 12px 16px;
-      border-radius: 50%;
-      color: white;
-      text-align: center;
-      font-size: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-    .whatsapp-btn { right: 80px; background: #25D366; }
-    .call-btn { right: 20px; background: #0D47A1; }
-  </style>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <header>
-    <div><strong>Clean&Live</strong></div>
-    <nav>
-      <a href="#servicios">Servicios</a>
-      <a href="#nosotros">Quiénes somos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </header>
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clean&Live - Control de Plagas Futurista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: 'Inter', sans-serif;
+        background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+        color: #f2f2f2;
+        scroll-behavior: smooth;
+      }
+      header {
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      header nav a {
+        margin: 0 1rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      header nav a:hover {
+        color: #00e0ff;
+      }
+      .social-icons a {
+        margin-left: 1rem;
+        color: white;
+        font-size: 1.2rem;
+      }
+      .hero {
+        text-align: center;
+        padding: 6rem 2rem;
+        background: linear-gradient(135deg, #1c1c1c, #111);
+        background-size: 400% 400%;
+        animation: heroGradient 20s ease infinite;
+      }
+      @keyframes heroGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, #00e0ff, #00ff9f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 4rem 2rem;
+        background: #121212;
+      }
+      .service {
+        background: #1e1e1e;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        transition: transform 0.5s, box-shadow 0.5s;
+        border: 1px solid #00e0ff3a;
+      }
+      .service:hover {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+      }
+      .service h3 {
+        color: #00ffcc;
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+      }
+      .cta-btn {
+        display: inline-block;
+        margin-top: 1rem;
+        background: #00e0ff;
+        color: #000;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+      }
+      .cta-btn:hover {
+        background: #00ffb7;
+      }
+      .contact-form {
+        padding: 4rem 2rem;
+        background: #101010;
+        max-width: 700px;
+        margin: 0 auto;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      }
+      .contact-form h2 {
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: 2rem;
+        color: #00e0ff;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        border: none;
+        background: #1a1a1a;
+        color: #f2f2f2;
+      }
+      .contact-form button {
+        background: #00e0ff;
+        color: #000;
+        padding: 1rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+      }
+      .floating-btn {
+        position: fixed;
+        bottom: 20px;
+        z-index: 999;
+        padding: 12px 16px;
+        border-radius: 50%;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      }
+      .whatsapp-btn { right: 80px; background: #25D366; }
+      .call-btn { right: 20px; background: #0D47A1; }
 
-  <section class="hero">
-    <h1>Soluciones inteligentes para espacios limpios, seguros y sin plagas</h1>
-    <p>Fumigación | Fontanería | Limpieza Profesional</p>
-  </section>
+        /* Intro con Efecto de Nebulización ULV */
+#intro-loader {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+  animation: fadeOutIntro 1s ease forwards;
+  animation-delay: 4s;
+}
 
-  <section class="services" id="servicios">
-    <div class="service" data-sr>
-      <h3>Fumigación y Control de Plagas</h3>
-      <p>Eliminamos cucarachas, ratas, zancudos y más con productos ecoamigables.</p>
-      <a href="#contacto" class="cta-btn">Fumigación urgente</a>
-    </div>
-    <div class="service" data-sr>
-      <h3>Fontanería</h3>
-      <p>Reparación de fugas, cambios de grifería, mantenimiento de tuberías.</p>
-      <a href="#contacto" class="cta-btn">Fuga de agua urgente</a>
-    </div>
-    <div class="service" data-sr>
-      <h3>Limpieza General</h3>
-      <p>Servicio profesional de limpieza residencial y comercial.</p>
-      <a href="#contacto" class="cta-btn">Limpieza urgente</a>
-    </div>
-  </section>
+.nebulizer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  <section class="contact-form" id="contacto">
-    <h2>Contáctanos</h2>
-    <form>
-      <input type="text" placeholder="Nombre" required />
-      <input type="email" placeholder="Correo electrónico" required />
-      <input type="tel" placeholder="Teléfono" />
-      <textarea rows="5" placeholder="Mensaje"></textarea>
-      <button type="submit">Enviar mensaje</button>
-    </form>
-  </section>
+.logo-neb {
+  width: 140px;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInLogo 2s ease forwards 1s;
+  filter: drop-shadow(0 0 20px #00e0ff);
+}
 
-  <a href="https://wa.me/506XXXXXXXX" class="floating-btn whatsapp-btn" title="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="tel:+506XXXXXXXX" class="floating-btn call-btn" title="Llamar">
-    <i class="fas fa-phone"></i>
-  </a>
+/* Neblina */
+.mist {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: mistMove 6s infinite ease-in-out alternate;
+  z-index: 1;
+}
 
-  <script>
-    ScrollReveal().reveal('[data-sr]', {
-      delay: 200,
-      duration: 1000,
-      distance: '50px',
-      origin: 'bottom',
-      reset: true
-    });
+.mist1 {
+  top: -80px;
+  left: -80px;
+  animation-delay: 0s;
+}
 
-    gsap.from(".hero h1", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
-    gsap.from(".hero p", { duration: 1.2, y: 30, opacity: 0, delay: 0.5 });
-  </script>
-</body>
-</html>
+.mist2 {
+  bottom: -80px;
+  right: -80px;
+  animation-delay: 1.5s;
+}
+
+/* Animaciones */
+@keyframes mistMove {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(40px, 30px) scale(1.3); }
+}
+
+@keyframes fadeInLogo {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOutIntro {
+  to { opacity: 0; visibility: hidden; }
+}
+
+
+      
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+     <!-- Intro Futurista con Nebulización ULV -->
+   <div id="intro-loader">
+  <div class="nebulizer">
+    <div class="mist mist1"></div>
+    <div class="mist mist2"></div>
+    <img src="Clean&Live.ai.png" alt="Clean&Live Logo" class="logo-neb" />
+  </div>
+  </div>
+
+    
+    <header>
+      <div><strong>Clean&Live</strong></div>
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Quiénes somos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </header>
+  
+    <section class="hero">
+      <h1>Soluciones inteligentes para espacios limpios, seguros y sin plagas</h1>
+      <p>Fumigación | Fontanería | Limpieza Profesional</p>
+    </section>
+  
+    <section class="services" id="servicios">
+      <div class="service" data-sr>
+        <h3>Fumigación y Control de Plagas</h3>
+        <p>Eliminamos cucarachas, ratas, zancudos y más con productos ecoamigables.</p>
+        <a href="#contacto" class="cta-btn">Fumigación urgente</a>
+      </div>
+      <div class="service" data-sr>
+        <h3>Fontanería</h3>
+        <p>Reparación de fugas, cambios de grifería, mantenimiento de tuberías.</p>
+        <a href="#contacto" class="cta-btn">Fuga de agua urgente</a>
+      </div>
+      <div class="service" data-sr>
+        <h3>Limpieza General</h3>
+        <p>Servicio profesional de limpieza residencial y comercial.</p>
+        <a href="#contacto" class="cta-btn">Limpieza urgente</a>
+      </div>
+    </section>
+  
+    <section class="contact-form" id="contacto">
+      <h2>Contáctanos</h2>
+      <form>
+        <input type="text" placeholder="Nombre" required />
+        <input type="email" placeholder="Correo electrónico" required />
+        <input type="tel" placeholder="Teléfono" />
+        <textarea rows="5" placeholder="Mensaje"></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
+  
+    <a href="https://wa.me/506XXXXXXXX" class="floating-btn whatsapp-btn" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+506XXXXXXXX" class="floating-btn call-btn" title="Llamar">
+      <i class="fas fa-phone"></i>
+    </a>
+  
+    <script>
+      ScrollReveal().reveal('[data-sr]', {
+        delay: 200,
+        duration: 1000,
+        distance: '50px',
+        origin: 'bottom',
+        reset: true
+      });
+  
+      gsap.from(".hero h1", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
+      gsap.from(".hero p", { duration: 1.2, y: 30, opacity: 0, delay: 0.5 });
+    </script>
+
+     <script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const intro = document.getElementById("intro-loader");
+      if (intro) intro.remove();
+    }, 4500); // tiempo total de animación
+  });
+</script>
+
+    
+  </body>
+  </html>
