@@ -36,12 +36,54 @@
       header nav a:hover {
         color: #00e0ff;
       }
-      .social-icons a {
-        margin-left: 1rem;
-        color: white;
-        font-size: 1.2rem;
-      }
-      .hero {
+
+      .social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  text-decoration: none;
+}
+
+/* Colores personalizados por red */
+.social-icons a.facebook:hover {
+  background: #1877f2;
+  color: #fff;
+  box-shadow: 0 0 18px #1877f2;
+}
+
+.social-icons a.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: white;
+  box-shadow: 0 0 18px #d6249f;
+}
+
+.social-icons a.tiktok:hover {
+  background: linear-gradient(135deg, #25f4ee, #fe2c55);
+  color: white;
+  box-shadow: 0 0 18px #fe2c55;
+}
+
+.social-icons a.whatsapp:hover {
+  background: #25D366;
+  color: white;
+  box-shadow: 0 0 18px #25D366;
+}
+
+        .hero {
         text-align: center;
         padding: 6rem 2rem;
         background: linear-gradient(135deg, #1c1c1c, #111);
@@ -182,7 +224,7 @@
   position: absolute;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.07), transparent 70%);
+  background: linear-gradient(145deg, #001F3F, #003366, #00A86B);
   border-radius: 50%;
   filter: blur(80px);
   animation: mistMove 6s infinite ease-in-out alternate;
@@ -227,6 +269,8 @@
       
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
   </head>
   <body>
 
@@ -250,10 +294,20 @@
         <a href="#contacto">Contacto</a>
       </nav>
       <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </header>
+  <a href="https://facebook.com" class="facebook" title="Facebook" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://instagram.com" class="instagram" title="Instagram" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://tiktok.com" class="tiktok" title="TikTok" target="_blank">
+    <i class="fab fa-tiktok"></i>
+  </a>
+  <a href="https://wa.me/506XXXXXXXX" class="whatsapp" title="WhatsApp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
   
     <section class="hero">
       <h1>Soluciones inteligentes para espacios limpios, seguros y sin plagas</h1>
