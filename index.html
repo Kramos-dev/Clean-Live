@@ -17,22 +17,22 @@
       scroll-behavior: smooth;
     }
 
+    /* VIDEO DE FONDO GLOBAL */
     .video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.video-background video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.5); /* Oscurece para resaltar el texto encima */
-}
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.75); /* ajusta brillo si quieres */
+    }
 
     
     header {
@@ -349,6 +349,14 @@
     </div>
   </div>
 
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="control de plagas.mp4" type="video/mp4" />
+      Tu navegador no soporta videos HTML5.
+    </video>
+  </div>
+
+
   <header>
     <div><strong>Clean&Live</strong></div>
     <nav>
@@ -363,13 +371,6 @@
       <a href="https://wa.me/506XXXXXXXX" class="whatsapp" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
   </header>
-
-  <div class="video-background">
-  <video autoplay muted loop playsinline>
-    <source src="control de plagas.mp4" type="video/mp4" />
-    Tu navegador no soporta videos HTML5.
-  </video>
-</div>
 
   <section class="hero">
     <h1>Soluciones inteligentes para espacios limpios, seguros y sin plagas</h1>
