@@ -74,6 +74,56 @@
       box-shadow: 0 0 18px #25D366;
     }
 
+
+    .video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5); /* Oscurece para resaltar el texto encima */
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+
     .hero {
       text-align: center;
       padding: 6rem 2rem;
@@ -309,6 +359,13 @@
       <a href="https://wa.me/506XXXXXXXX" class="whatsapp" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
   </header>
+
+  <div class="video-background">
+  <video autoplay muted loop playsinline>
+    <source src="control-de-plagas--costa-rica-video" type="video/mp4" />
+    Tu navegador no soporta videos HTML5.
+  </video>
+</div>
 
   <section class="hero">
     <h1>Soluciones inteligentes para espacios limpios, seguros y sin plagas</h1>
