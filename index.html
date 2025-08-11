@@ -100,19 +100,24 @@ header nav a:hover {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff; /* blanco para mejor contraste */
+  background: rgba(255, 255, 255, 0.25); /* Más opaco para mejor contraste */
+  color: #eee; /* Gris claro para que el icono sea visible */
   font-size: 1.3rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25); /* Sombra más visible */
   backdrop-filter: blur(6px);
   text-decoration: none;
+}
+
+.social-icons a i {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8)); /* Sombra para destacar icono */
 }
 
 .social-icons a:hover {
   color: #fff;
 }
 
+/* Hover colores específicos para cada red */
 .social-icons a.facebook:hover {
   background: #1877f2;
   box-shadow: 0 0 18px #1877f2;
@@ -201,7 +206,7 @@ header nav a:hover {
 
 /* MAIN padding para evitar que el contenido quede oculto */
 main {
-  padding-top: 200px;
+  padding-top: 0px;
 }
 
     /* HERO */
