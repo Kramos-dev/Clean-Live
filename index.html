@@ -47,190 +47,180 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   
   <style>
-    /* (Aquí va todo tu CSS del ejemplo anterior sin cambios, para no repetirlo todo) */
-    /* ... copia el CSS completo que te di antes ... */
-     /* Reset y body */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: 'Inter', sans-serif;
-  background: #000000;
-  color: #ffffff;
-  scroll-behavior: smooth;
-}
+    /* Reset y body */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000000;
+      color: #ffffff;
+      scroll-behavior: smooth;
+    }
 
-   .video-background-split {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-  padding: 0;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-}
+    .video-background-split {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      padding: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
 
-.video-split {
-  width: 33.3333%;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
+    .video-split {
+      width: 33.3333%;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
 
-.video-split video {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.75);
-  pointer-events: none;
-}
+    .video-split video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.75);
+      pointer-events: none;
+    }
 
-/* Cortes ninja exactos para que encajen sin huecos */
+    /* Cortes ninja exactos para que encajen sin huecos */
+    .video-split-1 {
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+      margin-right: -2px; /* Evita pequeño espacio entre videos */
+    }
 
-.video-split-1 {
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
-  margin-right: -2px; /* Evita pequeño espacio entre videos */
-}
+    .video-split-2 {
+      clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+      margin-left: -2px;
+      margin-right: -2px;
+    }
 
-.video-split-2 {
-  clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
-  margin-left: -2px;
-  margin-right: -2px;
-}
+    .video-split-3 {
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+      margin-left: -2px;
+    }
 
-.video-split-3 {
-  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-  margin-left: -2px;
-}
+    /* Responsivo: mantenemos siempre 3 columnas */
+    @media (max-width: 768px) {
+      .video-background-split {
+        flex-direction: row !important;
+        height: 100vh;
+      }
+      .video-split {
+        width: 33.3333% !important;
+        height: 100vh !important;
+      }
+      .video-split video {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+      }
+      /* Ajustes para iconos sociales en móviles */
+      .social-icons {
+        gap: 0.7rem;
+      }
+      .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+      }
+      .social-icons a i {
+        filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.7));
+      }
+    }
 
-/* Responsivo: mantenemos siempre 3 columnas */
+    /* HEADER */
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 70px;
+      box-sizing: border-box;
+    }
 
-@media (max-width: 768px) {
-  .video-background-split {
-    flex-direction: row !important;
-    height: 100vh;
-  }
-  .video-split {
-    width: 33.3333% !important;
-    height: 100vh !important;
-  }
-  .video-split video {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-  }
-}
- 
+    header nav a {
+      margin: 0 1rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
 
-/* HEADER */
-header {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: 70px;
-  box-sizing: border-box;
-}
+    header nav a:hover {
+      color: #00e0ff;
+    }
 
-header nav a {
-  margin: 0 1rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
+    /* SOCIAL ICONS */
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
 
-header nav a:hover {
-  color: #00e0ff;
-}
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25); /* Mejor contraste */
+      color: #eee; /* Gris claro */
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(6px);
+      text-decoration: none;
+    }
 
-/* SOCIAL ICONS */
-.social-icons {
-  display: flex;
-  gap: 1rem;
-}
+    .social-icons a i {
+      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
+    }
 
-.social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25); /* Mejor contraste */
-  color: #eee; /* Gris claro */
-  font-size: 1.3rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(6px);
-  text-decoration: none;
-}
+    .social-icons a:hover {
+      color: #fff;
+    }
 
-.social-icons a i {
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
-}
+    /* Hover colores específicos para cada red */
+    .social-icons a.facebook:hover {
+      background: #1877f2;
+      box-shadow: 0 0 18px #1877f2;
+    }
 
-.social-icons a:hover {
-  color: #fff;
-}
+    .social-icons a.instagram:hover {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      box-shadow: 0 0 18px #d6249f;
+    }
 
-/* Hover colores específicos para cada red */
-.social-icons a.facebook:hover {
-  background: #1877f2;
-  box-shadow: 0 0 18px #1877f2;
-}
+    .social-icons a.tiktok:hover {
+      background: linear-gradient(135deg, #25f4ee, #fe2c55);
+      box-shadow: 0 0 18px #fe2c55;
+    }
 
-.social-icons a.instagram:hover {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  box-shadow: 0 0 18px #d6249f;
-}
-
-.social-icons a.tiktok:hover {
-  background: linear-gradient(135deg, #25f4ee, #fe2c55);
-  box-shadow: 0 0 18px #fe2c55;
-}
-
-.social-icons a.whatsapp:hover {
-  background: #25D366;
-  box-shadow: 0 0 18px #25D366;
-}
-
-
-  /* Ajustes para iconos sociales en móviles */
-  .social-icons {
-    gap: 0.7rem;
-  }
-  .social-icons a {
-    width: 36px;
-    height: 36px;
-    font-size: 1.1rem;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-  }
-  .social-icons a i {
-    filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.7));
-  }
-}
-
-    
+    .social-icons a.whatsapp:hover {
+      background: #25D366;
+      box-shadow: 0 0 18px #25D366;
+    }
 
     /* HERO */
     .hero {
@@ -248,11 +238,13 @@ header nav a:hover {
       background-size: 400% 400%;
       animation: heroGradient 20s ease infinite;
     }
+
     @keyframes heroGradient {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
@@ -260,6 +252,7 @@ header nav a:hover {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     .hero p {
       font-size: 1.4rem;
     }
@@ -272,6 +265,7 @@ header nav a:hover {
       padding: 4rem 2rem;
       background: #121212;
     }
+
     .service {
       background: #1e1e1e;
       border-radius: 20px;
@@ -280,15 +274,18 @@ header nav a:hover {
       transition: transform 0.5s, box-shadow 0.5s;
       border: 1px solid #00e0ff3a;
     }
+
     .service:hover {
       transform: translateY(-12px) scale(1.03);
       box-shadow: 0 12px 30px rgba(0,0,0,0.6);
     }
+
     .service h3 {
       color: #00ffcc;
       margin-bottom: 1rem;
       font-size: 1.6rem;
     }
+
     .cta-btn {
       display: inline-block;
       margin-top: 1rem;
@@ -300,6 +297,7 @@ header nav a:hover {
       font-weight: 700;
       transition: all 0.3s ease;
     }
+
     .cta-btn:hover {
       background: #00ffb7;
     }
@@ -313,12 +311,14 @@ header nav a:hover {
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
+
     .contact-form h2 {
       margin-bottom: 2rem;
       text-align: center;
       font-size: 2rem;
       color: #00e0ff;
     }
+
     .contact-form input,
     .contact-form textarea {
       width: 100%;
@@ -329,6 +329,7 @@ header nav a:hover {
       background: #1a1a1a;
       color: #f2f2f2;
     }
+
     .contact-form button {
       background: #00e0ff;
       color: #000;
@@ -353,6 +354,7 @@ header nav a:hover {
       font-size: 20px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
+
     .whatsapp-btn { right: 80px; background: #25D366; }
     .call-btn { right: 20px; background: #0D47A1; }
 
@@ -369,7 +371,14 @@ header nav a:hover {
       animation: fadeOutIntro 1s ease forwards;
       animation-delay: 2.5s;
     }
-    .nebulizer { display: flex; align-items: center; justify-content: center; position: relative; }
+
+    .nebulizer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
     .logo-neb {
       width: 300px;
       height: auto;
@@ -378,6 +387,7 @@ header nav a:hover {
       animation: fadeInLogo 2s ease forwards 1.2s;
       filter: drop-shadow(0 0 25px #00e0ff) blur(0.5px);
     }
+
     .mist {
       position: absolute;
       width: 400px;
@@ -388,23 +398,156 @@ header nav a:hover {
       animation: mistMove 6s infinite ease-in-out alternate;
       z-index: 1;
     }
+
     .mist1 { top: -100px; left: -100px; animation-delay: 0s; }
     .mist2 { bottom: -80px; right: -100px; animation-delay: 1.2s; }
     .mist3 { top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 2s; }
-    @keyframes mistMove { 0% { transform: scale(1) translate(0, 0); } 100% { transform: scale(1.4) translate(30px, 20px); } }
-    @keyframes fadeInLogo { 0% { opacity: 0; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1); } }
-    @keyframes fadeOutIntro { to { opacity: 0; visibility: hidden; } }
+
+    @keyframes mistMove {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.4) translate(30px, 20px); }
+    }
+    @keyframes fadeInLogo {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes fadeOutIntro {
+      to { opacity: 0; visibility: hidden; }
+    }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      header { padding: 2rem 1rem; flex-direction: column; align-items: center; text-align: center; }
-      .logo img { max-width: 80%; height: auto; }
-      .tagline { font-size: 1.2rem; margin-top: 1rem; }
-      .social-icons { flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
-      .social-icons a { width: 42px; height: 42px; margin: 0.3rem; font-size: 1.2rem; }
-      h1 { font-size: 1.8rem; }
-      p { font-size: 1rem; }
+      header {
+        padding: 2rem 1rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .logo img {
+        max-width: 80%;
+        height: auto;
+      }
+      .tagline {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+      .social-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      .social-icons a {
+        width: 42px;
+        height: 42px;
+        margin: 0.3rem;
+        font-size: 1.2rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1rem;
+      }
     }
+  </style>
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="intro-loader" role="alert" aria-live="assertive" aria-busy="true" aria-label="Cargando sitio">
+    <div class="nebulizer">
+      <div class="mist mist1"></div>
+      <div class="mist mist2"></div>
+      <div class="mist mist3"></div>
+      <img src="clean-live-logo.png" alt="Logo Clean&Live" class="logo-neb" />
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header role="banner">
+    <div><strong>Clean&Live</strong></div>
+    <nav role="navigation" aria-label="Menú principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Quiénes somos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/groups/159796779286299/user/100064180988376/" class="facebook" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/cleanlive_cr/" class="instagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com" class="tiktok" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/506XXXXXXXX" class="whatsapp" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </header>
+
+  <!-- VIDEO DE FONDO -->
+  <div class="video-background-split">
+    <video class="video-split video-split-1" autoplay muted loop playsinline preload="auto" src="control de plagas.mp4"></video>
+    <video class="video-split video-split-2" autoplay muted loop playsinline preload="auto" src="Fontanero_Repara_Fuga_de_Agua.mp4"></video>
+    <video class="video-split video-split-3" autoplay muted loop playsinline preload="auto" src="control-de-plagas.mp4"></video>
+  </div>
+  
+  <main>
+    <!-- HERO -->
+    <section class="hero" role="region" aria-label="Presentación principal">
+      <h1>Soluciones inteligentes para espacios limpios, seguros y sin plagas</h1>
+      <p>Fumigación | Fontanería | Tapicería</p>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services" id="servicios" role="region" aria-label="Servicios principales">
+      <article class="service" data-sr>
+        <h3>Fumigación y Control de Plagas</h3>
+        <p>Eliminamos cucarachas, ratas, zancudos y más con productos ecoamigables.</p>
+        <a href="#contacto" class="cta-btn">Fumigación urgente</a>
+      </article>
+      <article class="service" data-sr>
+        <h3>Fontanería</h3>
+        <p>Reparación de fugas, cambios de grifería, mantenimiento de tuberías.</p>
+        <a href="#contacto" class="cta-btn">Fuga de agua urgente</a>
+      </article>
+      <article class="service" data-sr>
+        <h3>Limpieza General</h3>
+        <p>Servicio profesional de limpieza residencial y comercial.</p>
+        <a href="#contacto" class="cta-btn">Limpieza urgente</a>
+      </article>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact-form" id="contacto" role="region" aria-label="Formulario de contacto">
+      <h2>Contáctanos</h2>
+      <form>
+        <input type="text" placeholder="Nombre" required aria-required="true" />
+        <input type="email" placeholder="Correo electrónico" required aria-required="true" />
+        <input type="tel" placeholder="Teléfono" />
+        <textarea rows="5" placeholder="Mensaje"></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- BOTONES FLOTANTES -->
+  <a href="https://wa.me/50612345678" class="floating-btn whatsapp-btn" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+50612345678" class="floating-btn call-btn" title="Llamar" aria-label="Llamar"><i class="fas fa-phone"></i></a>
+
+  <!-- SCRIPTS -->
+  <script>
+    ScrollReveal().reveal('[data-sr]', {
+      delay: 200,
+      duration: 1000,
+      distance: '50px',
+      origin: 'bottom',
+      reset: true
+    });
+    gsap.from(".hero h1", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
+    gsap.from(".hero p", { duration: 1.2, y: 30, opacity: 0, delay: 0.5 });
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const intro = document.getElementById("intro-loader");
+        if (intro) intro.remove();
+      }, 4500);
+    });
+  </script>
+
 
     
   </style>
