@@ -49,25 +49,70 @@
   <style>
     /* (Aquí va todo tu CSS del ejemplo anterior sin cambios, para no repetirlo todo) */
     /* ... copia el CSS completo que te di antes ... */
+     /* Reset y body */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000000;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
 
-    .social-icons a {
+/* HEADER */
+header {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 70px;
+  box-sizing: border-box;
+}
+
+header nav a {
+  margin: 0 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #00e0ff;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25); /* Más opaco para mejor contraste */
-  color: #eee; /* Gris claro para que el icono sea visible */
+  background: rgba(255, 255, 255, 0.25); /* Mejor contraste */
+  color: #eee; /* Gris claro */
   font-size: 1.3rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25); /* Sombra más visible */
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(6px);
   text-decoration: none;
 }
 
 .social-icons a i {
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8)); /* Sombra para destacar icono */
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
 }
 
 .social-icons a:hover {
@@ -95,60 +140,16 @@
   box-shadow: 0 0 18px #25D366;
 }
 
-   /* Reset y body */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Inter', sans-serif;
-  background: #000000;
-  color: #ffffff;
-  scroll-behavior: smooth;
-}
+/* VIDEO BACKGROUND CON 3 COLUMNAS Y CORTE NINJA */
 
-/* HEADER */
-header {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: 70px; /* fija altura para cálculo */
-  box-sizing: border-box;
-}
-
-header nav a {
-  margin: 0 1rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-header nav a:hover {
-  color: #00e0ff;
-}
-
-/* SOCIAL ICONS */
-.social-icons {
-  display: flex;
-  gap: 1rem;
-}
-
-
-
-/* VIDEO BACKGROUND AJUSTADO */
-
- .video-background-split {
+.video-background-split {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  display: flex;        /* fila horizontal siempre */
-  flex-direction: row;  /* no cambia en móvil */
+  display: flex;        /* fila horizontal */
+  flex-direction: row;  /* fija fila */
   z-index: -1;
   pointer-events: none;
 }
@@ -170,8 +171,7 @@ header nav a:hover {
   pointer-events: none;
 }
 
-/* Cortes ninja para desktop y móviles */
-
+/* Cortes ninja diagonales para desktop y móviles */
 .video-split-1 {
   clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
 }
@@ -182,13 +182,12 @@ header nav a:hover {
 
 .video-split-3 {
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-} 
+}
 
-
-/* RESPONSIVE */
+/* RESPONSIVE MÓVILES: misma estructura y corte ninja */
 @media (max-width: 768px) {
   .video-background-split {
-    flex-direction: row !important; /* fuerza fila horizontal */
+    flex-direction: row !important; /* siempre filas horizontales */
     height: 100vh;
   }
   .video-split {
@@ -203,12 +202,29 @@ header nav a:hover {
     height: 100% !important;
     object-fit: cover;
   }
+
+  /* Ajustes para iconos sociales en móviles */
+  .social-icons {
+    gap: 0.7rem;
+  }
+  .social-icons a {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  }
+  .social-icons a i {
+    filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.7));
+  }
 }
 
-/* MAIN padding para evitar que el contenido quede oculto */
+/* MAIN padding para evitar contenido oculto tras header */
 main {
-  padding-top: 0px;
+  padding-top: 70px; /* Igual que la altura del header */
 }
+
+    
 
     /* HERO */
     .hero {
