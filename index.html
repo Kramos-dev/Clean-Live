@@ -25,22 +25,48 @@
       scroll-behavior: smooth;
     }
 
-    /* VIDEO DE FONDO GLOBAL */
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      z-index: -1;
-    }
-    .video-background video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.75);
-    }
+
+    /* Contenedor del video dividido */
+.video-background-split {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Cada columna de video */
+.video-split {
+  flex: 1 1 33.3333%;
+  height: 100vh;
+  object-fit: cover;
+  border-left: 0.5px solid rgba(255, 255, 255, 0.5); /* corte fino tipo ninja */
+}
+
+/* El primero no necesita borde a la izquierda */
+.video-split:first-child {
+  border-left: none;
+}
+
+/* Responsive: en móviles los videos se apilan */
+@media (max-width: 768px) {
+  .video-background-split {
+    flex-direction: column;
+  }
+  .video-split {
+    width: 100%;
+    height: 33.333vh;
+    border-left: none;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.5);
+  }
+  .video-split:first-child {
+    border-top: none;
+  }
+}
+
 
     header {
       background: rgba(0, 0, 0, 0.6);
@@ -371,12 +397,18 @@
     </div>
   </div>
 
-  <div class="video-background">
-    <video autoplay muted loop playsinline>
-      <source src="control de plagas.mp4" type="video/mp4" />
-      Tu navegador no soporta videos HTML5.
-    </video>
-  </div>
+  <div class="video-background-split">
+  <video class="video-split" autoplay muted loop playsinline>
+    <source src="control de plagas.mp4" type="video/mp4" />
+  </video>
+  <video class="video-split" autoplay muted loop playsinline>
+    <source src="Fontanero_Repara_Fuga_de_Agua.mp4" type="video/mp4" />
+  </video>
+  <video class="video-split" autoplay muted loop playsinline>
+    <source src="video3.mp4" type="video/mp4" />
+  </video>
+</div>
+
 
   <header>
     <div><strong>Clean&Live</strong></div>
