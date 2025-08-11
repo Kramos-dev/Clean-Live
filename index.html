@@ -124,34 +124,19 @@
 /* Responsive: en móvil quitamos clip-path y hacemos videos apilados */
 @media (max-width: 768px) {
   .video-background-split {
-    flex-direction: column;
+    flex-direction: row !important; /* fuerza fila horizontal */
     height: 100vh;
-    position: fixed;
   }
-  .video-split-1,
-  .video-split-2,
-  .video-split-3 {
-    flex: none;
-    height: 33.3333vh;
-    overflow: hidden;
+  .video-split {
+    width: 33.3333% !important;
+    height: 100vh !important;
   }
-
-  .video-split-1 {
-    clip-path: polygon(0 0, 100% 10%, 90% 100%, 0% 100%);
-  }
-
-  .video-split-2 {
-    clip-path: polygon(10% 0, 100% 0, 100% 100%, 5% 100%);
-  }
-
-  .video-split-3 {
-    clip-path: polygon(5% 0, 100% 0, 100% 90%, 0% 100%);
-  }
-
   .video-split video {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: absolute !important;
+    top: 0; 
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
     object-fit: cover;
   }
 }
