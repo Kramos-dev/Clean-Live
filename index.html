@@ -26,21 +26,68 @@
     }
 
     /* VIDEO DE FONDO GLOBAL */
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      z-index: -1;
-    }
-    .video-background video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.75);
-    }
+    .video-background-split {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;        /* fila horizontal siempre */
+  flex-direction: row;  /* no cambia en móvil */
+  z-index: -1;
+  pointer-events: none;
+}
+
+.video-split {
+  width: 33.3333%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-split video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+  pointer-events: none;
+}
+
+/* Cortes ninja para desktop y móviles */
+
+.video-split-1 {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+
+.video-split-2 {
+  clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+}
+
+.video-split-3 {
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* En móviles también 3 columnas, igual que desktop */
+
+@media (max-width: 768px) {
+  .video-background-split {
+    flex-direction: row; /* fuerza filas horizontales siempre */
+    height: 100vh;
+  }
+  .video-split {
+    width: 33.3333%;
+    height: 100vh;
+  }
+  .video-split video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 
     header {
       background: rgba(0, 0, 0, 0.6);
