@@ -136,15 +136,15 @@ header nav a:hover {
 /* VIDEO BACKGROUND AJUSTADO */
 .video-background-split {
   position: fixed;
-  top: 70px; /* justo debajo del header */
+  top: 70px;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 70px); /* resto de la pantalla */
-  display: flex;
+  height: 100vh;
+  display: flex;        /* fila horizontal siempre */
+  flex-direction: row;  /* no cambia en móvil */
   z-index: -1;
   pointer-events: none;
 }
-
 /* Cada video ocupa 1/3 del ancho */
 .video-split-1, .video-split-2, .video-split-3 {
   position: relative;
