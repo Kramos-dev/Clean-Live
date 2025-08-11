@@ -17,75 +17,68 @@
       scroll-behavior: smooth;
     }
 
-    /* VIDEO DE FONDO GLOBAL */
-    .video-background-split {
+
+.video-background-split {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  display: flex;
+  display: flex;        /* fila horizontal siempre */
+  flex-direction: row;  /* no cambia en móvil */
   z-index: -1;
-  pointer-events: none; /* para que no interfiera con clicks */
-  margin: 0;
-  padding: 0;
+  pointer-events: none;
 }
 
 .video-split {
-  flex: 1 1 33.3333%;
-  position: relative;
+  width: 33.3333%;
   height: 100vh;
-  overflow: hidden; /* evitar que sobresalga */
+  position: relative;
+  overflow: hidden;
 }
 
 .video-split video {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(0.75);
+  pointer-events: none;
 }
 
-/* Cortes ninja con clip-path en cada video */
-/* Ajustados para que los bordes encajen sin espacios */
+/* Cortes ninja para desktop y móviles */
+
 .video-split-1 {
-  clip-path: polygon(0 0, 100% 0, 85.1% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
 }
 
 .video-split-2 {
-  clip-path: polygon(14.9% 0, 100% 0, 85.1% 100%, 0% 100%);
-  margin-left: 0; /* eliminar margen para evitar líneas */
+  clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
 }
 
 .video-split-3 {
-  clip-path: polygon(14.9% 0, 100% 0, 100% 100%, 0% 100%);
-  margin-left: 0; /* eliminar margen */
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-/* Responsive: apilar videos sin clip-path */
+/* En móviles también 3 columnas, igual que desktop */
+
 @media (max-width: 768px) {
   .video-background-split {
-    flex-direction: column;
-    height: auto;
-    position: fixed;
+    flex-direction: row; /* fuerza filas horizontales siempre */
+    height: 100vh;
   }
-  .video-split-1,
-  .video-split-2,
-  .video-split-3 {
-    clip-path: none !important;
-    height: 200px;
-    flex: none;
-    margin-left: 0 !important;
+  .video-split {
+    width: 33.3333%;
+    height: 100vh;
   }
   .video-split video {
-    position: relative;
-    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
     width: 100%;
+    height: 100%;
   }
 }
-
 
     
     header {
