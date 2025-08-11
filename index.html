@@ -76,6 +76,9 @@
   .video-background-split {
     flex-direction: row !important; /* fuerza fila horizontal */
     height: 100vh;
+    object-fit: cover; /* mantiene el recorte proporcional */
+    transform: scale(0.85); /* zoom out: aleja el video */
+    transform-origin: center center; /* centra el zoom */
   }
   .video-split {
     width: 33.3333% !important;
