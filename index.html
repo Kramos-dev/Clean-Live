@@ -168,36 +168,44 @@
       gap: 1rem;
     }
     .social-icons a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      font-size: 1.3rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(6px);
-      text-decoration: none;
-    }
-    .social-icons a.facebook:hover {
-      background: #1877f2;
-      box-shadow: 0 0 18px #1877f2;
-    }
-    .social-icons a.instagram:hover {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-      box-shadow: 0 0 18px #d6249f;
-    }
-    .social-icons a.tiktok:hover {
-      background: linear-gradient(135deg, #25f4ee, #fe2c55);
-      box-shadow: 0 0 18px #fe2c55;
-    }
-    .social-icons a.whatsapp:hover {
-      background: #25D366;
-      box-shadow: 0 0 18px #25D366;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15); /* Aumenté la opacidad para mejor contraste */
+  color: #ffffff; /* Texto/íconos blanco para buen contraste */
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15); /* sombra clara para destacar */
+  backdrop-filter: blur(6px);
+  text-decoration: none;
+}
+
+.social-icons a.facebook:hover {
+  background: #1877f2;
+  box-shadow: 0 0 18px #1877f2;
+  color: #fff;
+}
+
+.social-icons a.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0 0 18px #d6249f;
+  color: #fff;
+}
+
+.social-icons a.tiktok:hover {
+  background: linear-gradient(135deg, #25f4ee, #fe2c55);
+  box-shadow: 0 0 18px #fe2c55;
+  color: #fff;
+}
+
+.social-icons a.whatsapp:hover {
+  background: #25D366;
+  box-shadow: 0 0 18px #25D366;
+  color: #fff;
+}
 
     /* HERO */
     .hero {
@@ -388,12 +396,6 @@
     </div>
   </div>
 
-  <!-- VIDEO DE FONDO -->
-  <div class="video-background-split">
-  <video class="video-split video-split-1" autoplay muted loop playsinline preload="auto" src="control de plagas.mp4"></video>
-  <video class="video-split video-split-2" autoplay muted loop playsinline preload="auto" src="Fontanero_Repara_Fuga_de_Agua.mp4"></video>
-  <video class="video-split video-split-3" autoplay muted loop playsinline preload="auto" src="control-de-plagas.mp4"></video>
-</div>
 
   <!-- HEADER -->
   <header role="banner">
@@ -411,6 +413,13 @@
     </div>
   </header>
 
+<!-- VIDEO DE FONDO -->
+  <div class="video-background-split">
+  <video class="video-split video-split-1" autoplay muted loop playsinline preload="auto" src="control de plagas.mp4"></video>
+  <video class="video-split video-split-2" autoplay muted loop playsinline preload="auto" src="Fontanero_Repara_Fuga_de_Agua.mp4"></video>
+  <video class="video-split video-split-3" autoplay muted loop playsinline preload="auto" src="control-de-plagas.mp4"></video>
+</div>
+  
   <main>
     <!-- HERO -->
     <section class="hero" role="region" aria-label="Presentación principal">
