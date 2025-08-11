@@ -3,13 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clean&Live - Control de Plagas </title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <title>Clean&Live - Control de Plagas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+  />
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Inter', sans-serif;
       background: transparent;
@@ -17,70 +25,23 @@
       scroll-behavior: smooth;
     }
 
+    /* VIDEO DE FONDO GLOBAL */
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.75);
+    }
 
-.video-background-split {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;        /* fila horizontal siempre */
-  flex-direction: row;  /* no cambia en móvil */
-  z-index: -1;
-  pointer-events: none;
-}
-
-.video-split {
-  width: 33.3333%;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-
-.video-split video {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.75);
-  pointer-events: none;
-}
-
-/* Cortes ninja para desktop y móviles */
-
-.video-split-1 {
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
-}
-
-.video-split-2 {
-  clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
-}
-
-.video-split-3 {
-  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-/* En móviles también 3 columnas, igual que desktop */
-
-@media (max-width: 768px) {
-  .video-background-split {
-    flex-direction: row; /* fuerza filas horizontales siempre */
-    height: 100vh;
-  }
-  .video-split {
-    width: 33.3333%;
-    height: 100vh;
-  }
-  .video-split video {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-    
     header {
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(10px);
@@ -127,7 +88,13 @@
       box-shadow: 0 0 18px #1877f2;
     }
     .social-icons a.instagram:hover {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      background: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285aeb 90%
+      );
       box-shadow: 0 0 18px #d6249f;
     }
     .social-icons a.tiktok:hover {
@@ -135,56 +102,35 @@
       box-shadow: 0 0 18px #fe2c55;
     }
     .social-icons a.whatsapp:hover {
-      background: #25D366;
-      box-shadow: 0 0 18px #25D366;
+      background: #25d366;
+      box-shadow: 0 0 18px #25d366;
     }
 
-
-    
-
-.hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  padding: 2rem;
-  color: white;
-  z-index: 1;
-}
-
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.4rem;
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-
     .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       text-align: center;
       padding: 6rem 2rem;
+      color: white;
+      z-index: 1;
       background: transparent;
       background-size: 400% 400%;
       animation: heroGradient 20s ease infinite;
     }
     @keyframes heroGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
     .hero h1 {
       font-size: 3rem;
@@ -193,6 +139,54 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    .hero p {
+      font-size: 1.4rem;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      header {
+        padding: 2rem 1rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .logo img {
+        max-width: 80%;
+        height: auto;
+      }
+      .tagline {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+      .social-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      .social-icons a {
+        width: 42px;
+        height: 42px;
+        margin: 0.3rem;
+        font-size: 1.2rem;
+      }
+      canvas#particles-js,
+      #fogCanvas {
+        width: 100vw !important;
+        height: 100vh !important;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -204,13 +198,13 @@
       background: #1e1e1e;
       border-radius: 20px;
       padding: 2rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
       transition: transform 0.5s, box-shadow 0.5s;
       border: 1px solid #00e0ff3a;
     }
     .service:hover {
       transform: translateY(-12px) scale(1.03);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
     }
     .service h3 {
       color: #00ffcc;
@@ -231,13 +225,14 @@
     .cta-btn:hover {
       background: #00ffb7;
     }
+
     .contact-form {
       padding: 4rem 2rem;
       background: #101010;
       max-width: 700px;
       margin: 0 auto;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
     .contact-form h2 {
       margin-bottom: 2rem;
@@ -266,6 +261,7 @@
       cursor: pointer;
       width: 100%;
     }
+
     .floating-btn {
       position: fixed;
       bottom: 20px;
@@ -275,10 +271,16 @@
       color: white;
       text-align: center;
       font-size: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
-    .whatsapp-btn { right: 80px; background: #25D366; }
-    .call-btn { right: 20px; background: #0D47A1; }
+    .whatsapp-btn {
+      right: 80px;
+      background: #25d366;
+    }
+    .call-btn {
+      right: 20px;
+      background: #0d47a1;
+    }
 
     #intro-loader {
       position: fixed;
@@ -316,73 +318,47 @@
       animation: mistMove 6s infinite ease-in-out alternate;
       z-index: 1;
     }
-    .mist1 { top: -100px; left: -100px; animation-delay: 0s; }
-    .mist2 { bottom: -80px; right: -100px; animation-delay: 1.2s; }
-    .mist3 { top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 2s; }
+    .mist1 {
+      top: -100px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+    .mist2 {
+      bottom: -80px;
+      right: -100px;
+      animation-delay: 1.2s;
+    }
+    .mist3 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-delay: 2s;
+    }
 
     @keyframes mistMove {
-      0% { transform: scale(1) translate(0, 0); }
-      100% { transform: scale(1.4) translate(30px, 20px); }
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+      100% {
+        transform: scale(1.4) translate(30px, 20px);
+      }
     }
     @keyframes fadeInLogo {
-      0% { opacity: 0; transform: scale(0.8); }
-      100% { opacity: 1; transform: scale(1); }
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
     @keyframes fadeOutIntro {
-      to { opacity: 0; visibility: hidden; }
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
     }
-
-      @media (max-width: 768px) {
-  header {
-    padding: 2rem 1rem;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .logo img {
-    max-width: 80%;
-    height: auto;
-  }
-
-  .tagline {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-  }
-
-  .social-icons {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 1rem;
-  }
-
-  .social-icons a {
-    width: 42px;
-    height: 42px;
-    margin: 0.3rem;
-    font-size: 1.2rem;
-  }
-
-  canvas#particles-js {
-    width: 100vw !important;
-    height: 100vh !important;
-  }
-
-  #fogCanvas {
-    width: 100vw !important;
-    height: 100vh !important;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-}
-
-    
   </style>
 </head>
 <body>
@@ -395,14 +371,12 @@
     </div>
   </div>
 
-  <!-- VIDEO DE FONDO DIVIDIDO -->
-<div class="video-background-split">
-  <video class="video-split video-split-1" autoplay muted loop playsinline preload="auto" src="control de plagas.mp4"></video>
-  <video class="video-split video-split-2" autoplay muted loop playsinline preload="auto" src="Fontanero_Repara_Fuga_de_Agua"></video>
-  <video class="video-split video-split-3" autoplay muted loop playsinline preload="auto" src="control-de-plagas.mp4"></video>
-</div>
-
-
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="control de plagas.mp4" type="video/mp4" />
+      Tu navegador no soporta videos HTML5.
+    </video>
+  </div>
 
   <header>
     <div><strong>Clean&Live</strong></div>
@@ -412,10 +386,33 @@
       <a href="#contacto">Contacto</a>
     </nav>
     <div class="social-icons">
-      <a href="https://www.facebook.com/groups/159796779286299/user/100064180988376/" class="facebook" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/cleanlive_cr/" class="instagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://tiktok.com" class="tiktok" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://wa.me/506XXXXXXXX" class="whatsapp" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a
+        href="https://www.facebook.com/groups/159796779286299/user/100064180988376/"
+        class="facebook"
+        title="Facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a
+        href="https://www.instagram.com/cleanlive_cr/"
+        class="instagram"
+        title="Instagram"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a href="https://tiktok.com" class="tiktok" title="TikTok" target="_blank" rel="noopener noreferrer"
+        ><i class="fab fa-tiktok"></i
+      ></a>
+      <a
+        href="https://wa.me/506XXXXXXXX"
+        class="whatsapp"
+        title="WhatsApp"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
     </div>
   </header>
 
@@ -453,8 +450,12 @@
     </form>
   </section>
 
-  <a href="https://wa.me/506XXXXXXXX" class="floating-btn whatsapp-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="tel:+506XXXXXXXX" class="floating-btn call-btn" title="Llamar"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/506XXXXXXXX" class="floating-btn whatsapp-btn" title="WhatsApp"
+    ><i class="fab fa-whatsapp"></i
+  ></a>
+  <a href="tel:+506XXXXXXXX" class="floating-btn call-btn" title="Llamar"
+    ><i class="fas fa-phone"></i
+  ></a>
 
   <script>
     ScrollReveal().reveal('[data-sr]', {
@@ -462,13 +463,15 @@
       duration: 1000,
       distance: '50px',
       origin: 'bottom',
-      reset: true
+      reset: true,
     });
-    gsap.from(".hero h1", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
-    gsap.from(".hero p", { duration: 1.2, y: 30, opacity: 0, delay: 0.5 });
-    window.addEventListener("load", () => {
+
+    gsap.from('.hero h1', { duration: 1, y: -50, opacity: 0, ease: 'power3.out' });
+    gsap.from('.hero p', { duration: 1.2, y: 30, opacity: 0, delay: 0.5 });
+
+    window.addEventListener('load', () => {
       setTimeout(() => {
-        const intro = document.getElementById("intro-loader");
+        const intro = document.getElementById('intro-loader');
         if (intro) intro.remove();
       }, 4500);
     });
