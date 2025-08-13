@@ -500,17 +500,33 @@
   </section>
 
   <section class="contact-form" id="contacto">
-    <h2>Contáctanos</h2>
-    <form>
-      <form action="https://formspree.io/f/xqaleyal" method="POST" novalidate data-aos="fade-up" data-aos-delay="200" >
-      <input type="text" placeholder="Nombre" required />
-      <input type="email" placeholder="Correo electrónico" required />
-      <input type="tel" placeholder="Teléfono" required />
-      <textarea rows="5" placeholder="Mensaje"></textarea>
-      <button type="submit">Enviar mensaje</button>
-    </form>
-  </section>
+  <h2>Contáctanos</h2>
+  <form id="formulario" action="https://formspree.io/f/xqaleyal" method="POST" novalidate data-aos="fade-up" data-aos-delay="200">
 
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <span class="error"></span>
+
+    <input type="tel" name="telefono" placeholder="Teléfono" required pattern="[0-9+ ]+">
+    <span class="error"></span>
+
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <span class="error"></span>
+
+    <select name="servicio" required>
+      <option value="">Seleccione el servicio</option>
+      <option value="Fontanería (Fugas de agua - Destaqueos)">Fontanería (Fugas de agua - Destaqueos)</option>
+      <option value="Control de plagas">Control de plagas</option>
+      <option value="Mantenimiento de tapicería">Mantenimiento de tapicería</option>
+    </select>
+    <span class="error"></span>
+
+    <textarea name="mensaje" rows="5" placeholder="Escriba detalles adicionales (opcional)"></textarea>
+    <span class="error"></span>
+
+    <button type="submit">Enviar mensaje</button>
+  </form>
+</section>
+  
   <a href="https://wa.me/50672390602" class="floating-btn whatsapp-btn" title="WhatsApp"
     ><i class="fab fa-whatsapp"></i
   ></a>
