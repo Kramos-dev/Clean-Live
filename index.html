@@ -363,6 +363,21 @@
       .video-background-split { transform: scale(0.95); transform-origin:center center; }
       .video-split video { width:100% !important; height:100% !important; object-fit:cover; }
     }
+
+    /* Igualar dimensiones de los videos solo en escritorio */
+@media (min-width: 1024px) {
+  .video-split {
+    height: 100vh; /* misma altura para todos */
+  }
+
+  .video-split video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* recorte uniforme */
+    object-position: center; /* centrado */
+  }
+}
+
   </style>
 </head>
 
