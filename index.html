@@ -92,28 +92,6 @@
   }
 }
 
-    <header>
-  <div class="logo">Mister Plumber</div>
-
-  <nav id="nav-menu">
-    <a href="#inicio">Inicio</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <div class="social-icons">
-    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-    <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
-    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-  </div>
-
-  <div class="menu-toggle" id="menu-toggle">
-    ☰
-  </div>
-</header>
-
-<style>
   header {
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
@@ -232,16 +210,7 @@
       display: flex;
     }
   }
-</style>
 
-<script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const navMenu = document.getElementById("nav-menu");
-
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-  });
-</script>
 
 <!-- Iconos de Font Awesome -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -564,6 +533,13 @@
         ><i class="fab fa-whatsapp"></i
       ></a>
     </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+    
   </header>
 
   <section class="hero">
@@ -643,5 +619,15 @@
       }, 4500);
     });
   </script>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
+  
 </body>
 </html>
