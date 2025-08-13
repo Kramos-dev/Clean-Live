@@ -4,15 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clean&Live - Control de Plagas</title>
+
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous"
   />
+
+  <!-- Librerías -->
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
   <style>
+    /* RESET Y TIPOGRAFÍA */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -25,196 +33,106 @@
       scroll-behavior: smooth;
     }
 
-
+    /* VIDEO SPLIT DE FONDO */
     .video-background-split {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  z-index: -1;
-  pointer-events: none;
-}
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .video-split {
+      flex: 1 1 33.3333%;
+      position: relative;
+      overflow: hidden;
+    }
+    .video-split video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.75);
+      pointer-events: none;
+    }
 
-.video-split {
-  flex: 1 1 33.3333%;
-  position: relative;
-  overflow: hidden;
-}
-
-.video-split video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.75);
-  pointer-events: none;
-}
-
-/* Cortes ninja diagonales para desktop */
-
-.video-split-1 {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-.video-split-2 {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  margin-left: 0;
-}
-
-.video-split-3 {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  margin-left: 0;
-}
-
-/* Corte ninja para móviles */
-
-@media (max-width: 768px) {
-  .video-background-split {
-    object-fit: cover; /* mantiene el recorte proporcional */
-    transform: scale(0.95); /* zoom out: aleja el video */
-    transform-origin: center center; /* centra el zoom */
-  }
-  .video-split {
-    width: 33.3333% !important;
-    height: 100vh !important;
-  }
-  .video-split video {
-    position: absolute !important;
-    top: 0; 
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-  }
-}
-
-  header {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-  }
-
-  header nav {
-    display: flex;
-    gap: 1rem;
-  }
-
-  header nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-
-  header nav a:hover {
-    color: #00e0ff;
-  }
-
-  .social-icons {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    font-size: 1.3rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(6px);
-    text-decoration: none;
-  }
-
-  .social-icons a.facebook:hover {
-    background: #1877f2;
-    box-shadow: 0 0 18px #1877f2;
-  }
-
-  .social-icons a.instagram:hover {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-    box-shadow: 0 0 18px #d6249f;
-  }
-
-  .social-icons a.tiktok:hover {
-    background: linear-gradient(135deg, #25f4ee, #fe2c55);
-    box-shadow: 0 0 18px #fe2c55;
-  }
-
-  .social-icons a.whatsapp:hover {
-    background: #25d366;
-    box-shadow: 0 0 18px #25d366;
-  }
-
-  /* Botón hamburguesa oculto en desktop */
-  .menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    color: white;
-    cursor: pointer;
-  }
-
-  /* 📱 Responsive */
-  @media (max-width: 768px) {
+    /* Header */
     header {
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       flex-wrap: wrap;
     }
-
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
     nav {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      text-align: center;
-      padding: 1rem 0;
+      display: flex;
+      gap: 1rem;
     }
-
     nav a {
-      display: block;
-      margin: 0.5rem 0;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
-
-    .menu-toggle {
-      display: block;
-    }
+    nav a:hover { color: #00e0ff; }
 
     .social-icons {
-      order: 3;
-      width: 100%;
-      justify-content: center;
-      margin-top: 10px;
-    }
-
-    nav.active {
       display: flex;
+      gap: 1rem;
     }
-  }
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      backdrop-filter: blur(6px);
+      text-decoration: none;
+    }
+    .social-icons a.facebook:hover { background:#1877f2; box-shadow:0 0 18px #1877f2; }
+    .social-icons a.instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); box-shadow:0 0 18px #d6249f; }
+    .social-icons a.tiktok:hover { background: linear-gradient(135deg,#25f4ee,#fe2c55); box-shadow:0 0 18px #fe2c55; }
+    .social-icons a.whatsapp:hover { background:#25d366; box-shadow:0 0 18px #25d366; }
 
+    /* Menú hamburguesa */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      background: #fff;
+      transition: 0.3s;
+    }
 
-<!-- Iconos de Font Awesome -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+    /* HERO */
     .hero {
       position: relative;
       display: flex;
@@ -231,15 +149,9 @@
       animation: heroGradient 20s ease infinite;
     }
     @keyframes heroGradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position:0% 50%; }
+      50% { background-position:100% 50%; }
+      100% { background-position:0% 50%; }
     }
     .hero h1 {
       font-size: 3rem;
@@ -248,232 +160,169 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .hero p {
-      font-size: 1.4rem;
-    }
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      header {
-        padding: 2rem 1rem;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .logo img {
-        max-width: 80%;
-        height: auto;
-      }
-      .tagline {
-        font-size: 1.2rem;
-        margin-top: 1rem;
-      }
-      .social-icons {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 1rem;
-      }
-      .social-icons a {
-        width: 42px;
-        height: 42px;
-        margin: 0.3rem;
-        font-size: 1.2rem;
-      }
-      canvas#particles-js,
-      #fogCanvas {
-        width: 100vw !important;
-        height: 100vh !important;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-    }
+    .hero p { font-size: 1.4rem; }
 
+    /* SERVICIOS */
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
       gap: 2rem;
       padding: 4rem 2rem;
-      background: #121212;
+      background:#121212;
     }
     .service {
-      background: #1e1e1e;
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      background:#1e1e1e;
+      border-radius:20px;
+      padding:2rem;
+      box-shadow:0 8px 24px rgba(0,0,0,0.4);
       transition: transform 0.5s, box-shadow 0.5s;
-      border: 1px solid #00e0ff3a;
+      border:1px solid #00e0ff3a;
     }
-    .service:hover {
-      transform: translateY(-12px) scale(1.03);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-    }
-    .service h3 {
-      color: #00ffcc;
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-    }
+    .service:hover { transform: translateY(-12px) scale(1.03); box-shadow:0 12px 30px rgba(0,0,0,0.6);}
+    .service h3 { color:#00ffcc; margin-bottom:1rem; font-size:1.6rem; }
     .cta-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #00e0ff;
-      color: #000;
-      padding: 0.75rem 1.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
+      display:inline-block;
+      margin-top:1rem;
+      background:#00e0ff;
+      color:#000;
+      padding:0.75rem 1.5rem;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:700;
       transition: all 0.3s ease;
     }
-    .cta-btn:hover {
-      background: #00ffb7;
-    }
+    .cta-btn:hover { background:#00ffb7; }
 
+    /* CONTACTO */
     .contact-form {
-      padding: 4rem 2rem;
-      background: #101010;
-      max-width: 700px;
-      margin: 0 auto;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding:4rem 2rem;
+      background:#101010;
+      max-width:700px;
+      margin:0 auto;
+      border-radius:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
     }
     .contact-form h2 {
-      margin-bottom: 2rem;
-      text-align: center;
-      font-size: 2rem;
-      color: #00e0ff;
+      margin-bottom:2rem;
+      text-align:center;
+      font-size:2rem;
+      color:#00e0ff;
     }
     .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 12px;
-      border: none;
-      background: #1a1a1a;
-      color: #f2f2f2;
+    .contact-form textarea,
+    .contact-form select {
+      width:100%;
+      padding:1rem;
+      margin-bottom:1rem;
+      border-radius:12px;
+      border:none;
+      background:#1a1a1a;
+      color:#f2f2f2;
     }
     .contact-form button {
-      background: #00e0ff;
-      color: #000;
-      padding: 1rem;
-      border: none;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
+      background:#00e0ff;
+      color:#000;
+      padding:1rem;
+      border:none;
+      border-radius:50px;
+      font-size:1rem;
+      font-weight:bold;
+      cursor:pointer;
+      width:100%;
     }
 
+    /* BOTONES FLOTANTES */
     .floating-btn {
       position: fixed;
       bottom: 20px;
       z-index: 999;
       padding: 12px 16px;
-      border-radius: 50%;
-      color: white;
-      text-align: center;
-      font-size: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      border-radius:50%;
+      color:white;
+      text-align:center;
+      font-size:20px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.2);
     }
-    .whatsapp-btn {
-      right: 80px;
-      background: #25d366;
-    }
-    .call-btn {
-      right: 20px;
-      background: #0d47a1;
-    }
+    .whatsapp-btn { right:80px; background:#25d366; }
+    .call-btn { right:20px; background:#0d47a1; }
 
+    /* INTRO LOADER */
     #intro-loader {
-  position: fixed;
-  inset: 0;
-  background: #00e0ff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  overflow: hidden;
-  animation: fadeOutIntro 1s ease forwards;
-  animation-delay: 1.5s; /* Se cierra 1.5s después */
-}
-
-.nebulizer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.logo-neb {
-  width: 300px;
-  height: auto;
-  z-index: 2;
-  opacity: 0;
-  animation: fadeInLogo 1.5s ease forwards; /* Duración reducida a 1.5s */
-  filter: drop-shadow(0 0 25px #00e0ff) blur(0.5px);
-}
-
+      position: fixed;
+      inset:0;
+      background:#00e0ff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      overflow:hidden;
+      animation: fadeOutIntro 1s ease forwards;
+      animation-delay:1.5s;
+    }
+    .nebulizer {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+    .logo-neb {
+      width:300px;
+      height:auto;
+      z-index:2;
+      opacity:0;
+      animation: fadeInLogo 1.5s ease forwards;
+      filter: drop-shadow(0 0 25px #00e0ff) blur(0.5px);
+    }
     .mist {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: #00e0ff;
-      border-radius: 50%;
-      filter: blur(80px);
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:#00e0ff;
+      border-radius:50%;
+      filter:blur(80px);
       animation: mistMove 6s infinite ease-in-out alternate;
-      z-index: 1;
+      z-index:1;
     }
-    .mist1 {
-      top: -100px;
-      left: -100px;
-      animation-delay: 0s;
-    }
-    .mist2 {
-      bottom: -80px;
-      right: -100px;
-      animation-delay: 1.2s;
-    }
-    .mist3 {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation-delay: 2s;
-    }
+    .mist1 { top:-100px; left:-100px; animation-delay:0s; }
+    .mist2 { bottom:-80px; right:-100px; animation-delay:1.2s; }
+    .mist3 { top:50%; left:50%; transform:translate(-50%,-50%); animation-delay:2s; }
 
     @keyframes mistMove {
-      0% {
-        transform: scale(1) translate(0, 0);
-      }
-      100% {
-        transform: scale(1.4) translate(30px, 20px);
-      }
+      0% { transform: scale(1) translate(0,0); }
+      100% { transform: scale(1.4) translate(30px,20px); }
     }
     @keyframes fadeInLogo {
-      0% {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
+      0% { opacity:0; transform:scale(0.8); }
+      100% { opacity:1; transform:scale(1); }
     }
-    @keyframes fadeOutIntro {
-      to {
-        opacity: 0;
-        visibility: hidden;
-      }
+    @keyframes fadeOutIntro { to { opacity:0; visibility:hidden; } }
+
+    /* RESPONSIVE */
+    @media (max-width:768px) {
+      header { flex-direction: column; padding:2rem 1rem; text-align:center; }
+      nav { display:none; flex-direction:column; width:100%; background:rgba(0,0,0,0.85); padding:1rem 0; }
+      nav a { display:block; margin:0.5rem 0; }
+      nav.active { display:flex; }
+      .menu-toggle { display:flex; }
+
+      .hero h1 { font-size:2rem; }
+      .hero p { font-size:1rem; }
+
+      .social-icons { flex-wrap:wrap; justify-content:center; margin-top:1rem; }
+      .social-icons a { width:42px; height:42px; margin:0.3rem; font-size:1.2rem; }
+
+      canvas#particles-js,
+      #fogCanvas { width:100vw !important; height:100vh !important; }
+
+      /* Video zoom out */
+      .video-background-split { transform: scale(0.95); transform-origin:center center; }
+      .video-split video { width:100% !important; height:100% !important; object-fit:cover; }
     }
   </style>
 </head>
+
 <body>
+  <!-- INTRO LOADER -->
   <div id="intro-loader">
     <div class="nebulizer">
       <div class="mist mist1"></div>
@@ -483,70 +332,47 @@
     </div>
   </div>
 
+  <!-- VIDEO BACKGROUND SPLIT -->
   <div class="video-background-split">
-  <div class="video-split video-split-1">
-    <video autoplay muted loop playsinline preload="auto" src="Video_de_Fumigación_Profesional.mp4"></video>
+    <div class="video-split video-split-1">
+      <video autoplay muted loop playsinline preload="auto" src="Video_de_Fumigación_Profesional.mp4"></video>
+    </div>
+    <div class="video-split video-split-2">
+      <video autoplay muted loop playsinline preload="auto" src="Fontanero_Repara_Fuga_de_Agua.mp4"></video>
+    </div>
+    <div class="video-split video-split-3">
+      <video autoplay muted loop playsinline preload="auto" src="Video_De_Tapicería_Generado.mp4"></video>
+    </div>
   </div>
-  <div class="video-split video-split-2">
-    <video autoplay muted loop playsinline preload="auto" src="Fontanero_Repara_Fuga_de_Agua.mp4"></video>
-  </div>
-  <div class="video-split video-split-3">
-    <video autoplay muted loop playsinline preload="auto" src="Video_De_Tapicería_Generado.mp4"></video>
-  </div>
-</div>
 
-
-
+  <!-- HEADER -->
   <header>
-    <div><strong>Clean&Live</strong></div>
-    <nav>
+    <div class="logo"><strong>Clean&Live</strong></div>
+    <nav id="nav-menu">
       <a href="#servicios">Servicios</a>
       <a href="#nosotros">Quiénes somos</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <div class="social-icons">
-      <a
-        href="https://www.facebook.com/groups/159796779286299/user/100064180988376/"
-        class="facebook"
-        title="Facebook"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-      <a
-        href="https://www.instagram.com/cleanlive_cr/"
-        class="instagram"
-        title="Instagram"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a href="https://tiktok.com" class="tiktok" title="TikTok" target="_blank" rel="noopener noreferrer"
-        ><i class="fab fa-tiktok"></i
-      ></a>
-      <a
-        href="https://wa.me/50672390602"
-        class="whatsapp"
-        title="WhatsApp"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><i class="fab fa-whatsapp"></i
-      ></a>
+      <a href="https://www.facebook.com/" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/50672390602" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-
     <div class="menu-toggle" id="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-    
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <h1>Soluciones inteligentes para espacios limpios, seguros y sin fugas ni plagas</h1>
     <p>Fumigación | Fontanería | Limpieza de Tapicería</p>
   </section>
 
+  <!-- SERVICIOS -->
   <section class="services" id="servicios">
     <div class="service" data-sr>
       <h3>Fumigación y Control de Plagas</h3>
@@ -565,42 +391,31 @@
     </div>
   </section>
 
+  <!-- CONTACTO -->
   <section class="contact-form" id="contacto">
-  <h2>Contáctanos</h2>
-  <form id="formulario" action="https://formspree.io/f/xqaleyal" method="POST" novalidate data-aos="fade-up" data-aos-delay="200">
+    <h2>Contáctanos</h2>
+    <form id="formulario" action="https://formspree.io/f/xqaleyal" method="POST" novalidate data-aos="fade-up" data-aos-delay="200">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="tel" name="telefono" placeholder="Teléfono" required pattern="[0-9+ ]+">
+      <input type="email" name="email" placeholder="Correo electrónico" required>
+      <select name="servicio" required>
+        <option value="" disabled selected>Seleccione el servicio</option>
+        <option value="Fontanería (Fugas de agua - Destaqueos)">Fontanería (Fugas de agua - Destaqueos)</option>
+        <option value="Control de plagas">Control de plagas</option>
+        <option value="Mantenimiento de tapicería">Mantenimiento de tapicería</option>
+      </select>
+      <textarea name="mensaje" rows="5" placeholder="Escriba detalles adicionales (opcional)"></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </section>
 
-    <input type="text" name="nombre" placeholder="Nombre" required>
-    <span class="error"></span>
+  <!-- BOTONES FLOTANTES -->
+  <a href="https://wa.me/50672390602" class="floating-btn whatsapp-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+50672390602" class="floating-btn call-btn" title="Llamar"><i class="fas fa-phone"></i></a>
 
-    <input type="tel" name="telefono" placeholder="Teléfono" required pattern="[0-9+ ]+">
-    <span class="error"></span>
-
-    <input type="email" name="email" placeholder="Correo electrónico" required>
-    <span class="error"></span>
-
-    <select name="servicio" required>
-      <option value="">Seleccione el servicio</option>
-      <option value="Fontanería (Fugas de agua - Destaqueos)">Fontanería (Fugas de agua - Destaqueos)</option>
-      <option value="Control de plagas">Control de plagas</option>
-      <option value="Mantenimiento de tapicería">Mantenimiento de tapicería</option>
-    </select>
-    <span class="error"></span>
-
-    <textarea name="mensaje" rows="5" placeholder="Escriba detalles adicionales (opcional)"></textarea>
-    <span class="error"></span>
-
-    <button type="submit">Enviar mensaje</button>
-  </form>
-</section>
-  
-  <a href="https://wa.me/50672390602" class="floating-btn whatsapp-btn" title="WhatsApp"
-    ><i class="fab fa-whatsapp"></i
-  ></a>
-  <a href="tel:+50672390602" class="floating-btn call-btn" title="Llamar"
-    ><i class="fas fa-phone"></i
-  ></a>
-
+  <!-- SCRIPTS -->
   <script>
+    // ScrollReveal
     ScrollReveal().reveal('[data-sr]', {
       delay: 200,
       duration: 1000,
@@ -609,25 +424,17 @@
       reset: true,
     });
 
+    // GSAP Hero
     gsap.from('.hero h1', { duration: 1, y: -50, opacity: 0, ease: 'power3.out' });
     gsap.from('.hero p', { duration: 1.2, y: 30, opacity: 0, delay: 0.5 });
 
+    // Loader
     window.addEventListener('load', () => {
       setTimeout(() => {
         const intro = document.getElementById('intro-loader');
         if (intro) intro.remove();
       }, 4500);
     });
-  </script>
 
-<script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const navMenu = document.getElementById("nav-menu");
-
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-  });
-</script>
-  
-</body>
-</html>
+    // Menu hamburguesa
+    const menuToggle = document.getElementById("menu-toggle");
