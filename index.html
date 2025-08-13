@@ -92,69 +92,159 @@
   }
 }
 
+    <header>
+  <div class="logo">Mister Plumber</div>
+
+  <nav id="nav-menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <div class="social-icons">
+    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+</header>
+
+<style>
+  header {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  header nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  header nav a:hover {
+    color: #00e0ff;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(6px);
+    text-decoration: none;
+  }
+
+  .social-icons a.facebook:hover {
+    background: #1877f2;
+    box-shadow: 0 0 18px #1877f2;
+  }
+
+  .social-icons a.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    box-shadow: 0 0 18px #d6249f;
+  }
+
+  .social-icons a.tiktok:hover {
+    background: linear-gradient(135deg, #25f4ee, #fe2c55);
+    box-shadow: 0 0 18px #fe2c55;
+  }
+
+  .social-icons a.whatsapp:hover {
+    background: #25d366;
+    box-shadow: 0 0 18px #25d366;
+  }
+
+  /* Botón hamburguesa oculto en desktop */
+  .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* 📱 Responsive */
+  @media (max-width: 768px) {
     header {
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      flex-wrap: wrap;
     }
-    header nav a {
-      margin: 0 1rem;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
+
+    nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      text-align: center;
+      padding: 1rem 0;
     }
-    header nav a:hover {
-      color: #00e0ff;
+
+    nav a {
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    .menu-toggle {
+      display: block;
     }
 
     .social-icons {
-      display: flex;
-      gap: 1rem;
-    }
-    .social-icons a {
-      display: flex;
-      align-items: center;
+      order: 3;
+      width: 100%;
       justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      font-size: 1.3rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(6px);
-      text-decoration: none;
+      margin-top: 10px;
     }
-    .social-icons a.facebook:hover {
-      background: #1877f2;
-      box-shadow: 0 0 18px #1877f2;
+
+    nav.active {
+      display: flex;
     }
-    .social-icons a.instagram:hover {
-      background: radial-gradient(
-        circle at 30% 107%,
-        #fdf497 0%,
-        #fd5949 45%,
-        #d6249f 60%,
-        #285aeb 90%
-      );
-      box-shadow: 0 0 18px #d6249f;
-    }
-    .social-icons a.tiktok:hover {
-      background: linear-gradient(135deg, #25f4ee, #fe2c55);
-      box-shadow: 0 0 18px #fe2c55;
-    }
-    .social-icons a.whatsapp:hover {
-      background: #25d366;
-      box-shadow: 0 0 18px #25d366;
-    }
+  }
+</style>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
+
+<!-- Iconos de Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     .hero {
       position: relative;
@@ -477,7 +567,7 @@
   </header>
 
   <section class="hero">
-    <h1>Soluciones inteligentes para espacios limpios, seguros y sin plagas</h1>
+    <h1>Soluciones inteligentes para espacios limpios, seguros y sin fugas ni plagas</h1>
     <p>Fumigación | Fontanería | Limpieza de Tapicería</p>
   </section>
 
