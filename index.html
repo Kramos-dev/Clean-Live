@@ -115,22 +115,67 @@
     .social-icons a.whatsapp:hover { background:#25d366; box-shadow:0 0 18px #25d366; }
 
     /* Menú hamburguesa */
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      color: white;
-      cursor: pointer;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .menu-toggle span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      margin: 5px;
-      background: #fff;
-      transition: 0.3s;
-    }
+    /* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Animación al activar (X) */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav#nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    padding: 1rem 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+  }
+
+  nav#nav-menu.active {
+    display: flex;
+  }
+
+  nav#nav-menu a {
+    margin: 0.5rem 0;
+    display: block;
+  }
+}
+
 
     /* HERO */
     .hero {
@@ -348,11 +393,12 @@
   <!-- HEADER -->
   <header>
     <div class="logo"><strong>Clean&Live</strong></div>
-    <nav id="nav-menu">
-      <a href="#servicios">Servicios</a>
-      <a href="#nosotros">Quiénes somos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <!-- Menú -->
+  <nav id="nav-menu">
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Quiénes somos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
     <div class="social-icons">
       <a href="https://www.facebook.com/" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -437,9 +483,12 @@
     });
 
     // Menu hamburguesa
-    const menuToggle = document.getElementById("menu-toggle");
+    <script>
+const menuToggle = document.getElementById("menu-toggle");
 const navMenu = document.getElementById("nav-menu");
 
 menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("active");
+  menuToggle.classList.toggle("active");
 });
+</script>
