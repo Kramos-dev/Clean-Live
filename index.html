@@ -333,31 +333,34 @@
     }
 
     #intro-loader {
-      position: fixed;
-      inset: 0;
-      background: #00e0ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      overflow: hidden;
-      animation: fadeOutIntro 1s ease forwards;
-      animation-delay: 2,5s;
-    }
-    .nebulizer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .logo-neb {
-      width: 300px;
-      height: auto;
-      z-index: 2;
-      opacity: 0;
-      animation: fadeInLogo 2s ease forwards 1.2s;
-      filter: drop-shadow(0 0 25px #00e0ff) blur(0.5px);
-    }
+  position: fixed;
+  inset: 0;
+  background: #00e0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+  animation: fadeOutIntro 1s ease forwards;
+  animation-delay: 1.5s; /* Se cierra 1.5s después */
+}
+
+.nebulizer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-neb {
+  width: 300px;
+  height: auto;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInLogo 1.5s ease forwards; /* Duración reducida a 1.5s */
+  filter: drop-shadow(0 0 25px #00e0ff) blur(0.5px);
+}
+
     .mist {
       position: absolute;
       width: 400px;
