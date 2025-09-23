@@ -205,34 +205,103 @@
 
 
     /* HERO */
-    .hero {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 6rem 2rem;
-      color: white;
-      z-index: 1;
-      background: transparent;
-      background-size: 400% 400%;
-      animation: heroGradient 20s ease infinite;
-    }
-    @keyframes heroGradient {
-      0% { background-position:0% 50%; }
-      50% { background-position:100% 50%; }
-      100% { background-position:0% 50%; }
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #00e0ff, #00ff9f);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero p { font-size: 1.4rem; }
+    /* HERO existente */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 6rem 2rem;
+  color: white;
+  z-index: 1;
+  background: transparent;
+  background-size: 400% 400%;
+  animation: heroGradient 20s ease infinite;
+}
+@keyframes heroGradient {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #00e0ff, #00ff9f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  color: #f0f0f0;
+}
+
+/* Botones tecnológicos 2025 */
+.service-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.service-btn {
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.service-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.25), transparent 70%);
+  transform: rotate(25deg);
+  transition: all 0.6s ease;
+}
+
+.service-btn:hover::before {
+  top: -30%;
+  left: -30%;
+}
+
+.service-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+}
+
+/* Colores personalizados */
+.service-btn.fumigacion {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+}
+.service-btn.fontaneria {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+.service-btn.tapiceria {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1.1rem; }
+  .service-btn { flex: 1 1 100%; text-align: center; }
+}
 
     /* SERVICIOS */
     .services {
@@ -463,10 +532,16 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero">
-    <h1>Soluciones inteligentes para espacios limpios, seguros y sin fugas ni plagas</h1>
-    <p>Fumigación | Fontanería | Limpieza de Tapicería</p>
-  </section>
+<section class="hero">
+  <h1>Soluciones inteligentes para espacios limpios, seguros y sin fugas ni plagas</h1>
+  <p>Fumigación | Fontanería | Limpieza de Tapicería</p>
+
+  <div class="service-buttons">
+    <a href="tel:+506XXXXXXXX" class="service-btn fumigacion">Fumigación</a>
+    <a href="tel:+506XXXXXXXX" class="service-btn fontaneria">Fontanería</a>
+    <a href="tel:+506XXXXXXXX" class="service-btn tapiceria">Tapicería</a>
+  </div>
+</section>
 
   <!-- SERVICIOS -->
   <section class="services" id="servicios">
