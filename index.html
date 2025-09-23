@@ -136,6 +136,35 @@
       backdrop-filter: blur(6px);
       text-decoration: none;
     }
+
+    /* Teléfono destacado */
+.phone-call a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #00ff9f;
+  text-decoration: none;
+  margin-right: 1rem;
+  padding: 8px 16px;
+  border: 2px solid #00ff9f;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.phone-call a:hover {
+  background: #00ff9f;
+  color: #0f2027;
+  box-shadow: 0 0 15px #00ff9f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .phone-call a {
+    font-size: 1rem;
+    padding: 6px 12px;
+    margin: 10px 0;
+    display: inline-block;
+  }
+}
     .social-icons a.facebook:hover { background:#1877f2; box-shadow:0 0 18px #1877f2; }
     .social-icons a.instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); box-shadow:0 0 18px #d6249f; }
     .social-icons a.tiktok:hover { background: linear-gradient(135deg,#25f4ee,#fe2c55); box-shadow:0 0 18px #fe2c55; }
