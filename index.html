@@ -3,566 +3,296 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Clean&Live | Servicios Profesionales de Limpieza y Mantenimiento</title>
-    <meta name="description" content="Servicios de limpieza profesional para el hogar, cocina y lavandería. Soluciones premium de limpieza profunda en Costa Rica." />
-    <meta name="keywords" content="limpieza de hogar, servicio de limpieza, limpieza de cocina, lavado de ropa, limpieza premium" />
-    <meta name="author" content="Clean and Live" />
-    <link rel="canonical" href="https://www.cleanlivecostarica.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Clean&Live | Elite Cleaning Systems</title>
+    <meta name="description" content="Servicios de limpieza profesional. Soluciones premium de limpieza profunda en Costa Rica." />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <style>
+        :root {
+            --accent-cyan: #22d3ee;
+            --accent-green: #34d399;
+            --accent-violet: #a78bfa;
+            --bg-dark: #070b14;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #070b14;
+            background: var(--bg-dark);
             color: #f2f2f2;
-            scroll-behavior: smooth;
+            line-height: 1.5;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+        }
+
+        /* LIGHTING EFFECTS */
+        .glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            pointer-events: none;
         }
 
         /* HEADER */
         header {
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: rgba(7, 11, 20, 0.8);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            z-index: 1000;
+            background: rgba(7, 11, 20, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
         }
         .header-inner {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 1.5rem;
+            padding: 1.2rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-decoration: none;
             color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            letter-spacing: -0.03em;
         }
-        .logo svg { color: #22d3ee; }
-        .logo span { color: #22d3ee; }
-        nav { display: flex; align-items: center; gap: 2rem; }
-        nav a {
-            color: rgba(255,255,255,0.5);
+        .logo span { color: var(--accent-cyan); }
+
+        .nav-phone {
+            color: var(--accent-green);
             text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: color 0.2s;
+            font-weight: 700;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            border-radius: 50px;
+            transition: 0.3s;
         }
-        nav a:hover { color: #fff; }
-        .phone-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: #34d399;
-            text-decoration: none;
-            padding: 0.5rem 1.25rem;
-            border: 1px solid rgba(52, 211, 153, 0.3);
-            border-radius: 9999px;
-            transition: all 0.2s;
-        }
-        .phone-btn:hover { background: rgba(52, 211, 153, 0.1); }
+        .nav-phone:hover { background: rgba(52, 211, 153, 0.1); }
 
         /* HERO */
         .hero {
-            position: relative;
-            padding: 7rem 1.5rem 5rem;
+            padding: 8rem 1.5rem 5rem;
             text-align: center;
-            overflow: hidden;
+            position: relative;
         }
-        .hero-glow-1 {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 500px;
-            background: rgba(34, 211, 238, 0.07);
-            border-radius: 50%;
-            filter: blur(120px);
-            pointer-events: none;
-        }
-        .hero-glow-2 {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 400px;
-            height: 400px;
-            background: rgba(52, 211, 153, 0.05);
-            border-radius: 50%;
-            filter: blur(100px);
-            pointer-events: none;
-        }
-        .hero-content { position: relative; max-width: 720px; margin: 0 auto; }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 9999px;
-            padding: 0.375rem 1rem;
-            margin-bottom: 2rem;
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: rgba(255,255,255,0.5);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .hero-badge svg { color: #22d3ee; width: 14px; height: 14px; }
         .hero h1 {
-            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 800;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
+            line-height: 1;
             margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
         }
-        .hero h1 .gradient {
-            background: linear-gradient(135deg, #22d3ee, #6ee7b7);
+        .hero h1 b {
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
         .hero p {
-            font-size: 1.125rem;
-            color: rgba(255,255,255,0.45);
-            max-width: 540px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.6;
+            color: rgba(255,255,255,0.5);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
         }
-        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #06b6d4, #0891b2);
-            color: #000;
-            font-weight: 600;
-            padding: 0.875rem 2rem;
-            border-radius: 0.75rem;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-primary:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 40px -10px rgba(0, 224, 255, 0.5);
-        }
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #fff;
-            font-weight: 600;
-            padding: 0.875rem 2rem;
-            border-radius: 0.75rem;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-        }
-        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
 
-        /* PLANS */
-        .plans { padding: 2rem 1.5rem 6rem; }
-        .plans-header { text-align: center; margin-bottom: 4rem; }
-        .plans-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
-        .plans-header p { color: rgba(255,255,255,0.35); max-width: 420px; margin: 0 auto; }
-        .plans-grid {
+        /* PRICING GRID */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 1.5rem 8rem;
         }
+
         .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
             position: relative;
-            background: rgba(255,255,255,0.02);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 1rem;
-            padding: 2.5rem 2rem;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+            overflow: hidden;
         }
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
         }
-        .card.featured {
-            border-width: 2px;
-            border-color: rgba(52, 211, 153, 0.4);
-        }
-        .card.featured:hover { border-color: rgba(52, 211, 153, 0.7); }
-        .card.cyan:hover { border-color: rgba(34, 211, 238, 0.5); }
-        .card.violet:hover { border-color: rgba(167, 139, 250, 0.5); }
 
-        .card-badge {
+        .card.popular {
+            border-color: var(--accent-green);
+            background: rgba(52, 211, 153, 0.03);
+        }
+
+        .badge {
             position: absolute;
-            top: -0.75rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #34d399, #10b981);
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--accent-green);
             color: #000;
             font-size: 0.7rem;
-            font-weight: 700;
-            padding: 0.25rem 1rem;
-            border-radius: 9999px;
+            font-weight: 800;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
-        .card-icon {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 0.75rem;
+
+        .card-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .card-price { font-size: 0.9rem; color: rgba(255,255,255,0.4); margin-bottom: 2rem; }
+        
+        .feature-list { list-style: none; margin-bottom: 3rem; }
+        .feature-list li {
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.4rem;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
         }
-        .card-icon.cyan { background: linear-gradient(135deg, #22d3ee, #0891b2); }
-        .card-icon.green { background: linear-gradient(135deg, #34d399, #10b981); }
-        .card-icon.violet { background: linear-gradient(135deg, #a78bfa, #7c3aed); }
+        .feature-list svg { color: var(--accent-green); flex-shrink: 0; }
 
-        .card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
-        .card .subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
-        .card ul { list-style: none; margin-bottom: 2rem; flex-grow: 1; }
-        .card ul li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            font-size: 0.875rem;
-            color: rgba(255,255,255,0.65);
-            margin-bottom: 0.75rem;
-        }
-        .card ul li .check {
-            color: #34d399;
-            font-size: 0.8rem;
-            margin-top: 0.15rem;
-            flex-shrink: 0;
-        }
-        .card-cta {
+        .btn-card {
             display: block;
             text-align: center;
-            padding: 0.75rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            font-size: 0.875rem;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        .card-cta.outline {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #fff;
-        }
-        .card-cta.outline:hover { background: rgba(255,255,255,0.12); }
-        .card-cta.filled {
-            background: linear-gradient(135deg, #34d399, #10b981);
-            color: #000;
-        }
-        .card-cta.filled:hover {
-            box-shadow: 0 0 30px -8px rgba(0,255,159,0.5);
-            transform: scale(1.02);
-        }
-
-        /* CONTACT */
-        .contact { padding: 2rem 1.5rem 6rem; }
-        .contact-box {
-            max-width: 520px;
-            margin: 0 auto;
-            border: 1px solid rgba(255,255,255,0.08);
-            background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(8px);
+            padding: 1.2rem;
             border-radius: 1rem;
-            padding: 2.5rem;
-        }
-        .contact-box h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
-        .contact-box .sub {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.35);
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .contact-box input,
-        .contact-box select,
-        .contact-box textarea {
-            width: 100%;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 0.75rem;
-            padding: 0.75rem 1rem;
-            font-size: 0.875rem;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            margin-bottom: 1rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .contact-box input::placeholder,
-        .contact-box textarea::placeholder { color: rgba(255,255,255,0.25); }
-        .contact-box input:focus,
-        .contact-box select:focus,
-        .contact-box textarea:focus {
-            border-color: rgba(34, 211, 238, 0.5);
-            box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.1);
-        }
-        .contact-box select { color: rgba(255,255,255,0.5); }
-        .contact-box select option { background: #0f172a; color: #fff; }
-        .contact-box textarea { resize: none; }
-        .contact-box button {
-            width: 100%;
-            background: linear-gradient(135deg, #34d399, #10b981);
-            color: #000;
-            font-weight: 600;
-            padding: 0.875rem;
-            border-radius: 0.75rem;
-            border: none;
-            font-size: 0.95rem;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s;
-        }
-        .contact-box button:hover {
-            box-shadow: 0 0 30px -8px rgba(0,255,159,0.4);
-            transform: scale(1.02);
-        }
-
-        /* FOOTER */
-        footer {
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 2rem 1.5rem;
-        }
-        .footer-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-        }
-        .footer-brand svg { color: #22d3ee; }
-        .footer-brand span { color: #22d3ee; }
-        .footer-info { color: rgba(255,255,255,0.35); font-size: 0.85rem; }
-        .footer-copy { color: rgba(255,255,255,0.25); font-size: 0.75rem; }
-
-        /* FLOATING WA */
-        .float-wa {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            z-index: 100;
-            width: 56px;
-            height: 56px;
-            background: #10b981;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 30px -4px rgba(16, 185, 129, 0.5);
             text-decoration: none;
-            transition: transform 0.2s;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
-        .float-wa:hover { transform: scale(1.1); }
-        .float-wa svg { width: 28px; height: 28px; color: #fff; }
+        .btn-cyan { background: var(--accent-cyan); color: #000; }
+        .btn-green { background: var(--accent-green); color: #000; }
+        .btn-violet { background: var(--accent-violet); color: #000; }
+        .btn-card:hover { transform: scale(1.02); filter: brightness(1.1); }
 
-        /* ANIMATIONS */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* CONTACT FORM */
+        .contact {
+            background: rgba(255,255,255,0.02);
+            padding: 8rem 1.5rem;
+            border-top: 1px solid var(--border);
         }
-        .animate { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; opacity: 0; }
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
+        .contact-inner {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contact h2 { font-size: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.04em; }
+        
+        form { margin-top: 3rem; text-align: left; }
+        input, select, textarea {
+            width: 100%;
+            padding: 1.2rem;
+            background: #0f172a;
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-family: inherit;
+        }
+        input:focus { border-color: var(--accent-cyan); outline: none; }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: #fff;
+            color: #000;
+            border: none;
+            border-radius: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .submit-btn:hover { background: var(--accent-cyan); }
 
         @media (max-width: 768px) {
-            nav { display: none; }
-            .plans-grid { grid-template-columns: 1fr; }
-            .card.featured { transform: none; }
-            .hero h1 { font-size: 2.4rem; }
-            .contact-box { padding: 1.5rem; }
+            .hero { padding-top: 5rem; }
+            .grid { padding-bottom: 4rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="header-inner">
-            <a href="#" class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-                Clean<span>&</span>Live
-            </a>
-            <nav>
-                <a href="#servicios">Servicios</a>
-                <a href="#contacto">Contacto</a>
-                <a href="tel:+50663026080" class="phone-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    6302-6080
-                </a>
-            </nav>
+            <a href="#" class="logo">Clean<span>&</span>Live</a>
+            <a href="tel:+50663026080" class="nav-phone">6302-6080</a>
         </div>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
-        <div class="hero-glow-1"></div>
-        <div class="hero-glow-2"></div>
-        <div class="hero-content">
-            <div class="hero-badge animate delay-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                Servicios Profesionales · Costa Rica
-            </div>
-            <h1 class="animate delay-2">
-                Limpieza Profesional que <span class="gradient">Transforma tu Espacio</span>
-            </h1>
-            <p class="animate delay-3">Expertos en dejar tu hogar impecable con tecnología de vanguardia y personal de absoluta confianza.</p>
-            <div class="hero-buttons animate delay-4">
-                <a href="#servicios" class="btn-primary">
-                    Ver Planes
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-                <a href="https://wa.me/50663026080" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                    WhatsApp
-                </a>
-            </div>
-        </div>
+        <div class="glow" style="top: -10%; left: 30%; width: 500px; height: 500px; background: rgba(34, 211, 238, 0.1);"></div>
+        <h1>Pureza <b>Inteligente</b></h1>
+        <p>Sistemas de limpieza profunda con estándares de grado profesional. Transformamos espacios, protegemos tu tiempo.</p>
     </section>
 
-    <!-- PLANS -->
-    <section id="servicios" class="plans">
-        <div class="plans-header">
-            <h2>Nuestros Planes</h2>
-            <p>Elegí el nivel de limpieza que tu espacio necesita</p>
+    <div class="grid">
+        <div class="card">
+            <div class="card-title">Hogar Básica</div>
+            <div class="card-price">Mantenimiento Esencial</div>
+            <ul class="feature-list">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Desinfección de superficies</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Aspirado de alta potencia</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Limpieza de baños</li>
+            </ul>
+            <a href="https://wa.me/50663026080?text=Me+interesa+el+Plan+Hogar+Basico" class="btn-card btn-cyan">Seleccionar Plan</a>
         </div>
-        <div class="plans-grid">
 
-            <!-- Card 1 -->
-            <div class="card cyan">
-                <div class="card-icon cyan">✨</div>
-                <h3>Hogar Básica</h3>
-                <p class="subtitle">Esencial y Rápido</p>
-                <ul>
-                    <li><span class="check">✓</span> Desinfección de superficies</li>
-                    <li><span class="check">✓</span> Limpieza de pisos y alfombras</li>
-                    <li><span class="check">✓</span> Sacudido de polvo general</li>
-                    <li><span class="check">✓</span> Limpieza de baños principales</li>
-                </ul>
-                <a href="https://wa.me/50663026080" target="_blank" rel="noopener noreferrer" class="card-cta outline">Contratar Ahora →</a>
-            </div>
-
-            <!-- Card 2 (Featured) -->
-            <div class="card featured">
-                <div class="card-badge">Más Popular</div>
-                <div class="card-icon green">🔥</div>
-                <h3>Full Cocina & Lavado</h3>
-                <p class="subtitle">Hogar + Detalle</p>
-                <ul>
-                    <li><span class="check">✓</span> Todo lo del plan Básico</li>
-                    <li><span class="check">✓</span> Limpieza profunda de grasa en cocina</li>
-                    <li><span class="check">✓</span> Lavado y secado de ropa</li>
-                    <li><span class="check">✓</span> Limpieza interna de microondas</li>
-                    <li><span class="check">✓</span> Organización de alacenas</li>
-                </ul>
-                <a href="https://wa.me/50663026080" target="_blank" rel="noopener noreferrer" class="card-cta filled">¡Lo quiero! →</a>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="card violet">
-                <div class="card-icon violet">👑</div>
-                <h3>Premium Total</h3>
-                <p class="subtitle">Máximo Confort</p>
-                <ul>
-                    <li><span class="check">✓</span> Servicio Cocina & Lavado</li>
-                    <li><span class="check">✓</span> Limpieza de vidrios y ventanales</li>
-                    <li><span class="check">✓</span> Vaporización de colchones</li>
-                    <li><span class="check">✓</span> Desinfección con Ozono</li>
-                    <li><span class="check">✓</span> Tratamiento de muebles/cuero</li>
-                </ul>
-                <a href="https://wa.me/50663026080" target="_blank" rel="noopener noreferrer" class="card-cta outline">Consultar Premium →</a>
-            </div>
-
+        <div class="card popular">
+            <div class="badge">Recomendado</div>
+            <div class="card-title">Full System</div>
+            <div class="card-price">Hogar + Cocina + Lavado</div>
+            <ul class="feature-list">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Todo el plan Básico</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Desengrasado Industrial</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Gestión de Lavandería</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Limpieza de Electrodomésticos</li>
+            </ul>
+            <a href="https://wa.me/50663026080?text=Quiero+el+Plan+Full+System" class="btn-card btn-green">Contratar Ahora</a>
         </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contacto" class="contact">
-        <div class="contact-box">
-            <h2>Solicita tu Presupuesto</h2>
-            <p class="sub">Te respondemos en minutos por WhatsApp</p>
-            <form id="contactForm">
-                <input type="text" placeholder="Tu nombre" required />
-                <input type="email" placeholder="Email (opcional)" />
-                <input type="tel" placeholder="Teléfono" required />
-                <select required>
-                    <option value="">Selecciona un plan</option>
-                    <option value="Limpieza Básica">Limpieza Básica</option>
-                    <option value="Cocina y Lavado">Cocina y Lavado</option>
-                    <option value="Premium Total">Premium Total</option>
+        <div class="card">
+            <div class="card-title">Total Premium</div>
+            <div class="card-price">Cuidado VIP & Sanitización</div>
+            <ul class="feature-list">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Full System Incluido</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Vaporización de Colchones</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Purificación con Ozono</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Tratamiento de Cuero/Muebles</li>
+            </ul>
+            <a href="https://wa.me/50663026080?text=Consulta+por+Plan+Premium" class="btn-card btn-violet">Acceso VIP</a>
+        </div>
+    </div>
+
+    <section class="contact" id="contacto">
+        <div class="contact-inner">
+            <h2>Hablemos.</h2>
+            <p>Configura tu servicio personalizado en segundos.</p>
+            <form id="waForm">
+                <input type="text" id="name" placeholder="Nombre completo" required>
+                <select id="plan">
+                    <option value="Hogar Básica">Plan Hogar Básica</option>
+                    <option value="Full System">Plan Full System</option>
+                    <option value="Total Premium">Plan Total Premium</option>
                 </select>
-                <textarea rows="3" placeholder="¿Algún detalle adicional?"></textarea>
-                <button type="submit">Enviar por WhatsApp</button>
+                <textarea id="msg" rows="3" placeholder="Mensaje adicional (opcional)"></textarea>
+                <button type="submit" class="submit-btn">Abrir Canal de WhatsApp</button>
             </form>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-                Clean<span>&</span>Live
-            </div>
-            <p class="footer-info">Costa Rica · +506 6302-6080</p>
-            <p class="footer-copy">© 2026 Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/50663026080" target="_blank" rel="noopener noreferrer" class="float-wa">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-    </a>
-
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('waForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const inputs = this.querySelectorAll('input, select, textarea');
-            const name = inputs[0].value;
-            const plan = inputs[3].value;
-            const detail = inputs[4].value;
-            const msg = `Hola Clean&Live! Soy ${name}. Me interesa el plan: ${plan}. ${detail}`;
-            window.open(`https://wa.me/50663026080?text=${encodeURIComponent(msg)}`, '_blank');
+            const name = document.getElementById('name').value;
+            const plan = document.getElementById('plan').value;
+            const msg = document.getElementById('msg').value;
+            const fullMsg = `Hola Clean&Live! Mi nombre es ${name}. Me interesa el plan: ${plan}. ${msg}`;
+            window.open(`https://wa.me/50663026080?text=${encodeURIComponent(fullMsg)}`, '_blank');
         });
     </script>
 
