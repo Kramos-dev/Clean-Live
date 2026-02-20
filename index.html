@@ -1,653 +1,570 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Fontanero | Servicios de fontaneria | Fugas de Agua | Destaqueo Inodoros</title>
-    <meta name="description" content="¿Pagas de más en tu recibo? Mister Plumber, fontanero en San José, detecta y repara fugas de agua con fontanería profesional 24/7." />
-    <meta name="keywords" content="fontanero, detección de fugas de agua, fontanería, Destaqueos, fugas de agua Costa Rica" />
-    <meta name="author" content="Clean and live" />
+    <title>Clean&Live | Servicios Profesionales de Limpieza y Mantenimiento</title>
+    <meta name="description" content="Servicios de limpieza profesional para el hogar, cocina y lavandería. Soluciones premium de limpieza profunda en Costa Rica." />
+    <meta name="keywords" content="limpieza de hogar, servicio de limpieza, limpieza de cocina, lavado de ropa, limpieza premium" />
+    <meta name="author" content="Clean and Live" />
     <link rel="canonical" href="https://www.cleanlivecostarica.com" />
-    <meta property="og:title" content="Fontanero Urgente 24/7 en San José, Heredia y Alajuela | Detección de Fugas y Destaqueos Profesionales" />
-    <meta property="og:description" content="Fontanería profesional: detectamos y reparamos fugas invisibles en tuberías." />
-    <meta property="og:image" content="https://fontaneroyfugasdeagua.github.io/repositorio/misterplumberanimado.PNG" />
-    <meta property="og:url" content="https://www.cleanlivecostarica.com" />
-    
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Fontanero y destaqueos en San José | Mister Plumber" />
-    <meta name="twitter:description" content="Soluciones rápidas y limpias para fugas de agua." />
-    <meta name="twitter:image" content="https://fontaneroyfugasdeagua.github.io/repositorio/misterplumberanimado.PNG"/>
-    <meta name="robots" content="index, follow" />
-    <meta name="google-site-verification" content="Szj1eI3c7BIdZQSvwKkHWnt-vGUKpsb1ZDnRlR_hHWw" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  
-  <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #070b14;
+            color: #f2f2f2;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous"
-  />
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(7, 11, 20, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo svg { color: #22d3ee; }
+        .logo span { color: #22d3ee; }
+        nav { display: flex; align-items: center; gap: 2rem; }
+        nav a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #fff; }
+        .phone-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #34d399;
+            text-decoration: none;
+            padding: 0.5rem 1.25rem;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 9999px;
+            transition: all 0.2s;
+        }
+        .phone-btn:hover { background: rgba(52, 211, 153, 0.1); }
 
-  <!-- Librerías -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        /* HERO */
+        .hero {
+            position: relative;
+            padding: 7rem 1.5rem 5rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-glow-1 {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 500px;
+            background: rgba(34, 211, 238, 0.07);
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+        }
+        .hero-glow-2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: rgba(52, 211, 153, 0.05);
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+        }
+        .hero-content { position: relative; max-width: 720px; margin: 0 auto; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 9999px;
+            padding: 0.375rem 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .hero-badge svg { color: #22d3ee; width: 14px; height: 14px; }
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, #22d3ee, #6ee7b7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 1.125rem;
+            color: rgba(255,255,255,0.45);
+            max-width: 540px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: #000;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 40px -10px rgba(0, 224, 255, 0.5);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17497885978">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        /* PLANS */
+        .plans { padding: 2rem 1.5rem 6rem; }
+        .plans-header { text-align: center; margin-bottom: 4rem; }
+        .plans-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .plans-header p { color: rgba(255,255,255,0.35); max-width: 420px; margin: 0 auto; }
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .card {
+            position: relative;
+            background: rgba(255,255,255,0.02);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 1rem;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+        .card.featured {
+            border-width: 2px;
+            border-color: rgba(52, 211, 153, 0.4);
+        }
+        .card.featured:hover { border-color: rgba(52, 211, 153, 0.7); }
+        .card.cyan:hover { border-color: rgba(34, 211, 238, 0.5); }
+        .card.violet:hover { border-color: rgba(167, 139, 250, 0.5); }
 
-  gtag('config', 'AW-17497885978');
-</script>
+        .card-badge {
+            position: absolute;
+            top: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #34d399, #10b981);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+        .card-icon.cyan { background: linear-gradient(135deg, #22d3ee, #0891b2); }
+        .card-icon.green { background: linear-gradient(135deg, #34d399, #10b981); }
+        .card-icon.violet { background: linear-gradient(135deg, #a78bfa, #7c3aed); }
 
-  <style>
-    /* RESET Y TIPOGRAFÍA */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: transparent;
-      color: #f2f2f2;
-      scroll-behavior: smooth;
-    }
+        .card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .card .subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
+        .card ul { list-style: none; margin-bottom: 2rem; flex-grow: 1; }
+        .card ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 0.75rem;
+        }
+        .card ul li .check {
+            color: #34d399;
+            font-size: 0.8rem;
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+        }
+        .card-cta {
+            display: block;
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .card-cta.outline {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .card-cta.outline:hover { background: rgba(255,255,255,0.12); }
+        .card-cta.filled {
+            background: linear-gradient(135deg, #34d399, #10b981);
+            color: #000;
+        }
+        .card-cta.filled:hover {
+            box-shadow: 0 0 30px -8px rgba(0,255,159,0.5);
+            transform: scale(1.02);
+        }
 
-    /* VIDEO SPLIT DE FONDO */
-    .video-background-split {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      z-index: -1;
-      pointer-events: none;
-    }
-    .video-split {
-      flex: 1 1 33.3333%;
-      position: relative;
-      overflow: hidden;
-    }
-    .video-split video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.75);
-      pointer-events: none;
-    }
+        /* CONTACT */
+        .contact { padding: 2rem 1.5rem 6rem; }
+        .contact-box {
+            max-width: 520px;
+            margin: 0 auto;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(8px);
+            border-radius: 1rem;
+            padding: 2.5rem;
+        }
+        .contact-box h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .contact-box .sub {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.35);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .contact-box input,
+        .contact-box select,
+        .contact-box textarea {
+            width: 100%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .contact-box input::placeholder,
+        .contact-box textarea::placeholder { color: rgba(255,255,255,0.25); }
+        .contact-box input:focus,
+        .contact-box select:focus,
+        .contact-box textarea:focus {
+            border-color: rgba(34, 211, 238, 0.5);
+            box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.1);
+        }
+        .contact-box select { color: rgba(255,255,255,0.5); }
+        .contact-box select option { background: #0f172a; color: #fff; }
+        .contact-box textarea { resize: none; }
+        .contact-box button {
+            width: 100%;
+            background: linear-gradient(135deg, #34d399, #10b981);
+            color: #000;
+            font-weight: 600;
+            padding: 0.875rem;
+            border-radius: 0.75rem;
+            border: none;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+        .contact-box button:hover {
+            box-shadow: 0 0 30px -8px rgba(0,255,159,0.4);
+            transform: scale(1.02);
+        }
 
-    /* Header */
-    header {
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: white;
-    }
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: #00e0ff; }
+        /* FOOTER */
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 2rem 1.5rem;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        .footer-brand svg { color: #22d3ee; }
+        .footer-brand span { color: #22d3ee; }
+        .footer-info { color: rgba(255,255,255,0.35); font-size: 0.85rem; }
+        .footer-copy { color: rgba(255,255,255,0.25); font-size: 0.75rem; }
 
-    .social-icons {
-      display: flex;
-      gap: 1rem;
-    }
-    .social-icons a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-      color: #fff;
-      font-size: 1.3rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      backdrop-filter: blur(6px);
-      text-decoration: none;
-    }
+        /* FLOATING WA */
+        .float-wa {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 100;
+            width: 56px;
+            height: 56px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 30px -4px rgba(16, 185, 129, 0.5);
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .float-wa:hover { transform: scale(1.1); }
+        .float-wa svg { width: 28px; height: 28px; color: #fff; }
 
-    /* Teléfono destacado */
-.phone-call a {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #00ff9f;
-  text-decoration: none;
-  margin-right: 1rem;
-  padding: 8px 16px;
-  border: 2px solid #00ff9f;
-  border-radius: 40px;
-  transition: all 0.3s ease;
-}
+        /* ANIMATIONS */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
 
-.phone-call a:hover {
-  background: #00ff9f;
-  color: #0f2027;
-  box-shadow: 0 0 15px #00ff9f;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .phone-call a {
-    font-size: 1rem;
-    padding: 6px 12px;
-    margin: 10px 0;
-    display: inline-block;
-  }
-}
-    .social-icons a.facebook:hover { background:#1877f2; box-shadow:0 0 18px #1877f2; }
-    .social-icons a.instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); box-shadow:0 0 18px #d6249f; }
-    .social-icons a.tiktok:hover { background: linear-gradient(135deg,#25f4ee,#fe2c55); box-shadow:0 0 18px #fe2c55; }
-    .social-icons a.whatsapp:hover { background:#25d366; box-shadow:0 0 18px #25d366; }
-
-    /* Menú hamburguesa */
-    /* Botón hamburguesa */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: white;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-/* Animación al activar (X) */
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Estilos para móviles */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
-
-  nav#nav-menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    text-align: center;
-    padding: 1rem 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 999;
-  }
-
-  nav#nav-menu.active {
-    display: flex;
-  }
-
-  nav#nav-menu a {
-    margin: 0.5rem 0;
-    display: block;
-  }
-}
-
-
-    /* HERO */
-    /* HERO existente */
-.hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  padding: 6rem 2rem;
-  color: white;
-  z-index: 1;
-  background: transparent;
-  background-size: 400% 400%;
-  animation: heroGradient 20s ease infinite;
-}
-@keyframes heroGradient {
-  0% { background-position:0% 50%; }
-  50% { background-position:100% 50%; }
-  100% { background-position:0% 50%; }
-}
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(90deg, #00e0ff, #00ff9f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero p {
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-  color: #f0f0f0;
-}
-
-/* Botones tecnológicos 2025 */
-.service-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.service-btn {
-  padding: 15px 35px;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: #fff;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.2);
-  backdrop-filter: blur(12px);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-.service-btn::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.25), transparent 70%);
-  transform: rotate(25deg);
-  transition: all 0.6s ease;
-}
-
-.service-btn:hover::before {
-  top: -30%;
-  left: -30%;
-}
-
-.service-btn:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-}
-
-/* Colores personalizados */
-.service-btn.fumigacion {
-  background: linear-gradient(135deg, #ff6a00, #ee0979);
-}
-.service-btn.fontaneria {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-}
-.service-btn.tapiceria {
-  background: linear-gradient(135deg, #43e97b, #38f9d7);
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2rem; }
-  .hero p { font-size: 1.1rem; }
-  .service-btn { flex: 1 1 100%; text-align: center; }
-}
-
-    /* SERVICIOS */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-      gap: 2rem;
-      padding: 4rem 2rem;
-      background:#121212;
-    }
-    .service {
-      background:#1e1e1e;
-      border-radius:20px;
-      padding:2rem;
-      box-shadow:0 8px 24px rgba(0,0,0,0.4);
-      transition: transform 0.5s, box-shadow 0.5s;
-      border:1px solid #00e0ff3a;
-    }
-    .service:hover { transform: translateY(-12px) scale(1.03); box-shadow:0 12px 30px rgba(0,0,0,0.6);}
-    .service h3 { color:#00ffcc; margin-bottom:1rem; font-size:1.6rem; }
-    .cta-btn {
-      display:inline-block;
-      margin-top:1rem;
-      background:#00e0ff;
-      color:#000;
-      padding:0.75rem 1.5rem;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:700;
-      transition: all 0.3s ease;
-    }
-    .cta-btn:hover { background:#00ffb7; }
-
-    /* CONTACTO */
-    .contact-form {
-      padding:4rem 2rem;
-      background:#101010;
-      max-width:700px;
-      margin:0 auto;
-      border-radius:20px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.3);
-    }
-    .contact-form h2 {
-      margin-bottom:2rem;
-      text-align:center;
-      font-size:2rem;
-      color:#00e0ff;
-    }
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
-      width:100%;
-      padding:1rem;
-      margin-bottom:1rem;
-      border-radius:12px;
-      border:none;
-      background:#1a1a1a;
-      color:#f2f2f2;
-    }
-    .contact-form button {
-      background:#00e0ff;
-      color:#000;
-      padding:1rem;
-      border:none;
-      border-radius:50px;
-      font-size:1rem;
-      font-weight:bold;
-      cursor:pointer;
-      width:100%;
-    }
-
-    /* BOTONES FLOTANTES */
-    .floating-btn {
-      position: fixed;
-      bottom: 20px;
-      z-index: 999;
-      padding: 12px 16px;
-      border-radius:50%;
-      color:white;
-      text-align:center;
-      font-size:20px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.2);
-    }
-    .whatsapp-btn { right:80px; background:#25d366; }
-    .call-btn { right:20px; background:#0d47a1; }
-
-    /* INTRO LOADER */
-    #intro-loader {
-      position: fixed;
-      inset:0;
-      background:#00e0ff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-      overflow:hidden;
-      animation: fadeOutIntro 1s ease forwards;
-      animation-delay:1.5s;
-    }
-    .nebulizer {
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-    }
-    .logo-neb {
-      width:300px;
-      height:auto;
-      z-index:2;
-      opacity:0;
-      animation: fadeInLogo 1.5s ease forwards;
-      filter: drop-shadow(0 0 25px #00e0ff) blur(0.5px);
-    }
-    .mist {
-      position:absolute;
-      width:400px;
-      height:400px;
-      background:#00e0ff;
-      border-radius:50%;
-      filter:blur(80px);
-      animation: mistMove 6s infinite ease-in-out alternate;
-      z-index:1;
-    }
-    .mist1 { top:-100px; left:-100px; animation-delay:0s; }
-    .mist2 { bottom:-80px; right:-100px; animation-delay:1.2s; }
-    .mist3 { top:50%; left:50%; transform:translate(-50%,-50%); animation-delay:2s; }
-
-    @keyframes mistMove {
-      0% { transform: scale(1) translate(0,0); }
-      100% { transform: scale(1.4) translate(30px,20px); }
-    }
-    @keyframes fadeInLogo {
-      0% { opacity:0; transform:scale(0.8); }
-      100% { opacity:1; transform:scale(1); }
-    }
-    @keyframes fadeOutIntro { to { opacity:0; visibility:hidden; } }
-
-    /* RESPONSIVE */
-    @media (max-width:768px) {
-      header { flex-direction: column; padding:2rem 1rem; text-align:center; }
-      nav { display:none; flex-direction:column; width:100%; background:rgba(0,0,0,0.85); padding:1rem 0; }
-      nav a { display:block; margin:0.5rem 0; }
-      nav.active { display:flex; }
-      .menu-toggle { display:flex; }
-
-      .hero h1 { font-size:2rem; }
-      .hero p { font-size:1rem; }
-
-      .social-icons { flex-wrap:wrap; justify-content:center; margin-top:1rem; }
-      .social-icons a { width:42px; height:42px; margin:0.3rem; font-size:1.2rem; }
-
-      canvas#particles-js,
-      #fogCanvas { width:100vw !important; height:100vh !important; }
-
-      /* Video zoom out */
-      .video-background-split { transform: scale(0.95); transform-origin:center center; }
-      .video-split video { width:100% !important; height:100% !important; object-fit:cover; }
-    }
-
-    
-/* Igualar dimensiones de todos los videos en escritorio */
-@media (min-width: 1024px) {
-  .video-background-split {
-    display: flex;
-    align-items: stretch;
-  }
-
-  .video-split {
-    flex: 1 1 33.3333%;
-    display: flex;
-    align-items: stretch;
-  }
-
-  .video-split video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* llena el espacio recortando si es necesario */
-    object-position: center;
-  }
-}
-
-  </style>
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .plans-grid { grid-template-columns: 1fr; }
+            .card.featured { transform: none; }
+            .hero h1 { font-size: 2.4rem; }
+            .contact-box { padding: 1.5rem; }
+        }
+    </style>
 </head>
-
 <body>
-  <!-- INTRO LOADER -->
-  <div id="intro-loader">
-    <div class="nebulizer">
-      <div class="mist mist1"></div>
-      <div class="mist mist2"></div>
-      <div class="mist mist3"></div>
-      <img src="Clean&Live.ai (Post de Facebook).png" alt="Clean&Live Logo" class="logo-neb" />
-    </div>
-  </div>
 
-  <!-- VIDEO BACKGROUND SPLIT -->
-  <div class="video-background-split">
-    <div class="video-split video-split-1">
-      <video autoplay muted loop playsinline preload="auto" src="Video_de_Fumigación_Profesional.mp4"></video>
-    </div>
-    <div class="video-split video-split-2">
-      <video autoplay muted loop playsinline preload="auto" src="Fontanero_Repara_Fuga_de_Agua.mp4"></video>
-    </div>
-    <div class="video-split video-split-3">
-      <video autoplay muted loop playsinline preload="auto" src="Video_De_Tapicería_Generado.mp4"></video>
-    </div>
-  </div>
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                Clean<span>&</span>Live
+            </a>
+            <nav>
+                <a href="#servicios">Servicios</a>
+                <a href="#contacto">Contacto</a>
+                <a href="tel:+50663026080" class="phone-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    6302-6080
+                </a>
+            </nav>
+        </div>
+    </header>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo"><strong>Clean&Live</strong></div>
-    <!-- Menú -->
-  <nav id="nav-menu">
-    <a href="#servicios">Servicios</a>
-    <a href="#nosotros">Quiénes somos</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+        <div class="hero-content">
+            <div class="hero-badge animate delay-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Servicios Profesionales · Costa Rica
+            </div>
+            <h1 class="animate delay-2">
+                Limpieza Profesional que <span class="gradient">Transforma tu Espacio</span>
+            </h1>
+            <p class="animate delay-3">Expertos en dejar tu hogar impecable con tecnología de vanguardia y personal de absoluta confianza.</p>
+            <div class="hero-buttons animate delay-4">
+                <a href="#servicios" class="btn-primary">
+                    Ver Planes
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+                <a href="https://wa.me/50663026080" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <div class="phone-call">
-    <a href="tel:+50672390602">📞 +506 7239-0602</a>
-  </div>
-    
-    <div class="social-icons">
-      <a href="https://www.facebook.com/" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://tiktok.com" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://wa.me/50672390602" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </header>
+    <!-- PLANS -->
+    <section id="servicios" class="plans">
+        <div class="plans-header">
+            <h2>Nuestros Planes</h2>
+            <p>Elegí el nivel de limpieza que tu espacio necesita</p>
+        </div>
+        <div class="plans-grid">
 
-  <!-- HERO -->
-<section class="hero">
-  <h1>Soluciones inteligentes para espacios limpios, seguros y sin fugas ni plagas</h1>
+            <!-- Card 1 -->
+            <div class="card cyan">
+                <div class="card-icon cyan">✨</div>
+                <h3>Hogar Básica</h3>
+                <p class="subtitle">Esencial y Rápido</p>
+                <ul>
+                    <li><span class="check">✓</span> Desinfección de superficies</li>
+                    <li><span class="check">✓</span> Limpieza de pisos y alfombras</li>
+                    <li><span class="check">✓</span> Sacudido de polvo general</li>
+                    <li><span class="check">✓</span> Limpieza de baños principales</li>
+                </ul>
+                <a href="https://wa.me/50663026080" target="_blank" rel="noopener noreferrer" class="card-cta outline">Contratar Ahora →</a>
+            </div>
 
+            <!-- Card 2 (Featured) -->
+            <div class="card featured">
+                <div class="card-badge">Más Popular</div>
+                <div class="card-icon green">🔥</div>
+                <h3>Full Cocina & Lavado</h3>
+                <p class="subtitle">Hogar + Detalle</p>
+                <ul>
+                    <li><span class="check">✓</span> Todo lo del plan Básico</li>
+                    <li><span class="check">✓</span> Limpieza profunda de grasa en cocina</li>
+                    <li><span class="check">✓</span> Lavado y secado de ropa</li>
+                    <li><span class="check">✓</span> Limpieza interna de microondas</li>
+                    <li><span class="check">✓</span> Organización de alacenas</li>
+                </ul>
+                <a href="https://wa.me/50663026080" target="_blank" rel="noopener noreferrer" class="card-cta filled">¡Lo quiero! →</a>
+            </div>
 
-  <div class="service-buttons">
-    <a href="tel:+50672390602" class="service-btn fumigacion">Fumigación</a>
-    <a href="tel:+50672390602" class="service-btn fontaneria">Fontanería</a>
-    <a href="tel:+50672390602" class="service-btn tapiceria">Tapicería</a>
-  </div>
-</section>
+            <!-- Card 3 -->
+            <div class="card violet">
+                <div class="card-icon violet">👑</div>
+                <h3>Premium Total</h3>
+                <p class="subtitle">Máximo Confort</p>
+                <ul>
+                    <li><span class="check">✓</span> Servicio Cocina & Lavado</li>
+                    <li><span class="check">✓</span> Limpieza de vidrios y ventanales</li>
+                    <li><span class="check">✓</span> Vaporización de colchones</li>
+                    <li><span class="check">✓</span> Desinfección con Ozono</li>
+                    <li><span class="check">✓</span> Tratamiento de muebles/cuero</li>
+                </ul>
+                <a href="https://wa.me/50663026080" target="_blank" rel="noopener noreferrer" class="card-cta outline">Consultar Premium →</a>
+            </div>
 
-  <!-- SERVICIOS -->
-  <section class="services" id="servicios">
-    <div class="service" data-sr>
-      <h3>Fumigación y Control de Plagas</h3>
-      <p>Control de cucarachas, ratas, zancudos y más con productos ecoamigables.</p>
-      <a href="tel:+50672390602" class="cta-btn">Fumigación urgente</a>
-    </div>
-    <div class="service" data-sr>
-      <h3>Fontanería</h3>
-      <p>Reparación de fugas de agua, destaqueos , cambios de grifería, mantenimiento de tuberías.</p>
-      <a href="tel:+50672390602" class="cta-btn">Fuga de agua urgente</a>
-    </div>
-    <div class="service" data-sr>
-      <h3>Mantenimiento de tapicería</h3>
-      <p>Renueva tus muebles y asientos de vehículo con nuestro servicio profesional de limpieza y mantenimiento de tapicería. Eliminamos manchas, olores y suciedad, devolviéndoles su aspecto original. ¡Disfruta de espacios limpios y frescos en tu hogar y carro!</p>
-      <a href="tel:+50672390602" class="cta-btn">Limpieza urgente</a>
-    </div>
-  </section>
+        </div>
+    </section>
 
-  <!-- CONTACTO -->
-  <section class="contact-form" id="contacto">
-    <h2>Contáctanos</h2>
-    <form id="formulario" action="https://formspree.io/f/xqaleyal" method="POST" novalidate data-aos="fade-up" data-aos-delay="200">
-      <input type="text" name="nombre" placeholder="Nombre" required>
-      <input type="tel" name="telefono" placeholder="Teléfono" required pattern="[0-9+ ]+">
-      <input type="email" name="email" placeholder="Correo electrónico" required>
-      <select name="servicio" required>
-        <option value="" disabled selected>Seleccione el servicio</option>
-        <option value="Fontanería (Fugas de agua - Destaqueos)">Fontanería (Fugas de agua - Destaqueos)</option>
-        <option value="Control de plagas">Control de plagas</option>
-        <option value="Mantenimiento de tapicería">Mantenimiento de tapicería</option>
-      </select>
-      <textarea name="mensaje" rows="5" placeholder="Escriba detalles adicionales (opcional)"></textarea>
-      <button type="submit">Enviar mensaje</button>
-    </form>
-  </section>
+    <!-- CONTACT -->
+    <section id="contacto" class="contact">
+        <div class="contact-box">
+            <h2>Solicita tu Presupuesto</h2>
+            <p class="sub">Te respondemos en minutos por WhatsApp</p>
+            <form id="contactForm">
+                <input type="text" placeholder="Tu nombre" required />
+                <input type="email" placeholder="Email (opcional)" />
+                <input type="tel" placeholder="Teléfono" required />
+                <select required>
+                    <option value="">Selecciona un plan</option>
+                    <option value="Limpieza Básica">Limpieza Básica</option>
+                    <option value="Cocina y Lavado">Cocina y Lavado</option>
+                    <option value="Premium Total">Premium Total</option>
+                </select>
+                <textarea rows="3" placeholder="¿Algún detalle adicional?"></textarea>
+                <button type="submit">Enviar por WhatsApp</button>
+            </form>
+        </div>
+    </section>
 
-  <!-- BOTONES FLOTANTES -->
-  <a href="https://wa.me/50672390602" class="floating-btn whatsapp-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="tel:+50672390602" class="floating-btn call-btn" title="Llamar"><i class="fas fa-phone"></i></a>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                Clean<span>&</span>Live
+            </div>
+            <p class="footer-info">Costa Rica · +506 6302-6080</p>
+            <p class="footer-copy">© 2026 Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-  <!-- SCRIPTS -->
-  <script>
-    // ScrollReveal
-    ScrollReveal().reveal('[data-sr]', {
-      delay: 200,
-      duration: 1000,
-      distance: '50px',
-      origin: 'bottom',
-      reset: true,
-    });
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/50663026080" target="_blank" rel="noopener noreferrer" class="float-wa">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    </a>
 
-    // GSAP Hero
-    gsap.from('.hero h1', { duration: 1, y: -50, opacity: 0, ease: 'power3.out' });
-    gsap.from('.hero p', { duration: 1.2, y: 30, opacity: 0, delay: 0.5 });
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const inputs = this.querySelectorAll('input, select, textarea');
+            const name = inputs[0].value;
+            const plan = inputs[3].value;
+            const detail = inputs[4].value;
+            const msg = `Hola Clean&Live! Soy ${name}. Me interesa el plan: ${plan}. ${detail}`;
+            window.open(`https://wa.me/50663026080?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+    </script>
 
-    // Loader
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        const intro = document.getElementById('intro-loader');
-        if (intro) intro.remove();
-      }, 4500);
-    });
-
- 
-    // Menu hamburguesa
-  const menuToggle = document.getElementById("menu-toggle");
-  const navMenu = document.getElementById("nav-menu");
-
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-    menuToggle.classList.toggle("active");
-  });
-</script>
+</body>
+</html>
