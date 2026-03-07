@@ -17,44 +17,43 @@
             --p2728c: #0047bb;
             --p368c: #78be20;
             --p361c: #43b02a;
-            --apple-bg: #f5f5f7;
-            --glass-white: rgba(255, 255, 255, 0.7);
+            --apple-white: #ffffff;
+            --apple-silver: #f5f5f7;
+            --glass-white: rgba(255, 255, 255, 0.9);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
         body {
-            /* Aplicación de Montserrat Medium Italic a todo el sitio */
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
             font-style: italic; 
-            background-color: var(--apple-bg);
+            background-color: var(--apple-white); /* Cambio a blanco total para limpieza */
             color: #1d1d1f;
             overflow-x: hidden;
         }
 
-        /* Estilo para simular Amplitude - Ultra (Peso 900, sin itálica, condensada) */
         h1, h2, h3, .amplitude-ultra {
-            font-family: 'Arial Black', sans-serif; /* Fallback de Amplitude Ultra */
+            font-family: 'Arial Black', sans-serif;
             font-weight: 900;
-            font-style: normal; /* Los títulos van rectos y ultra gruesos */
+            font-style: normal;
             text-transform: uppercase;
-            letter-spacing: -1.5px;
-            line-height: 0.9;
+            letter-spacing: -1px;
         }
 
+        /* Video Background con filtro más claro para "Brillo y Limpieza" */
         #video-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover; z-index: -1;
-            filter: brightness(0.55) contrast(1.15);
+            filter: brightness(0.8) saturate(1.2); /* Más luz */
         }
 
         header {
             position: sticky; top: 0; z-index: 100;
             background: var(--glass-white);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0,0,0,0.05);
             padding: 15px 5%;
             display: flex; justify-content: space-between; align-items: center;
@@ -71,95 +70,117 @@
         }
 
         .hero {
-            height: 85vh;
+            height: 70vh;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
-            text-align: center; color: white; padding: 20px;
+            text-align: center; color: #1d1d1f; padding: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 10vw, 5rem);
-            margin-bottom: 20px;
-            text-shadow: 0 12px 40px rgba(0,0,0,0.4);
+            font-size: clamp(2.5rem, 9vw, 4.5rem);
+            color: #fff;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
         }
 
         .hero p {
-            font-size: 1.2rem; max-width: 750px; margin-bottom: 35px;
-            background: rgba(0,0,0,0.35); padding: 18px 28px;
-            border-radius: 60px; backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 1.15rem; max-width: 700px; margin-bottom: 25px;
+            background: rgba(255,255,255,0.9); /* Fondo blanco brillante */
+            padding: 20px 30px;
+            border-radius: 30px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            color: #1d1d1f;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        /* CTAs DIRECTOS DEBAJO DEL BODY COPY */
+        .direct-ctas {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 400px;
+            padding: 0 20px;
+            margin-bottom: 50px;
+        }
+
+        .cta-big {
+            padding: 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-family: 'Arial Black', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .cta-call { background: var(--p2728c); color: white; box-shadow: 0 10px 25px rgba(0, 71, 187, 0.3); }
+        .cta-wa { background: var(--p361c); color: white; box-shadow: 0 10px 25px rgba(67, 176, 42, 0.3); }
+
+        /* Contenedor de Servicios con fondo blanco puro */
+        .white-section {
+            background: var(--apple-white);
+            border-radius: 50px 50px 0 0;
+            margin-top: -30px;
+            padding-top: 60px;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.05);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
 
         .services-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px; margin-top: -90px;
+            gap: 20px;
         }
 
         .card {
-            background: white; border-radius: 35px; padding: 45px;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.06);
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            text-align: center;
-            border: 1px solid rgba(0,0,0,0.02);
+            background: var(--apple-silver); border-radius: 30px; padding: 40px;
+            transition: 0.4s; text-align: center; border: 1px solid #eee;
         }
 
-        .card:hover { transform: translateY(-12px); box-shadow: 0 25px 60px rgba(0, 71, 187, 0.15); }
-        .card i { font-size: 3.2rem; color: var(--p3005c); margin-bottom: 25px; }
+        .card i { font-size: 3rem; color: var(--p3005c); margin-bottom: 20px; }
 
-        .testimonials-section { background: white; padding: 100px 0; border-radius: 60px 60px 0 0; }
-        .testimonial-item {
-            padding: 50px; border-radius: 40px;
-            background: var(--apple-bg); text-align: center;
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-        .stars { color: #ffcc00; margin-bottom: 20px; font-size: 1.4rem; }
-
-        /* --- BOTONES FLOTANTES REDONDEADOS --- */
+        /* ISLA FLOTANTE DINÁMICA */
         .floating-island {
             position: fixed;
-            bottom: 30px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 12px 22px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 10px 15px;
             border-radius: 100px;
             display: flex;
-            gap: 15px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            gap: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             z-index: 1000;
-            border: 1px solid rgba(255,255,255,0.5);
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .float-btn {
-            width: 52px; height: 52px; border-radius: 50%;
+            width: 48px; height: 48px; border-radius: 50%;
             display: flex; justify-content: center; align-items: center;
-            color: white; text-decoration: none; font-size: 22px;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            color: white; font-size: 20px; text-decoration: none;
         }
-
-        .float-btn:active { transform: scale(0.85); }
 
         .btn-wa { background-color: var(--p361c); }
         .btn-ph { background-color: var(--p2728c); }
         .btn-fb { background-color: #1877f2; }
-        .btn-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
 
         footer {
-            background: #000; color: white; padding: 80px 5% 130px; text-align: center;
+            background: var(--apple-silver); color: #1d1d1f; padding: 60px 5% 100px; text-align: center;
+            border-top: 1px solid #eee;
         }
 
-        .footer-socials { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; }
-        .footer-socials a { color: white; font-size: 2.2rem; transition: 0.3s; }
-        .footer-socials a:hover { color: var(--p3005c); transform: scale(1.1); }
-
         @media (max-width: 768px) { 
-            .hero h1 { font-size: 2.8rem; }
-            .services-grid { margin-top: -50px; }
+            .hero { height: auto; padding: 100px 20px 40px; }
+            .hero h1 { font-size: 2.2rem; line-height: 1.1; }
         }
     </style>
 </head>
@@ -171,100 +192,87 @@
 
     <header>
         <div class="logo-text">Clean&Live</div>
-        <a href="tel:63026080" class="amplitude-ultra" style="color: var(--p2728c); text-decoration: none; font-size: 1.2rem;">6302-6080</a>
+        <a href="tel:63026080" class="amplitude-ultra" style="color: var(--p2728c); text-decoration: none; font-size: 1rem;">6302-6080</a>
     </header>
 
     <section class="hero">
-        <h1 data-aos="fade-down" class="amplitude-ultra">FONTANERO 24/7 <br><span style="color: var(--p368c);">COSTA RICA</span></h1>
-        <p data-aos="fade-up" data-aos-delay="200">
-            Expertos en <strong>detección de fugas de agua</strong> con tecnología ultrasónica y <strong>destaqueos</strong> de emergencia. Respuesta inmediata en todo el GAM.
+        <h1 data-aos="fade-down" class="amplitude-ultra">FONTANERÍA DE ALTA PRECISIÓN</h1>
+        <p data-aos="fade-up" data-aos-delay="100">
+            Somos <strong>Clean&Live Costa Rica</strong>. Expertos en detección de fugas sin romper y destaqueos urgentes 24/7.
         </p>
+
+        <div class="direct-ctas" data-aos="zoom-in" data-aos-delay="300">
+            <a href="tel:63026080" class="cta-big cta-call">
+                <i class="fas fa-phone-alt"></i> LLAMAR A EMERGENCIA
+            </a>
+            <a href="https://wa.me/50663026080" class="cta-big cta-wa">
+                <i class="fab fa-whatsapp"></i> WHATSAPP URGENTE
+            </a>
+        </div>
     </section>
 
-    <div class="container">
-        <div class="services-grid">
-            <div class="card" data-aos="fade-up">
-                <i class="fas fa-bullseye"></i>
-                <h3 class="amplitude-ultra">FUGAS INVISIBLES</h3>
-                <p>Localizamos fugas ocultas mediante geófonos de última generación. Ahorre dinero y evite daños estructurales.</p>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-water"></i>
-                <h3 class="amplitude-ultra">DESTAQUEOS 24/7</h3>
-                <p>Equipos de alta presión para liberar tuberías obstruidas en tiempo récord. Servicio limpio y garantizado.</p>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-check-circle"></i>
-                <h3 class="amplitude-ultra">INGENIERÍA HD</h3>
-                <p>Reparaciones definitivas con materiales de alta gama. El sello de confianza Clean&Live Costa Rica.</p>
-            </div>
-        </div>
-    </div>
-
-    <section class="testimonials-section">
+    <div class="white-section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 60px;" class="amplitude-ultra">TESTIMONIOS PRO</h2>
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <div class="stars">★★★★★</div>
-                            <p>"Excelente detección de fugas. Encontraron el problema en minutos sin romper el piso de mi casa en Escazú."</p>
-                            <br><strong class="amplitude-ultra" style="font-size: 0.9rem;">- RICARDO JIMÉNEZ</strong>
+            <div class="services-grid">
+                <div class="card" data-aos="fade-up">
+                    <i class="fas fa-search-location"></i>
+                    <h3 class="amplitude-ultra">FUGAS DE AGUA</h3>
+                    <p>Localización con geófonos digitales. No rompa si no sabe dónde está la fuga.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-sink"></i>
+                    <h3 class="amplitude-ultra">DESTAQUEOS 24/7</h3>
+                    <p>Respuesta inmediata para emergencias en fregaderos, inodoros y cajas.</p>
+                </div>
+            </div>
+
+            <div class="container" style="margin-top: 40px;">
+                <h2 style="text-align: center; margin-bottom: 30px;" class="amplitude-ultra">CLIENTES SATISFECHOS</h2>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div style="color: #ffcc00; margin-bottom: 10px;">★★★★★</div>
+                                <p>"Llegaron rápido a Curridabat y solucionaron la fuga. Muy profesionales."</p>
+                                <br><strong class="amplitude-ultra" style="font-size: 0.8rem;">- JORGE MORA</strong>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <div class="stars">★★★★★</div>
-                            <p>"El mejor fontanero 24/7. Llegaron un domingo a las 11pm para un destaqueo urgente en Heredia."</p>
-                            <br><strong class="amplitude-ultra" style="font-size: 0.9rem;">- SOFÍA BRENES</strong>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div style="color: #ffcc00; margin-bottom: 10px;">★★★★★</div>
+                                <p>"El mejor servicio 24/7 en Costa Rica. Los recomiendo totalmente."</p>
+                                <br><strong class="amplitude-ultra" style="font-size: 0.8rem;">- ANDREA S.</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <div class="floating-island">
-        <a href="https://wa.me/50663026080" class="float-btn btn-wa" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="tel:63026080" class="float-btn btn-ph" aria-label="Llamar">
-            <i class="fas fa-phone-alt"></i>
-        </a>
-        <a href="https://www.facebook.com/fontaneromisterplumber" class="float-btn btn-fb" target="_blank" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/cleanlive_cr/" class="float-btn btn-ig" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
+        <footer>
+            <div class="logo-text" style="font-size: 2.2rem; margin-bottom: 10px;">Clean&Live</div>
+            <p style="opacity: 0.8; margin-bottom: 30px;">Soluciones Hidráulicas Profesionales</p>
+            <p style="font-size: 0.8rem; opacity: 0.6; font-family: sans-serif; font-style: normal;">
+                &copy; 2026 CLEAN&LIVE COSTA RICA. <br>
+                TELÉFONO: 6302-6080
+            </p>
+        </footer>
     </div>
 
-    <footer>
-        <div class="logo-text" style="font-size: 2.5rem; margin-bottom: 10px;">Clean&Live</div>
-        <p style="opacity: 0.8; margin-bottom: 40px;">Líderes en Tecnología Hidráulica y Mantenimiento de Precisión</p>
-        
-        <div class="footer-socials">
-            <a href="https://www.facebook.com/fontaneromisterplumber"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/cleanlive_cr/"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/50663026080"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        
-        <p style="font-size: 0.8rem; opacity: 0.6; font-family: sans-serif; font-style: normal;">
-            &copy; 2026 CLEAN&LIVE COSTA RICA. TODOS LOS DERECHOS RESERVADOS.<br>
-            EMERGENCIAS: 6302-6080
-        </p>
-    </footer>
+    <div class="floating-island">
+        <a href="https://wa.me/50663026080" class="float-btn btn-wa"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:63026080" class="float-btn btn-ph"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://www.facebook.com/fontaneromisterplumber" class="float-btn btn-fb"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/cleanlive_cr/" class="float-btn btn-ig"><i class="fab fa-instagram"></i></a>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
-        
+        AOS.init({ duration: 1000 });
         var swiper = new Swiper(".mySwiper", {
-            spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: { delay: 4500, disableOnInteraction: false },
+            spaceBetween: 20,
+            autoplay: { delay: 4000 },
         });
     </script>
 </body>
