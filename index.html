@@ -10,6 +10,23 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<!-- Event snippet for Compra conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17977637656/BM3uCOOK2oIcEJj2s_xC',
+      'transaction_id': '',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 
     <style>
         :root {
@@ -430,17 +447,24 @@
             Somos <strong>Clean&Live Costa Rica</strong>. Expertos en detección de fugas sin romper y destaqueos urgentes con respuesta inmediata.
         </p>
 
-        <div class="hero-ctas">
-            <a href="https://wa.me/50663026080?text=Hola%20Clean%26Live%2C%20necesito%20un%20fontanero%20urgente" class="btn btn--primary" target="_blank">
-                <i class="fab fa-whatsapp"></i> WhatsApp Urgente
-            </a>
-            <a href="tel:+50663026080" class="btn btn--secondary">
-                <i class="fas fa-phone"></i> Llamar Ahora
-            </a>
-            <a href="#servicios" class="btn btn--outline">
-                <i class="fas fa-wrench"></i> Ver Servicios
-            </a>
-        </div>
+       <div class="hero-ctas">
+    <a href="https://wa.me/50663026080?text=Hola%20Clean%26Live%2C%20necesito%20un%20fontanero%20urgente" 
+       onclick="return gtag_report_conversion('https://wa.me/50663026080?text=Hola%20Clean%26Live%2C%20necesito%20un%20fontanero%20urgente');" 
+       class="btn btn--primary" 
+       target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp Urgente
+    </a>
+
+    <a href="tel:+50663026080" 
+       onclick="return gtag_report_conversion('tel:+50663026080');" 
+       class="btn btn--secondary">
+        <i class="fas fa-phone"></i> Llamar Ahora
+    </a>
+
+    <a href="#servicios" class="btn btn--outline">
+        <i class="fas fa-wrench"></i> Ver Servicios
+    </a>
+</div>
     </section>
 
     <!-- STATS -->
