@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Clean&Live | Fontanero 24/7 Costa Rica | Detección de Fugas de Agua</title>
+    <title>Clean&Live Costa Rica | Fontanero 24/7 & Detección de Fugas</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -12,129 +12,147 @@
 
     <style>
         :root {
+            /* Palette Pantone */
             --p3005c: #0077c0;
             --p2728c: #0047bb;
             --p368c: #78be20;
             --p361c: #43b02a;
-            --glass: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --apple-black: #1d1d1f;
+            --apple-bg: #f5f5f7;
+            --glass-white: rgba(255, 255, 255, 0.7);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            font-style: italic;
-            background-color: var(--apple-black);
-            color: #ffffff;
+            font-style: italic; /* Montserrat Medium Italic */
+            background-color: var(--apple-bg);
+            color: #1d1d1f;
             overflow-x: hidden;
         }
 
-        /* Estilo Amplitude Ultra para títulos */
-        h1, h2, h3, .brand-font {
-            font-family: 'Arial Black', sans-serif; /* Fallback Amplitude Ultra */
+        /* Títulos estilo Amplitude Ultra */
+        h1, h2, h3, .amplitude {
+            font-family: 'Arial Black', sans-serif;
             font-weight: 900;
             font-style: normal;
             text-transform: uppercase;
-            letter-spacing: -1px;
         }
 
+        /* Fondo de video con acabado premium */
         #video-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover; z-index: -1;
-            filter: brightness(0.4);
+            filter: brightness(0.6) contrast(1.1);
         }
 
+        /* Header Apple Glass */
         header {
             position: sticky; top: 0; z-index: 100;
-            background: rgba(29, 29, 31, 0.8);
+            background: var(--glass-white);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             padding: 15px 5%;
             display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid var(--glass-border);
         }
 
-        .logo { font-size: 1.4rem; color: #fff; font-weight: 900; }
-        .logo span { color: var(--p368c); }
+        .logo-text {
+            font-size: 1.5rem;
+            background: linear-gradient(to right, var(--p2728c), var(--p3005c));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
 
         /* Hero Section */
         .hero {
-            min-height: 80vh;
+            height: 85vh;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
-            text-align: center; padding: 40px 20px;
+            text-align: center; color: white; padding: 20px;
         }
 
-        .hero h1 { font-size: clamp(2.2rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 15px; }
-        .hero h1 span { color: var(--p3005c); }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 35px; opacity: 0.9; }
-
-        /* Botones CTA de Entrada */
-        .cta-container {
-            display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;
+        .hero h1 {
+            font-size: clamp(2.3rem, 9vw, 4.8rem);
+            line-height: 1; margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .btn {
-            padding: 18px 35px; border-radius: 18px; text-decoration: none;
-            font-weight: 900; font-size: 1.1rem; transition: 0.3s cubic-bezier(0.2, 0, 0.2, 1);
-            display: flex; align-items: center; gap: 10px; border: none; cursor: pointer;
+        .hero p {
+            font-size: 1.2rem; max-width: 700px; margin-bottom: 30px;
+            background: rgba(0,0,0,0.3); padding: 15px 25px;
+            border-radius: 50px; backdrop-filter: blur(10px);
         }
 
-        .btn-call { background: var(--p2728c); color: white; box-shadow: 0 10px 30px rgba(0, 71, 187, 0.4); }
-        .btn-wa { background: var(--p361c); color: white; box-shadow: 0 10px 30px rgba(67, 176, 42, 0.4); }
-        .btn:hover { transform: scale(1.05) translateY(-3px); }
-
-        /* Services & Testimonials */
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 2.5rem; }
-
+        /* Grid de Servicios */
         .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            border-radius: 30px; padding: 30px;
-            transition: 0.4s;
-        }
 
         .services-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 25px; margin-top: -80px;
         }
 
-        .service-card:hover { background: rgba(255,255,255,0.15); border-color: var(--p3005c); }
+        .card {
+            background: white; border-radius: 30px; padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: all 0.4s ease; text-align: center;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
 
-        /* Swiper Testimonials */
-        .swiper { width: 100%; padding: 50px 0; }
-        .testimonial-card { text-align: center; }
-        .stars { color: #ffcc00; margin-bottom: 10px; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0, 71, 187, 0.1); }
+
+        .card i { font-size: 3rem; color: var(--p3005c); margin-bottom: 20px; }
+
+        /* Testimonios Estilo Apple */
+        .testimonials-section { background: white; padding: 80px 0; }
+        .testimonial-item {
+            padding: 40px; border-radius: 30px;
+            background: var(--apple-bg); text-align: center;
+        }
+        .stars { color: #ffcc00; margin-bottom: 15px; font-size: 1.2rem; }
+
+        /* Botones CTA (Directos sin Omnigee) */
+        .cta-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+
+        .btn-main {
+            padding: 20px 40px; border-radius: 50px; text-decoration: none;
+            font-weight: 900; display: flex; align-items: center; gap: 10px;
+            transition: 0.3s; font-size: 1.1rem; border: none;
+        }
+
+        .btn-blue { background: var(--p2728c); color: white; box-shadow: 0 10px 20px rgba(0, 71, 187, 0.3); }
+        .btn-green { background: var(--p361c); color: white; box-shadow: 0 10px 20px rgba(67, 176, 42, 0.3); }
+        .btn-main:hover { transform: scale(1.05); filter: brightness(1.1); }
 
         /* Footer */
         footer {
-            background: #000; padding: 60px 5% 30px; text-align: center;
-            border-top: 1px solid var(--glass-border);
+            background: #1d1d1f; color: white; padding: 80px 5% 40px; text-align: center;
         }
 
-        .footer-socials { display: flex; justify-content: center; gap: 30px; margin: 30px 0; }
-        .footer-socials a { color: #fff; font-size: 1.8rem; transition: 0.3s; }
+        .footer-socials { display: flex; justify-content: center; gap: 25px; margin-bottom: 40px; }
+        .footer-socials a { color: white; font-size: 2rem; transition: 0.3s; }
         .footer-socials a:hover { color: var(--p3005c); }
 
-        /* Floating Action para móviles (fijo abajo) */
-        .mobile-bar {
-            position: fixed; bottom: 0; left: 0; width: 100%;
-            display: none; grid-template-columns: 1fr 1fr;
-            z-index: 999;
+        /* Barra de contacto móvil persistente */
+        .mobile-contact-bar {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 400px; background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border-radius: 100px; display: flex; padding: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2); z-index: 999;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
-        @media (max-width: 768px) {
-            .mobile-bar { display: grid; }
-            .hero { padding-bottom: 100px; }
-            .cta-container { display: none; } /* Ocultamos los del centro en móvil porque ya están abajo */
-            .hero h1 { font-size: 2.5rem; }
+        .mobile-contact-bar a {
+            flex: 1; text-align: center; padding: 12px; border-radius: 100px;
+            text-decoration: none; font-weight: 900; font-size: 0.9rem;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
         }
+
+        @media (min-width: 769px) { .mobile-contact-bar { display: none; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.8rem; } }
     </style>
 </head>
 <body>
@@ -144,107 +162,96 @@
     </video>
 
     <header>
-        <div class="logo">Clean<span>&</span>Live</div>
-        <a href="tel:63026080" style="color: white; text-decoration: none; font-weight: 700;">6302-6080</a>
+        <div class="logo-text">Clean&Live</div>
+        <a href="tel:63026080" class="btn-main btn-blue" style="padding: 10px 20px; font-size: 0.9rem;">6302-6080</a>
     </header>
 
     <section class="hero">
-        <h1 data-aos="fade-down">EMERGENCIA DE FONTANERÍA? <span>ATENCIÓN 24/7</span></h1>
+        <h1 data-aos="zoom-out">FONTANERO 24/7 <br><span style="color: var(--p368c);">COSTA RICA</span></h1>
         <p data-aos="fade-up" data-aos-delay="200">
-            ¿Fuga invisible? ¿Recibo de agua alto? Somos <strong>Clean&Live Costa Rica</strong>. 
-            Detectamos fugas sin romper y realizamos destaqueos urgentes en todo el GAM.
+            Expertos en <strong>detección de fugas de agua</strong> con tecnología ultrasónica y <strong>destaqueos</strong> de emergencia. Respuesta inmediata en todo el GAM.
         </p>
-        
-        <div class="cta-container" data-aos="zoom-in" data-aos-delay="400">
-            <a href="tel:63026080" class="btn btn-call"><i class="fas fa-phone-alt"></i> LLAMAR AHORA</a>
-            <a href="https://wa.me/50663026080" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WHATSAPP URGENTE</a>
+        <div class="cta-group" data-aos="fade-up" data-aos-delay="400">
+            <a href="tel:63026080" class="btn-main btn-blue"><i class="fas fa-phone-alt"></i> LLAMADA DE EMERGENCIA</a>
+            <a href="https://wa.me/50663026080" class="btn-main btn-green"><i class="fab fa-whatsapp"></i> WHATSAPP URGENTE</a>
         </div>
     </section>
 
     <div class="container">
-        <div class="section-title" data-aos="fade-up">
-            <h2>SOLUCIONES TECNOLÓGICAS</h2>
-        </div>
-
         <div class="services-grid">
-            <div class="glass-card service-card" data-aos="fade-up">
-                <i class="fas fa-search-location" style="font-size: 3rem; color: var(--p3005c); margin-bottom: 20px;"></i>
-                <h3>DETECCIÓN DE FUGAS</h3>
-                <p>Uso de geófonos electrónicos para localizar fugas de agua exactas. ¡No deje que su dinero se escape por la tubería!</p>
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-bullseye"></i>
+                <h3>FUGAS INVISIBLES</h3>
+                <p>Localizamos fugas ocultas mediante geófonos de última generación. Ahorre dinero y evite daños estructurales.</p>
             </div>
-            <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-bolt" style="font-size: 3rem; color: var(--p368c); margin-bottom: 20px;"></i>
-                <h3>DESTAQUEOS URGENTES</h3>
-                <p>Limpieza de cañerías, baños y fregaderos obstruidos. Fontanero 24/7 con respuesta inmediata en San José y Heredia.</p>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-water"></i>
+                <h3>DESTAQUEOS 24/7</h3>
+                <p>Equipos de alta presión para liberar tuberías obstruidas en tiempo récord. Servicio limpio y garantizado.</p>
             </div>
-            <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-tools" style="font-size: 3rem; color: #fff; margin-bottom: 20px;"></i>
-                <h3>REPARACIÓN TOTAL</h3>
-                <p>Cambio de tuberías, instalación de loza sanitaria y mantenimiento preventivo con sello de calidad Clean&Live.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container" style="background: rgba(255,255,255,0.02); border-radius: 50px;">
-        <div class="section-title">
-            <h2>CLIENTES SATISFECHOS</h2>
-        </div>
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide testimonial-card">
-                    <div class="glass-card">
-                        <div class="stars">★★★★★</div>
-                        <p>"Excelente servicio. El fontanero llegó en 30 minutos a Escazú y detectó la fuga que nadie encontraba. ¡Recomendado!"</p>
-                        <br><strong>- Juan Pablo Rojas</strong>
-                    </div>
-                </div>
-                <div class="swiper-slide testimonial-card">
-                    <div class="glass-card">
-                        <div class="stars">★★★★★</div>
-                        <p>"Clean&Live nos salvó de un destaqueo en plena madrugada. Muy profesionales y limpios."</p>
-                        <br><strong>- María Fernanda M.</strong>
-                    </div>
-                </div>
-                <div class="swiper-slide testimonial-card">
-                    <div class="glass-card">
-                        <div class="stars">★★★★★</div>
-                        <p>"Atención 24/7 real. El equipo de detección de fugas de agua es de última generación."</p>
-                        <br><strong>- Carlos Alvarado</strong>
-                    </div>
-                </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-check-circle"></i>
+                <h3>INGENIERÍA HD</h3>
+                <p>Reparaciones definitivas con materiales de alta gama. El sello de confianza Clean&Live Costa Rica.</p>
             </div>
         </div>
     </div>
 
-    <div class="mobile-bar">
-        <a href="tel:63026080" class="btn btn-call" style="border-radius: 0; justify-content: center;"><i class="fas fa-phone"></i> LLAMAR</a>
-        <a href="https://wa.me/50663026080" class="btn btn-wa" style="border-radius: 0; justify-content: center;"><i class="fab fa-whatsapp"></i> CHAT</a>
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">LO QUE DICEN EN COSTA RICA</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">★★★★★</div>
+                            <p>"Excelente detección de fugas. Encontraron el problema en minutos sin romper el piso de mi casa en Escazú."</p>
+                            <br><strong>- Ricardo Jiménez</strong>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">★★★★★</div>
+                            <p>"El mejor fontanero 24/7. Llegaron un domingo a las 11pm para un destaqueo urgente en Heredia."</p>
+                            <br><strong>- Sofía Brenes</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mobile-contact-bar">
+        <a href="tel:63026080" style="background: var(--p2728c); color: white;"><i class="fas fa-phone"></i> LLAMAR</a>
+        <a href="https://wa.me/50663026080" style="background: var(--p361c); color: white; margin-left: 5px;"><i class="fab fa-whatsapp"></i> CHAT</a>
     </div>
 
     <footer>
-        <h2 class="brand-font">Clean<span>&</span>Live</h2>
-        <p>Expertos en Fugas de Agua y Destaqueos en Costa Rica</p>
+        <div class="logo-text" style="font-size: 2.2rem; margin-bottom: 10px;">Clean&Live</div>
+        <p style="opacity: 0.7; margin-bottom: 30px;">Líderes en Tecnología Hidráulica y Mantenimiento Pro</p>
         
         <div class="footer-socials">
-            <a href="https://www.facebook.com/fontaneromisterplumber" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/cleanlive_cr/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/50663026080" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/fontaneromisterplumber"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/cleanlive_cr/"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/50663026080"><i class="fab fa-whatsapp"></i></a>
         </div>
-
-        <p style="opacity: 0.5; font-size: 0.8rem;">&copy; 2026 Clean&Live Costa Rica | Fontanero 24/7 | Ingeniería Hidráulica</p>
+        
+        <p style="font-size: 0.8rem; opacity: 0.5;">
+            &copy; 2026 Clean&Live Costa Rica. Todos los derechos reservados.<br>
+            Emergencias: 6302-6080
+        </p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        AOS.init();
+        AOS.init({ duration: 1000, once: true });
+        
         var swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
+            spaceBetween: 30,
             centeredSlides: true,
-            slidesPerView: "auto",
-            coverflowEffect: { rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true },
-            autoplay: { delay: 3000 }
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
         });
     </script>
 </body>
