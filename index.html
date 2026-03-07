@@ -2,277 +2,537 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clean&Live Costa Rica | Fontanero 24/7 & Detección de Fugas</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
+    <meta name="description" content="Servicio profesional de fontanería 24/7 en Costa Rica. Detección de fugas sin romper, destaqueos urgentes. Llámenos al 6302-6080." />
+    <meta name="keywords" content="fontanero costa rica, detección de fugas, destaqueos 24/7, plomero urgente, clean and live" />
+    <link rel="canonical" href="https://www.cleanlivecostarica.com/fontaneria" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <style>
         :root {
-            /* Palette Pantone Exacta */
-            --p3005c: #0077c0;
-            --p2728c: #0047bb;
-            --p368c: #78be20;
-            --p361c: #43b02a;
-            --apple-white: #ffffff;
-            --apple-silver: #f5f5f7;
-            --glass-white: rgba(255, 255, 255, 0.9);
+            --blue-deep: #0a1628;
+            --blue-primary: #0066ff;
+            --blue-light: #3d8bff;
+            --blue-glow: #0088ff;
+            --green-cta: #00c853;
+            --green-dark: #00a844;
+            --cyan: #00e5ff;
+            --surface: #0d1f3c;
+            --surface-light: #132744;
+            --glass: rgba(13, 31, 60, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.65);
+            --text-muted: rgba(255, 255, 255, 0.4);
+            --radius: 20px;
+            --radius-lg: 28px;
         }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            font-style: italic; 
-            background-color: var(--apple-white); /* Cambio a blanco total para limpieza */
-            color: #1d1d1f;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--blue-deep);
+            color: var(--text-primary);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
-
-        h1, h2, h3, .amplitude-ultra {
-            font-family: 'Arial Black', sans-serif;
-            font-weight: 900;
-            font-style: normal;
-            text-transform: uppercase;
-            letter-spacing: -1px;
+        /* ═══════════════════════════════════
+           BACKGROUND EFFECTS
+        ═══════════════════════════════════ */
+        .bg-grid {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background-image:
+                linear-gradient(rgba(0,102,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,102,255,0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
         }
-
-        /* Video Background con filtro más claro para "Brillo y Limpieza" */
-        #video-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; z-index: -1;
-            filter: brightness(0.8) saturate(1.2); /* Más luz */
+        .bg-orb {
+            position: fixed; border-radius: 50%; pointer-events: none; z-index: 0;
+            filter: blur(120px); opacity: 0.25;
         }
-
+        .bg-orb--1 { width: 600px; height: 600px; top: -10%; left: -10%; background: var(--blue-primary); }
+        .bg-orb--2 { width: 500px; height: 500px; bottom: 10%; right: -5%; background: var(--cyan); opacity: 0.12; }
+        /* ═══════════════════════════════════
+           HEADER
+        ═══════════════════════════════════ */
         header {
             position: sticky; top: 0; z-index: 100;
-            background: var(--glass-white);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 15px 5%;
+            background: var(--glass);
+            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 0 5%; height: 70px;
             display: flex; justify-content: space-between; align-items: center;
         }
-
-        .logo-text {
-            font-size: 1.6rem;
-            font-family: 'Arial Black', sans-serif;
-            background: linear-gradient(to right, var(--p2728c), var(--p3005c));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            font-style: normal;
+        .logo {
+            font-size: 1.5rem; font-weight: 900; letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--blue-light), var(--cyan));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-
+        .header-nav { display: flex; gap: 2rem; align-items: center; }
+        .header-nav a {
+            color: var(--text-secondary); text-decoration: none; font-weight: 600;
+            font-size: 0.9rem; transition: color 0.3s;
+        }
+        .header-nav a:hover { color: var(--text-primary); }
+        .header-cta {
+            background: var(--blue-primary); color: #fff !important;
+            padding: 10px 22px; border-radius: 50px; font-weight: 700;
+            text-decoration: none; font-size: 0.85rem;
+            box-shadow: 0 4px 20px rgba(0,102,255,0.35);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .header-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,102,255,0.5); }
+        /* ═══════════════════════════════════
+           HERO
+        ═══════════════════════════════════ */
         .hero {
-            height: 70vh;
-            display: flex; flex-direction: column;
+            position: relative; z-index: 1;
+            min-height: 90vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center;
-            text-align: center; color: #1d1d1f; padding: 20px;
+            text-align: center; padding: 120px 20px 80px;
         }
-
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--surface-light); border: 1px solid var(--glass-border);
+            padding: 8px 20px; border-radius: 50px; margin-bottom: 28px;
+            font-size: 0.85rem; font-weight: 600; color: var(--cyan);
+            animation: fadeUp 0.8s ease both;
+        }
+        .hero-badge i { font-size: 0.75rem; }
         .hero h1 {
-            font-size: clamp(2.5rem, 9vw, 4.5rem);
-            color: #fff;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            margin-bottom: 15px;
+            font-size: clamp(2.8rem, 8vw, 5.5rem);
+            font-weight: 900; line-height: 1.0; letter-spacing: -2px;
+            margin-bottom: 24px;
+            animation: fadeUp 0.8s 0.15s ease both;
         }
-
-        .hero p {
-            font-size: 1.15rem; max-width: 700px; margin-bottom: 25px;
-            background: rgba(255,255,255,0.9); /* Fondo blanco brillante */
-            padding: 20px 30px;
-            border-radius: 30px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            color: #1d1d1f;
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--blue-light), var(--cyan));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-
-        /* CTAs DIRECTOS DEBAJO DEL BODY COPY */
-        .direct-ctas {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 100%;
-            max-width: 400px;
-            padding: 0 20px;
-            margin-bottom: 50px;
+        .hero-sub {
+            font-size: 1.15rem; color: var(--text-secondary); max-width: 580px;
+            line-height: 1.7; margin-bottom: 40px;
+            animation: fadeUp 0.8s 0.3s ease both;
         }
-
-        .cta-big {
-            padding: 22px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-family: 'Arial Black', sans-serif;
-            font-weight: 900;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: 0.3s;
-            text-transform: uppercase;
-            border: none;
+        .hero-sub strong { color: var(--text-primary); }
+        .hero-ctas {
+            display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+            animation: fadeUp 0.8s 0.45s ease both;
         }
-
-        .cta-call { background: var(--p2728c); color: white; box-shadow: 0 10px 25px rgba(0, 71, 187, 0.3); }
-        .cta-wa { background: var(--p361c); color: white; box-shadow: 0 10px 25px rgba(67, 176, 42, 0.3); }
-
-        /* Contenedor de Servicios con fondo blanco puro */
-        .white-section {
-            background: var(--apple-white);
-            border-radius: 50px 50px 0 0;
-            margin-top: -30px;
-            padding-top: 60px;
-            box-shadow: 0 -20px 40px rgba(0,0,0,0.05);
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 18px 36px; border-radius: 16px;
+            text-decoration: none; font-weight: 800; font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none; cursor: pointer; text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-
+        .btn:hover { transform: translateY(-4px); }
+        .btn--primary {
+            background: var(--green-cta); color: #fff;
+            box-shadow: 0 8px 30px rgba(0,200,83,0.3);
+        }
+        .btn--primary:hover { box-shadow: 0 12px 40px rgba(0,200,83,0.45); }
+        .btn--secondary {
+            background: var(--blue-primary); color: #fff;
+            box-shadow: 0 8px 30px rgba(0,102,255,0.3);
+        }
+        .btn--secondary:hover { box-shadow: 0 12px 40px rgba(0,102,255,0.45); }
+        .btn--outline {
+            background: transparent; color: var(--text-primary);
+            border: 2px solid var(--glass-border);
+        }
+        .btn--outline:hover { border-color: var(--blue-light); background: var(--surface-light); }
+        /* ═══════════════════════════════════
+           STATS BAR
+        ═══════════════════════════════════ */
+        .stats-bar {
+            position: relative; z-index: 1;
+            display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
+            padding: 40px 20px;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            background: var(--glass); backdrop-filter: blur(20px);
+        }
+        .stat { text-align: center; }
+        .stat-num {
+            font-size: 2.5rem; font-weight: 900; letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--cyan), var(--blue-light));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+        /* ═══════════════════════════════════
+           SERVICES
+        ═══════════════════════════════════ */
+        .section { position: relative; z-index: 1; padding: 100px 20px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem); font-weight: 900;
+            letter-spacing: -1px; margin-bottom: 16px;
+        }
+        .section-header p { color: var(--text-secondary); font-size: 1.05rem; max-width: 550px; margin: 0 auto; }
         .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px; max-width: 1100px; margin: 0 auto;
+        }
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg); padding: 44px 36px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative; overflow: hidden;
+        }
+        .service-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--blue-primary), var(--cyan));
+            opacity: 0; transition: opacity 0.4s;
+        }
+        .service-card:hover { transform: translateY(-8px); border-color: rgba(0,102,255,0.3); }
+        .service-card:hover::before { opacity: 1; }
+        .service-icon {
+            width: 64px; height: 64px; border-radius: 18px;
+            background: linear-gradient(135deg, rgba(0,102,255,0.15), rgba(0,229,255,0.08));
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 24px; font-size: 1.6rem; color: var(--cyan);
+        }
+        .service-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; }
+        .service-card p { color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; }
+        .service-card .service-features {
+            list-style: none; margin-top: 20px; padding: 0;
+        }
+        .service-card .service-features li {
+            padding: 8px 0; color: var(--text-secondary); font-size: 0.9rem;
+            display: flex; align-items: center; gap: 10px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .service-card .service-features li:last-child { border: none; }
+        .service-card .service-features li i { color: var(--green-cta); font-size: 0.8rem; }
+        /* ═══════════════════════════════════
+           TESTIMONIALS
+        ═══════════════════════════════════ */
+        .testimonials-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 20px; max-width: 1100px; margin: 0 auto;
         }
-
-        .card {
-            background: var(--apple-silver); border-radius: 30px; padding: 40px;
-            transition: 0.4s; text-align: center; border: 1px solid #eee;
+        .testimonial {
+            background: var(--surface); border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg); padding: 36px;
         }
-
-        .card i { font-size: 3rem; color: var(--p3005c); margin-bottom: 20px; }
-
-        /* ISLA FLOTANTE DINÁMICA */
+        .testimonial-stars { color: #fbbf24; font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
+        .testimonial blockquote {
+            font-size: 1rem; line-height: 1.7; color: var(--text-secondary);
+            margin-bottom: 20px; font-style: italic;
+        }
+        .testimonial-author { font-weight: 700; font-size: 0.85rem; color: var(--text-primary); text-transform: uppercase; letter-spacing: 1px; }
+        /* ═══════════════════════════════════
+           CONTACT FORM
+        ═══════════════════════════════════ */
+        .form-wrapper {
+            max-width: 560px; margin: 0 auto;
+            background: var(--surface); border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg); padding: 48px 40px;
+        }
+        .form-wrapper h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; text-align: center; }
+        .form-wrapper .form-sub { color: var(--text-secondary); text-align: center; margin-bottom: 32px; font-size: 0.95rem; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label {
+            display: block; font-size: 0.8rem; font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%; padding: 14px 18px;
+            background: var(--blue-deep); border: 1px solid var(--glass-border);
+            border-radius: 14px; color: var(--text-primary);
+            font-family: 'Inter', sans-serif; font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none; border-color: var(--blue-primary);
+            box-shadow: 0 0 0 3px rgba(0,102,255,0.15);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-submit {
+            width: 100%; padding: 18px; border: none; border-radius: 16px;
+            background: var(--green-cta); color: #fff;
+            font-family: 'Inter', sans-serif; font-weight: 800;
+            font-size: 1rem; cursor: pointer; text-transform: uppercase;
+            letter-spacing: 0.5px; margin-top: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .form-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,200,83,0.35); }
+        /* ═══════════════════════════════════
+           FLOATING ISLAND
+        ═══════════════════════════════════ */
         .floating-island {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-            padding: 10px 15px;
-            border-radius: 100px;
-            display: flex;
-            gap: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
             z-index: 1000;
-            border: 1px solid rgba(0,0,0,0.05);
+            background: var(--glass); backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            padding: 10px 16px; border-radius: 100px;
+            display: flex; gap: 10px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            animation: islandIn 0.6s 1s ease both;
         }
-
-        .float-btn {
-            width: 48px; height: 48px; border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            color: white; font-size: 20px; text-decoration: none;
+        .island-btn {
+            width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 1.2rem; text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        .btn-wa { background-color: var(--p361c); }
-        .btn-ph { background-color: var(--p2728c); }
-        .btn-fb { background-color: #1877f2; }
-        .btn-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-
+        .island-btn:hover { transform: scale(1.12); }
+        .island-btn--wa { background: var(--green-cta); box-shadow: 0 4px 15px rgba(0,200,83,0.3); }
+        .island-btn--ph { background: var(--blue-primary); box-shadow: 0 4px 15px rgba(0,102,255,0.3); }
+        .island-btn--fb { background: #1877f2; box-shadow: 0 4px 15px rgba(24,119,242,0.3); }
+        .island-btn--ig { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); box-shadow: 0 4px 15px rgba(220,39,67,0.3); }
+        /* ═══════════════════════════════════
+           FOOTER
+        ═══════════════════════════════════ */
         footer {
-            background: var(--apple-silver); color: #1d1d1f; padding: 60px 5% 100px; text-align: center;
-            border-top: 1px solid #eee;
+            position: relative; z-index: 1;
+            text-align: center; padding: 60px 20px 120px;
+            border-top: 1px solid var(--glass-border);
+            background: var(--surface);
         }
-
-        @media (max-width: 768px) { 
-            .hero { height: auto; padding: 100px 20px 40px; }
-            .hero h1 { font-size: 2.2rem; line-height: 1.1; }
+        .footer-logo {
+            font-size: 1.8rem; font-weight: 900;
+            background: linear-gradient(135deg, var(--blue-light), var(--cyan));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+        .footer-tagline { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px; }
+        .footer-copy { color: var(--text-muted); font-size: 0.8rem; }
+        .footer-copy a { color: var(--cyan); text-decoration: none; }
+        /* ═══════════════════════════════════
+           ANIMATIONS
+        ═══════════════════════════════════ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes islandIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(40px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        /* ═══════════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════════ */
+        @media (max-width: 768px) {
+            .header-nav { display: none; }
+            .hero { min-height: auto; padding: 100px 20px 60px; }
+            .hero h1 { font-size: 2.5rem; letter-spacing: -1px; }
+            .hero-ctas { flex-direction: column; width: 100%; max-width: 360px; }
+            .btn { width: 100%; justify-content: center; }
+            .stats-bar { gap: 24px; }
+            .stat-num { font-size: 2rem; }
+            .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .form-wrapper { padding: 32px 24px; }
+            .section { padding: 60px 16px; }
         }
     </style>
 </head>
 <body>
-
-    <video autoplay muted loop id="video-bg" playsinline>
-        <source src="Fontanero_Repara_Fuga_de_Agua.mp4" type="video/mp4" />
-    </video>
-
+    <!-- BG Effects -->
+    <div class="bg-grid"></div>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <!-- HEADER -->
     <header>
-        <div class="logo-text">Clean&Live</div>
-        <a href="tel:63026080" class="amplitude-ultra" style="color: var(--p2728c); text-decoration: none; font-size: 1rem;">6302-6080</a>
+        <div class="logo">Clean&Live</div>
+        <nav class="header-nav">
+            <a href="#servicios">Servicios</a>
+            <a href="#testimonios">Clientes</a>
+            <a href="#contacto">Contacto</a>
+            <a href="tel:+50663026080" class="header-cta"><i class="fas fa-phone"></i> 6302-6080</a>
+        </nav>
     </header>
-
+    <!-- HERO -->
     <section class="hero">
-        <h1 data-aos="fade-down" class="amplitude-ultra">FONTANERÍA DE ALTA PRECISIÓN</h1>
-        <p data-aos="fade-up" data-aos-delay="100">
-            Somos <strong>Clean&Live Costa Rica</strong>. Expertos en detección de fugas sin romper y destaqueos urgentes 24/7.
+        <div class="hero-badge">
+            <i class="fas fa-shield-halved"></i>
+            Servicio Profesional 24/7 · Costa Rica
+        </div>
+        <h1>
+            Fontanería<br>
+            <span class="gradient-text">de Alta Precisión</span>
+        </h1>
+        <p class="hero-sub">
+            Somos <strong>Clean&Live Costa Rica</strong>. Expertos en detección de fugas sin romper y destaqueos urgentes con respuesta inmediata.
         </p>
-
-        <div class="direct-ctas" data-aos="zoom-in" data-aos-delay="300">
-            <a href="tel:63026080" class="cta-big cta-call">
-                <i class="fas fa-phone-alt"></i> LLAMAR A EMERGENCIA
+        <div class="hero-ctas">
+            <a href="https://wa.me/50663026080?text=Hola%20Clean%26Live%2C%20necesito%20un%20fontanero%20urgente" class="btn btn--primary" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp Urgente
             </a>
-            <a href="https://wa.me/50663026080" class="cta-big cta-wa">
-                <i class="fab fa-whatsapp"></i> WHATSAPP URGENTE
+            <a href="tel:+50663026080" class="btn btn--secondary">
+                <i class="fas fa-phone"></i> Llamar Ahora
+            </a>
+            <a href="#servicios" class="btn btn--outline">
+                <i class="fas fa-wrench"></i> Ver Servicios
             </a>
         </div>
     </section>
-
-    <div class="white-section">
-        <div class="container">
-            <div class="services-grid">
-                <div class="card" data-aos="fade-up">
-                    <i class="fas fa-search-location"></i>
-                    <h3 class="amplitude-ultra">FUGAS DE AGUA</h3>
-                    <p>Localización con geófonos digitales. No rompa si no sabe dónde está la fuga.</p>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-sink"></i>
-                    <h3 class="amplitude-ultra">DESTAQUEOS 24/7</h3>
-                    <p>Respuesta inmediata para emergencias en fregaderos, inodoros y cajas.</p>
-                </div>
+    <!-- STATS -->
+    <div class="stats-bar">
+        <div class="stat">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">Disponibilidad</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Trabajos Realizados</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">15min</div>
+            <div class="stat-label">Tiempo Respuesta</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Garantizado</div>
+        </div>
+    </div>
+    <!-- SERVICES -->
+    <section class="section" id="servicios">
+        <div class="section-header reveal">
+            <h2>Nuestros <span class="gradient-text">Servicios</span></h2>
+            <p>Soluciones profesionales con tecnología de punta y personal certificado.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-magnifying-glass"></i></div>
+                <h3>Detección de Fugas</h3>
+                <p>Localización exacta con geófonos digitales y cámaras termográficas. No rompemos si no sabemos dónde está.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Geófonos de última generación</li>
+                    <li><i class="fas fa-check"></i> Cámara termográfica</li>
+                    <li><i class="fas fa-check"></i> Sin romper paredes innecesariamente</li>
+                    <li><i class="fas fa-check"></i> Informe digital del trabajo</li>
+                </ul>
             </div>
-
-            <div class="container" style="margin-top: 40px;">
-                <h2 style="text-align: center; margin-bottom: 30px;" class="amplitude-ultra">CLIENTES SATISFECHOS</h2>
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="card">
-                                <div style="color: #ffcc00; margin-bottom: 10px;">★★★★★</div>
-                                <p>"Llegaron rápido a Curridabat y solucionaron la fuga. Muy profesionales."</p>
-                                <br><strong class="amplitude-ultra" style="font-size: 0.8rem;">- JORGE MORA</strong>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card">
-                                <div style="color: #ffcc00; margin-bottom: 10px;">★★★★★</div>
-                                <p>"El mejor servicio 24/7 en Costa Rica. Los recomiendo totalmente."</p>
-                                <br><strong class="amplitude-ultra" style="font-size: 0.8rem;">- ANDREA S.</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-toilet"></i></div>
+                <h3>Destaqueos 24/7</h3>
+                <p>Respuesta inmediata para emergencias en fregaderos, inodoros, cajas de registro y tuberías principales.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Respuesta en menos de 15 min</li>
+                    <li><i class="fas fa-check"></i> Equipos hidro-jet profesionales</li>
+                    <li><i class="fas fa-check"></i> Cámaras de inspección</li>
+                    <li><i class="fas fa-check"></i> Disponible domingos y feriados</li>
+                </ul>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-faucet-drip"></i></div>
+                <h3>Reparación General</h3>
+                <p>Instalación y reparación de tuberías, grifería, calentadores y sistemas hidráulicos completos.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Cambio de tuberías PVC/cobre</li>
+                    <li><i class="fas fa-check"></i> Instalación de grifería</li>
+                    <li><i class="fas fa-check"></i> Reparación de calentadores</li>
+                    <li><i class="fas fa-check"></i> Garantía por escrito</li>
+                </ul>
             </div>
         </div>
-
-        <footer>
-            <div class="logo-text" style="font-size: 2.2rem; margin-bottom: 10px;">Clean&Live</div>
-            <p style="opacity: 0.8; margin-bottom: 30px;">Soluciones Hidráulicas Profesionales</p>
-            <p style="font-size: 0.8rem; opacity: 0.6; font-family: sans-serif; font-style: normal;">
-                &copy; 2026 CLEAN&LIVE COSTA RICA. <br>
-                TELÉFONO: 6302-6080
-            </p>
-        </footer>
-    </div>
-
+    </section>
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonios">
+        <div class="section-header reveal">
+            <h2>Clientes <span class="gradient-text">Satisfechos</span></h2>
+            <p>La confianza de nuestros clientes es nuestra mejor carta de presentación.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"Llegaron a Curridabat en 12 minutos y solucionaron la fuga sin romper nada. Increíble tecnología y muy profesionales."</blockquote>
+                <div class="testimonial-author">— Jorge Mora</div>
+            </div>
+            <div class="testimonial reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"Domingo a las 10pm se nos tapó el fregadero. Nos atendieron de inmediato. El mejor servicio 24/7 de Costa Rica."</blockquote>
+                <div class="testimonial-author">— Andrea Solano</div>
+            </div>
+            <div class="testimonial reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"Detectaron una fuga oculta que llevábamos meses buscando. Ahorramos miles en recibo de agua. 100% recomendados."</blockquote>
+                <div class="testimonial-author">— Carlos Rodríguez</div>
+            </div>
+        </div>
+    </section>
+    <!-- CONTACT -->
+    <section class="section" id="contacto">
+        <div class="form-wrapper reveal">
+            <h3>Solicite su Cotización</h3>
+            <p class="form-sub">Respuesta en menos de 15 minutos</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Su nombre completo" required />
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" placeholder="8888-8888" required />
+                </div>
+                <div class="form-group">
+                    <label for="servicio">Servicio</label>
+                    <select id="servicio" required>
+                        <option value="">Seleccione un servicio</option>
+                        <option value="Detección de Fugas">Detección de Fugas</option>
+                        <option value="Destaqueo Urgente">Destaqueo Urgente</option>
+                        <option value="Reparación General">Reparación General</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Descripción</label>
+                    <textarea id="mensaje" placeholder="Describa brevemente su problema..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">
+                    <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">Clean&Live</div>
+        <p class="footer-tagline">Soluciones Hidráulicas Profesionales · Costa Rica</p>
+        <p class="footer-copy">
+            © 2026 Clean&Live Costa Rica · <a href="tel:+50663026080">6302-6080</a>
+        </p>
+    </footer>
+    <!-- FLOATING ISLAND -->
     <div class="floating-island">
-        <a href="https://wa.me/50663026080" class="float-btn btn-wa"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:63026080" class="float-btn btn-ph"><i class="fas fa-phone-alt"></i></a>
-        <a href="https://www.facebook.com/fontaneromisterplumber" class="float-btn btn-fb"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/cleanlive_cr/" class="float-btn btn-ig"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/50663026080" target="_blank" class="island-btn island-btn--wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+50663026080" class="island-btn island-btn--ph" title="Llamar"><i class="fas fa-phone"></i></a>
+        <a href="https://facebook.com" target="_blank" class="island-btn island-btn--fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" class="island-btn island-btn--ig" title="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        AOS.init({ duration: 1000 });
-        var swiper = new Swiper(".mySwiper", {
-            spaceBetween: 20,
-            autoplay: { delay: 4000 },
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => observer.observe(el));
+        // Form → WhatsApp
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const servicio = document.getElementById('servicio').value;
+            const mensaje = document.getElementById('mensaje').value;
+            const text = `🔧 *SOLICITUD CLEAN&LIVE*%0A━━━━━━━━━━━━━━━━━%0A👤 *Nombre:* ${nombre}%0A📞 *Teléfono:* ${telefono}%0A🛠️ *Servicio:* ${servicio}%0A📝 *Detalle:* ${mensaje}`;
+            window.open(`https://wa.me/50663026080?text=${text}`, '_blank');
         });
     </script>
 </body>
