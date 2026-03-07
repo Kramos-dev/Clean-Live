@@ -7,8 +7,10 @@
     <meta name="description" content="Servicio profesional de fontanería 24/7 en Costa Rica. Detección de fugas sin romper, destaqueos urgentes. Llámenos al 6302-6080." />
     <meta name="keywords" content="fontanero costa rica, detección de fugas, destaqueos 24/7, plomero urgente, clean and live" />
     <link rel="canonical" href="https://www.cleanlivecostarica.com/fontaneria" />
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
     <style>
         :root {
             --blue-deep: #0a1628;
@@ -28,8 +30,11 @@
             --radius: 20px;
             --radius-lg: 28px;
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
+
         html { scroll-behavior: smooth; }
+
         body {
             font-family: 'Inter', -apple-system, sans-serif;
             background: var(--blue-deep);
@@ -37,37 +42,10 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
+
         /* ═══════════════════════════════════
            BACKGROUND EFFECTS
         ═══════════════════════════════════ */
-
-        .video-container {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        #bg-video {
-            position: absolute;
-            top: 50%; left: 50%;
-            min-width: 100%; min-height: 100%;
-            width: auto; height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            filter: brightness(0.4) contrast(1.1); /* Ajuste para legibilidad del texto */
-        }
-
-        /* Overlay para asegurar que el texto siempre resalte */
-        .video-overlay {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: radial-gradient(circle, rgba(10,22,40,0.2) 0%, rgba(10,22,40,0.6) 100%);
-            z-index: -1;
-        }
-        
         .bg-grid {
             position: fixed; inset: 0; z-index: 0; pointer-events: none;
             background-image:
@@ -75,12 +53,14 @@
                 linear-gradient(90deg, rgba(0,102,255,0.03) 1px, transparent 1px);
             background-size: 80px 80px;
         }
+
         .bg-orb {
             position: fixed; border-radius: 50%; pointer-events: none; z-index: 0;
             filter: blur(120px); opacity: 0.25;
         }
         .bg-orb--1 { width: 600px; height: 600px; top: -10%; left: -10%; background: var(--blue-primary); }
         .bg-orb--2 { width: 500px; height: 500px; bottom: 10%; right: -5%; background: var(--cyan); opacity: 0.12; }
+
         /* ═══════════════════════════════════
            HEADER
         ═══════════════════════════════════ */
@@ -92,17 +72,20 @@
             padding: 0 5%; height: 70px;
             display: flex; justify-content: space-between; align-items: center;
         }
+
         .logo {
             font-size: 1.5rem; font-weight: 900; letter-spacing: -0.5px;
             background: linear-gradient(135deg, var(--blue-light), var(--cyan));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+
         .header-nav { display: flex; gap: 2rem; align-items: center; }
         .header-nav a {
             color: var(--text-secondary); text-decoration: none; font-weight: 600;
             font-size: 0.9rem; transition: color 0.3s;
         }
         .header-nav a:hover { color: var(--text-primary); }
+
         .header-cta {
             background: var(--blue-primary); color: #fff !important;
             padding: 10px 22px; border-radius: 50px; font-weight: 700;
@@ -111,6 +94,7 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .header-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,102,255,0.5); }
+
         /* ═══════════════════════════════════
            HERO
         ═══════════════════════════════════ */
@@ -120,6 +104,7 @@
             justify-content: center; align-items: center;
             text-align: center; padding: 120px 20px 80px;
         }
+
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
             background: var(--surface-light); border: 1px solid var(--glass-border);
@@ -128,6 +113,7 @@
             animation: fadeUp 0.8s ease both;
         }
         .hero-badge i { font-size: 0.75rem; }
+
         .hero h1 {
             font-size: clamp(2.8rem, 8vw, 5.5rem);
             font-weight: 900; line-height: 1.0; letter-spacing: -2px;
@@ -138,16 +124,19 @@
             background: linear-gradient(135deg, var(--blue-light), var(--cyan));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+
         .hero-sub {
             font-size: 1.15rem; color: var(--text-secondary); max-width: 580px;
             line-height: 1.7; margin-bottom: 40px;
             animation: fadeUp 0.8s 0.3s ease both;
         }
         .hero-sub strong { color: var(--text-primary); }
+
         .hero-ctas {
             display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
             animation: fadeUp 0.8s 0.45s ease both;
         }
+
         .btn {
             display: inline-flex; align-items: center; gap: 10px;
             padding: 18px 36px; border-radius: 16px;
@@ -157,21 +146,25 @@
             letter-spacing: 0.5px;
         }
         .btn:hover { transform: translateY(-4px); }
+
         .btn--primary {
             background: var(--green-cta); color: #fff;
             box-shadow: 0 8px 30px rgba(0,200,83,0.3);
         }
         .btn--primary:hover { box-shadow: 0 12px 40px rgba(0,200,83,0.45); }
+
         .btn--secondary {
             background: var(--blue-primary); color: #fff;
             box-shadow: 0 8px 30px rgba(0,102,255,0.3);
         }
         .btn--secondary:hover { box-shadow: 0 12px 40px rgba(0,102,255,0.45); }
+
         .btn--outline {
             background: transparent; color: var(--text-primary);
             border: 2px solid var(--glass-border);
         }
         .btn--outline:hover { border-color: var(--blue-light); background: var(--surface-light); }
+
         /* ═══════════════════════════════════
            STATS BAR
         ═══════════════════════════════════ */
@@ -183,6 +176,7 @@
             border-bottom: 1px solid var(--glass-border);
             background: var(--glass); backdrop-filter: blur(20px);
         }
+
         .stat { text-align: center; }
         .stat-num {
             font-size: 2.5rem; font-weight: 900; letter-spacing: -1px;
@@ -190,20 +184,24 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
         .stat-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
         /* ═══════════════════════════════════
            SERVICES
         ═══════════════════════════════════ */
         .section { position: relative; z-index: 1; padding: 100px 20px; }
+
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 {
             font-size: clamp(2rem, 5vw, 3rem); font-weight: 900;
             letter-spacing: -1px; margin-bottom: 16px;
         }
         .section-header p { color: var(--text-secondary); font-size: 1.05rem; max-width: 550px; margin: 0 auto; }
+
         .services-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px; max-width: 1100px; margin: 0 auto;
         }
+
         .service-card {
             background: var(--surface);
             border: 1px solid var(--glass-border);
@@ -218,14 +216,17 @@
         }
         .service-card:hover { transform: translateY(-8px); border-color: rgba(0,102,255,0.3); }
         .service-card:hover::before { opacity: 1; }
+
         .service-icon {
             width: 64px; height: 64px; border-radius: 18px;
             background: linear-gradient(135deg, rgba(0,102,255,0.15), rgba(0,229,255,0.08));
             display: flex; align-items: center; justify-content: center;
             margin-bottom: 24px; font-size: 1.6rem; color: var(--cyan);
         }
+
         .service-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; }
         .service-card p { color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; }
+
         .service-card .service-features {
             list-style: none; margin-top: 20px; padding: 0;
         }
@@ -236,6 +237,7 @@
         }
         .service-card .service-features li:last-child { border: none; }
         .service-card .service-features li i { color: var(--green-cta); font-size: 0.8rem; }
+
         /* ═══════════════════════════════════
            TESTIMONIALS
         ═══════════════════════════════════ */
@@ -243,16 +245,21 @@
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px; max-width: 1100px; margin: 0 auto;
         }
+
         .testimonial {
             background: var(--surface); border: 1px solid var(--glass-border);
             border-radius: var(--radius-lg); padding: 36px;
         }
+
         .testimonial-stars { color: #fbbf24; font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
+
         .testimonial blockquote {
             font-size: 1rem; line-height: 1.7; color: var(--text-secondary);
             margin-bottom: 20px; font-style: italic;
         }
+
         .testimonial-author { font-weight: 700; font-size: 0.85rem; color: var(--text-primary); text-transform: uppercase; letter-spacing: 1px; }
+
         /* ═══════════════════════════════════
            CONTACT FORM
         ═══════════════════════════════════ */
@@ -261,14 +268,17 @@
             background: var(--surface); border: 1px solid var(--glass-border);
             border-radius: var(--radius-lg); padding: 48px 40px;
         }
+
         .form-wrapper h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; text-align: center; }
         .form-wrapper .form-sub { color: var(--text-secondary); text-align: center; margin-bottom: 32px; font-size: 0.95rem; }
+
         .form-group { margin-bottom: 16px; }
         .form-group label {
             display: block; font-size: 0.8rem; font-weight: 700;
             color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;
             margin-bottom: 6px;
         }
+
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -284,7 +294,9 @@
             outline: none; border-color: var(--blue-primary);
             box-shadow: 0 0 0 3px rgba(0,102,255,0.15);
         }
+
         .form-group textarea { resize: vertical; min-height: 100px; }
+
         .form-submit {
             width: 100%; padding: 18px; border: none; border-radius: 16px;
             background: var(--green-cta); color: #fff;
@@ -294,6 +306,7 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .form-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,200,83,0.35); }
+
         /* ═══════════════════════════════════
            FLOATING ISLAND
         ═══════════════════════════════════ */
@@ -307,6 +320,7 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.4);
             animation: islandIn 0.6s 1s ease both;
         }
+
         .island-btn {
             width: 50px; height: 50px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
@@ -314,10 +328,12 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .island-btn:hover { transform: scale(1.12); }
+
         .island-btn--wa { background: var(--green-cta); box-shadow: 0 4px 15px rgba(0,200,83,0.3); }
         .island-btn--ph { background: var(--blue-primary); box-shadow: 0 4px 15px rgba(0,102,255,0.3); }
         .island-btn--fb { background: #1877f2; box-shadow: 0 4px 15px rgba(24,119,242,0.3); }
         .island-btn--ig { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); box-shadow: 0 4px 15px rgba(220,39,67,0.3); }
+
         /* ═══════════════════════════════════
            FOOTER
         ═══════════════════════════════════ */
@@ -327,15 +343,18 @@
             border-top: 1px solid var(--glass-border);
             background: var(--surface);
         }
+
         .footer-logo {
             font-size: 1.8rem; font-weight: 900;
             background: linear-gradient(135deg, var(--blue-light), var(--cyan));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             margin-bottom: 12px;
         }
+
         .footer-tagline { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px; }
         .footer-copy { color: var(--text-muted); font-size: 0.8rem; }
         .footer-copy a { color: var(--cyan); text-decoration: none; }
+
         /* ═══════════════════════════════════
            ANIMATIONS
         ═══════════════════════════════════ */
@@ -347,8 +366,10 @@
             from { opacity: 0; transform: translateX(-50%) translateY(40px); }
             to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
+
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
         .reveal.visible { opacity: 1; transform: translateY(0); }
+
         /* ═══════════════════════════════════
            RESPONSIVE
         ═══════════════════════════════════ */
@@ -368,16 +389,11 @@
 </head>
 <body>
 
-    <div class="video-container">
-        <video autoplay muted loop playsinline id="bg-video">
-            <source src="Fontanero_Repara_Fuga_de_Agua.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay"></div>
-    </div>
     <!-- BG Effects -->
     <div class="bg-grid"></div>
     <div class="bg-orb bg-orb--1"></div>
     <div class="bg-orb bg-orb--2"></div>
+
     <!-- HEADER -->
     <header>
         <div class="logo">Clean&Live</div>
@@ -388,19 +404,23 @@
             <a href="tel:+50663026080" class="header-cta"><i class="fas fa-phone"></i> 6302-6080</a>
         </nav>
     </header>
+
     <!-- HERO -->
     <section class="hero">
         <div class="hero-badge">
             <i class="fas fa-shield-halved"></i>
             Servicio Profesional 24/7 · Costa Rica
         </div>
+
         <h1>
             Fontanería<br>
             <span class="gradient-text">de Alta Precisión</span>
         </h1>
+
         <p class="hero-sub">
             Somos <strong>Clean&Live Costa Rica</strong>. Expertos en detección de fugas sin romper y destaqueos urgentes con respuesta inmediata.
         </p>
+
         <div class="hero-ctas">
             <a href="https://wa.me/50663026080?text=Hola%20Clean%26Live%2C%20necesito%20un%20fontanero%20urgente" class="btn btn--primary" target="_blank">
                 <i class="fab fa-whatsapp"></i> WhatsApp Urgente
@@ -413,6 +433,7 @@
             </a>
         </div>
     </section>
+
     <!-- STATS -->
     <div class="stats-bar">
         <div class="stat">
@@ -432,12 +453,14 @@
             <div class="stat-label">Garantizado</div>
         </div>
     </div>
+
     <!-- SERVICES -->
     <section class="section" id="servicios">
         <div class="section-header reveal">
             <h2>Nuestros <span class="gradient-text">Servicios</span></h2>
             <p>Soluciones profesionales con tecnología de punta y personal certificado.</p>
         </div>
+
         <div class="services-grid">
             <div class="service-card reveal">
                 <div class="service-icon"><i class="fas fa-magnifying-glass"></i></div>
@@ -450,6 +473,7 @@
                     <li><i class="fas fa-check"></i> Informe digital del trabajo</li>
                 </ul>
             </div>
+
             <div class="service-card reveal">
                 <div class="service-icon"><i class="fas fa-toilet"></i></div>
                 <h3>Destaqueos 24/7</h3>
@@ -461,6 +485,7 @@
                     <li><i class="fas fa-check"></i> Disponible domingos y feriados</li>
                 </ul>
             </div>
+
             <div class="service-card reveal">
                 <div class="service-icon"><i class="fas fa-faucet-drip"></i></div>
                 <h3>Reparación General</h3>
@@ -474,12 +499,14 @@
             </div>
         </div>
     </section>
+
     <!-- TESTIMONIALS -->
     <section class="section" id="testimonios">
         <div class="section-header reveal">
             <h2>Clientes <span class="gradient-text">Satisfechos</span></h2>
             <p>La confianza de nuestros clientes es nuestra mejor carta de presentación.</p>
         </div>
+
         <div class="testimonials-grid">
             <div class="testimonial reveal">
                 <div class="testimonial-stars">★★★★★</div>
@@ -498,11 +525,13 @@
             </div>
         </div>
     </section>
+
     <!-- CONTACT -->
     <section class="section" id="contacto">
         <div class="form-wrapper reveal">
             <h3>Solicite su Cotización</h3>
             <p class="form-sub">Respuesta en menos de 15 minutos</p>
+
             <form id="contactForm">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
@@ -532,6 +561,7 @@
             </form>
         </div>
     </section>
+
     <!-- FOOTER -->
     <footer>
         <div class="footer-logo">Clean&Live</div>
@@ -540,6 +570,7 @@
             © 2026 Clean&Live Costa Rica · <a href="tel:+50663026080">6302-6080</a>
         </p>
     </footer>
+
     <!-- FLOATING ISLAND -->
     <div class="floating-island">
         <a href="https://wa.me/50663026080" target="_blank" class="island-btn island-btn--wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -547,6 +578,7 @@
         <a href="https://facebook.com" target="_blank" class="island-btn island-btn--fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://instagram.com" target="_blank" class="island-btn island-btn--ig" title="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
+
     <script>
         // Scroll reveal
         const revealElements = document.querySelectorAll('.reveal');
@@ -559,6 +591,7 @@
             });
         }, { threshold: 0.15 });
         revealElements.forEach(el => observer.observe(el));
+
         // Form → WhatsApp
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -566,6 +599,7 @@
             const telefono = document.getElementById('telefono').value;
             const servicio = document.getElementById('servicio').value;
             const mensaje = document.getElementById('mensaje').value;
+
             const text = `🔧 *SOLICITUD CLEAN&LIVE*%0A━━━━━━━━━━━━━━━━━%0A👤 *Nombre:* ${nombre}%0A📞 *Teléfono:* ${telefono}%0A🛠️ *Servicio:* ${servicio}%0A📝 *Detalle:* ${mensaje}`;
             window.open(`https://wa.me/50663026080?text=${text}`, '_blank');
         });
