@@ -3,638 +3,241 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clean&Live Costa Rica | Fontanero 24/7 & Detección de Fugas</title>
-    <meta name="description" content="Servicio profesional de fontanería 24/7 en Costa Rica. Detección de fugas sin romper, destaqueos urgentes. Llámenos al 6302-6080." />
-    <meta name="keywords" content="fontanero costa rica, detección de fugas, destaqueos 24/7, plomero urgente, clean and live" />
-    <link rel="canonical" href="https://www.cleanlivecostarica.com/fontaneria" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <title>Clean&Live Costa Rica | Fontanería 24/7 & Detección de Fugas</title>
+    <meta name="description" content="Servicio profesional de fontanería 24/7 en Costa Rica. Detección de fugas con geófono y destaqueos urgentes. ¡Llegamos en 15 minutos!" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<!-- Event snippet for Compra conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17977637656"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17977637656');
+    </script>
+
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17977637656/BM3uCOOK2oIcEJj2s_xC',
+          'event_callback': callback
+      });
+      return false;
     }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17977637656/BM3uCOOK2oIcEJj2s_xC',
-      'transaction_id': '',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
+    </script>
 
     <style>
         :root {
             --blue-deep: #0a1628;
             --blue-primary: #0066ff;
             --blue-light: #3d8bff;
-            --blue-glow: #0088ff;
             --green-cta: #00c853;
-            --green-dark: #00a844;
             --cyan: #00e5ff;
             --surface: #0d1f3c;
-            --surface-light: #132744;
             --glass: rgba(13, 31, 60, 0.85);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.1);
             --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.65);
-            --text-muted: rgba(255, 255, 255, 0.4);
-            --radius: 20px;
+            --text-secondary: rgba(255, 255, 255, 0.7);
             --radius-lg: 28px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
         html { scroll-behavior: smooth; }
-
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--blue-deep);
             color: var(--text-primary);
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
         }
 
-        /* ═══════════════════════════════════
-           BACKGROUND EFFECTS
-        ═══════════════════════════════════ */
+        /* Fondo Animado Simple */
         .bg-grid {
-            position: fixed; inset: 0; z-index: 0; pointer-events: none;
-            background-image:
-                linear-gradient(rgba(0,102,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,102,255,0.03) 1px, transparent 1px);
-            background-size: 80px 80px;
+            position: fixed; inset: 0; z-index: -1;
+            background-image: radial-gradient(var(--blue-primary) 0.5px, transparent 0.5px);
+            background-size: 40px 40px; opacity: 0.15;
         }
 
-        .bg-orb {
-            position: fixed; border-radius: 50%; pointer-events: none; z-index: 0;
-            filter: blur(120px); opacity: 0.25;
-        }
-        .bg-orb--1 { width: 600px; height: 600px; top: -10%; left: -10%; background: var(--blue-primary); }
-        .bg-orb--2 { width: 500px; height: 500px; bottom: 10%; right: -5%; background: var(--cyan); opacity: 0.12; }
-
-        /* ═══════════════════════════════════
-           HEADER
-        ═══════════════════════════════════ */
+        /* Header */
         header {
             position: sticky; top: 0; z-index: 100;
-            background: var(--glass);
-            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            background: var(--glass); backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass-border);
-            padding: 0 5%; height: 70px;
-            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
         }
+        .logo { font-size: 1.5rem; font-weight: 900; color: var(--cyan); text-decoration: none; letter-spacing: -1px; }
+        .header-phone { color: white; font-weight: 800; text-decoration: none; font-size: 0.9rem; background: var(--blue-primary); padding: 8px 15px; border-radius: 50px; }
 
-        .logo {
-            font-size: 1.5rem; font-weight: 900; letter-spacing: -0.5px;
-            background: linear-gradient(135deg, var(--blue-light), var(--cyan));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-
-        .header-nav { display: flex; gap: 2rem; align-items: center; }
-        .header-nav a {
-            color: var(--text-secondary); text-decoration: none; font-weight: 600;
-            font-size: 0.9rem; transition: color 0.3s;
-        }
-        .header-nav a:hover { color: var(--text-primary); }
-
-        .header-cta {
-            background: var(--blue-primary); color: #fff !important;
-            padding: 10px 22px; border-radius: 50px; font-weight: 700;
-            text-decoration: none; font-size: 0.85rem;
-            box-shadow: 0 4px 20px rgba(0,102,255,0.35);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .header-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,102,255,0.5); }
-
-        /* ═══════════════════════════════════
-           HERO
-        ═══════════════════════════════════ */
-        .hero {
-            position: relative; z-index: 1;
-            min-height: 90vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            text-align: center; padding: 120px 20px 80px;
-        }
-
+        /* Hero Section */
+        .hero { padding: 100px 20px 60px; text-align: center; max-width: 900px; margin: 0 auto; }
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
-            background: var(--surface-light); border: 1px solid var(--glass-border);
-            padding: 8px 20px; border-radius: 50px; margin-bottom: 28px;
-            font-size: 0.85rem; font-weight: 600; color: var(--cyan);
-            animation: fadeUp 0.8s ease both;
+            background: rgba(0, 229, 255, 0.1); border: 1px solid var(--cyan);
+            padding: 8px 20px; border-radius: 50px; margin-bottom: 30px;
+            font-size: 0.85rem; font-weight: 700; color: var(--cyan);
         }
-        .hero-badge i { font-size: 0.75rem; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; letter-spacing: -2px; }
+        .hero h1 span { background: linear-gradient(135deg, #fff, var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 40px; }
 
-        .hero h1 {
-            font-size: clamp(2.8rem, 8vw, 5.5rem);
-            font-weight: 900; line-height: 1.0; letter-spacing: -2px;
-            margin-bottom: 24px;
-            animation: fadeUp 0.8s 0.15s ease both;
-        }
-        .hero h1 .gradient-text {
-            background: linear-gradient(135deg, var(--blue-light), var(--cyan));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-
-        .hero-sub {
-            font-size: 1.15rem; color: var(--text-secondary); max-width: 580px;
-            line-height: 1.7; margin-bottom: 40px;
-            animation: fadeUp 0.8s 0.3s ease both;
-        }
-        .hero-sub strong { color: var(--text-primary); }
-
-        .hero-ctas {
-            display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
-            animation: fadeUp 0.8s 0.45s ease both;
-        }
-
+        /* Botones de Acción */
+        .hero-ctas { display: flex; flex-direction: column; gap: 15px; align-items: center; }
         .btn {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 18px 36px; border-radius: 16px;
-            text-decoration: none; font-weight: 800; font-size: 1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none; cursor: pointer; text-transform: uppercase;
-            letter-spacing: 0.5px;
+            width: 100%; max-width: 350px; padding: 20px; border-radius: 18px;
+            text-decoration: none; font-weight: 800; text-transform: uppercase;
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            transition: all 0.3s ease; font-size: 1rem;
         }
-        .btn:hover { transform: translateY(-4px); }
+        .btn--wa { background: var(--green-cta); color: white; box-shadow: 0 10px 30px rgba(0, 200, 83, 0.4); }
+        .btn--ph { background: var(--blue-primary); color: white; box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3); }
+        .btn:hover { transform: translateY(-5px); filter: brightness(1.1); }
 
-        .btn--primary {
-            background: var(--green-cta); color: #fff;
-            box-shadow: 0 8px 30px rgba(0,200,83,0.3);
+        /* Stats Bar */
+        .stats { display: flex; justify-content: center; gap: 30px; padding: 40px 20px; flex-wrap: wrap; opacity: 0.8; }
+        .stat-item { text-align: center; }
+        .stat-item b { display: block; font-size: 1.5rem; color: var(--cyan); }
+        .stat-item span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Trust Methods */
+        .trust-methods { text-align: center; padding: 20px; border-top: 1px solid var(--glass-border); margin-top: 20px; }
+        .trust-methods i { font-size: 1.8rem; margin: 0 10px; opacity: 0.5; transition: 0.3s; }
+        .trust-methods i:hover { opacity: 1; color: var(--cyan); }
+
+        /* Formulario */
+        .contact-section { padding: 80px 20px; background: rgba(0,0,0,0.2); }
+        .form-container {
+            max-width: 550px; margin: 0 auto; background: var(--surface);
+            padding: 40px; border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
-        .btn--primary:hover { box-shadow: 0 12px 40px rgba(0,200,83,0.45); }
-
-        .btn--secondary {
-            background: var(--blue-primary); color: #fff;
-            box-shadow: 0 8px 30px rgba(0,102,255,0.3);
+        .form-container h2 { text-align: center; margin-bottom: 30px; font-weight: 800; }
+        input, select, textarea {
+            width: 100%; padding: 15px; margin-bottom: 20px; border-radius: 12px;
+            border: 1px solid var(--glass-border); background: #071222; color: white;
+            font-family: inherit; font-size: 1rem;
         }
-        .btn--secondary:hover { box-shadow: 0 12px 40px rgba(0,102,255,0.45); }
-
-        .btn--outline {
-            background: transparent; color: var(--text-primary);
-            border: 2px solid var(--glass-border);
+        input:focus, select:focus { border-color: var(--cyan); outline: none; }
+        .submit-btn {
+            width: 100%; background: var(--green-cta); color: white; border: none;
+            padding: 20px; border-radius: 15px; font-weight: 900; cursor: pointer;
+            text-transform: uppercase; font-size: 1rem; transition: 0.3s;
         }
-        .btn--outline:hover { border-color: var(--blue-light); background: var(--surface-light); }
+        .submit-btn:hover { background: #00e676; transform: scale(1.02); }
 
-        /* ═══════════════════════════════════
-           STATS BAR
-        ═══════════════════════════════════ */
-        .stats-bar {
-            position: relative; z-index: 1;
-            display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
-            padding: 40px 20px;
-            border-top: 1px solid var(--glass-border);
-            border-bottom: 1px solid var(--glass-border);
-            background: var(--glass); backdrop-filter: blur(20px);
-        }
-
-        .stat { text-align: center; }
-        .stat-num {
-            font-size: 2.5rem; font-weight: 900; letter-spacing: -1px;
-            background: linear-gradient(135deg, var(--cyan), var(--blue-light));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .stat-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
-
-        /* ═══════════════════════════════════
-           SERVICES
-        ═══════════════════════════════════ */
-        .section { position: relative; z-index: 1; padding: 100px 20px; }
-
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 {
-            font-size: clamp(2rem, 5vw, 3rem); font-weight: 900;
-            letter-spacing: -1px; margin-bottom: 16px;
-        }
-        .section-header p { color: var(--text-secondary); font-size: 1.05rem; max-width: 550px; margin: 0 auto; }
-
-        .services-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px; max-width: 1100px; margin: 0 auto;
-        }
-
-        .service-card {
-            background: var(--surface);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg); padding: 44px 36px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative; overflow: hidden;
-        }
-        .service-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: linear-gradient(90deg, var(--blue-primary), var(--cyan));
-            opacity: 0; transition: opacity 0.4s;
-        }
-        .service-card:hover { transform: translateY(-8px); border-color: rgba(0,102,255,0.3); }
-        .service-card:hover::before { opacity: 1; }
-
-        .service-icon {
-            width: 64px; height: 64px; border-radius: 18px;
-            background: linear-gradient(135deg, rgba(0,102,255,0.15), rgba(0,229,255,0.08));
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 24px; font-size: 1.6rem; color: var(--cyan);
-        }
-
-        .service-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; }
-        .service-card p { color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; }
-
-        .service-card .service-features {
-            list-style: none; margin-top: 20px; padding: 0;
-        }
-        .service-card .service-features li {
-            padding: 8px 0; color: var(--text-secondary); font-size: 0.9rem;
-            display: flex; align-items: center; gap: 10px;
-            border-bottom: 1px solid var(--glass-border);
-        }
-        .service-card .service-features li:last-child { border: none; }
-        .service-card .service-features li i { color: var(--green-cta); font-size: 0.8rem; }
-
-        /* ═══════════════════════════════════
-           TESTIMONIALS
-        ═══════════════════════════════════ */
-        .testimonials-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px; max-width: 1100px; margin: 0 auto;
-        }
-
-        .testimonial {
-            background: var(--surface); border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg); padding: 36px;
-        }
-
-        .testimonial-stars { color: #fbbf24; font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
-
-        .testimonial blockquote {
-            font-size: 1rem; line-height: 1.7; color: var(--text-secondary);
-            margin-bottom: 20px; font-style: italic;
-        }
-
-        .testimonial-author { font-weight: 700; font-size: 0.85rem; color: var(--text-primary); text-transform: uppercase; letter-spacing: 1px; }
-
-        /* ═══════════════════════════════════
-           CONTACT FORM
-        ═══════════════════════════════════ */
-        .form-wrapper {
-            max-width: 560px; margin: 0 auto;
-            background: var(--surface); border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg); padding: 48px 40px;
-        }
-
-        .form-wrapper h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; text-align: center; }
-        .form-wrapper .form-sub { color: var(--text-secondary); text-align: center; margin-bottom: 32px; font-size: 0.95rem; }
-
-        .form-group { margin-bottom: 16px; }
-        .form-group label {
-            display: block; font-size: 0.8rem; font-weight: 700;
-            color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;
-            margin-bottom: 6px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%; padding: 14px 18px;
-            background: var(--blue-deep); border: 1px solid var(--glass-border);
-            border-radius: 14px; color: var(--text-primary);
-            font-family: 'Inter', sans-serif; font-size: 0.95rem;
-            transition: border-color 0.3s;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none; border-color: var(--blue-primary);
-            box-shadow: 0 0 0 3px rgba(0,102,255,0.15);
-        }
-
-        .form-group textarea { resize: vertical; min-height: 100px; }
-
-        .form-submit {
-            width: 100%; padding: 18px; border: none; border-radius: 16px;
-            background: var(--green-cta); color: #fff;
-            font-family: 'Inter', sans-serif; font-weight: 800;
-            font-size: 1rem; cursor: pointer; text-transform: uppercase;
-            letter-spacing: 0.5px; margin-top: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .form-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,200,83,0.35); }
-
-        /* ═══════════════════════════════════
-           FLOATING ISLAND
-        ═══════════════════════════════════ */
+        /* Floating Island */
         .floating-island {
-            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
-            z-index: 1000;
-            background: var(--glass); backdrop-filter: blur(24px);
-            border: 1px solid var(--glass-border);
-            padding: 10px 16px; border-radius: 100px;
-            display: flex; gap: 10px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-            animation: islandIn 0.6s 1s ease both;
+            position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%);
+            background: var(--glass); backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border); padding: 10px 20px;
+            border-radius: 100px; display: flex; gap: 15px; z-index: 1000;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
         }
-
-        .island-btn {
-            width: 50px; height: 50px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: #fff; font-size: 1.2rem; text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
+        .island-link {
+            width: 48px; height: 48px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; color: white;
+            text-decoration: none; font-size: 1.2rem; transition: 0.3s;
         }
-        .island-btn:hover { transform: scale(1.12); }
+        .island-link:hover { transform: scale(1.15) translateY(-5px); }
 
-        .island-btn--wa { background: var(--green-cta); box-shadow: 0 4px 15px rgba(0,200,83,0.3); }
-        .island-btn--ph { background: var(--blue-primary); box-shadow: 0 4px 15px rgba(0,102,255,0.3); }
-        .island-btn--fb { background: #1877f2; box-shadow: 0 4px 15px rgba(24,119,242,0.3); }
-        .island-btn--ig { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); box-shadow: 0 4px 15px rgba(220,39,67,0.3); }
-
-        /* ═══════════════════════════════════
-           FOOTER
-        ═══════════════════════════════════ */
-        footer {
-            position: relative; z-index: 1;
-            text-align: center; padding: 60px 20px 120px;
-            border-top: 1px solid var(--glass-border);
-            background: var(--surface);
-        }
-
-        .footer-logo {
-            font-size: 1.8rem; font-weight: 900;
-            background: linear-gradient(135deg, var(--blue-light), var(--cyan));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
-        }
-
-        .footer-tagline { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px; }
-        .footer-copy { color: var(--text-muted); font-size: 0.8rem; }
-        .footer-copy a { color: var(--cyan); text-decoration: none; }
-
-        /* ═══════════════════════════════════
-           ANIMATIONS
-        ═══════════════════════════════════ */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes islandIn {
-            from { opacity: 0; transform: translateX(-50%) translateY(40px); }
-            to { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
-
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        /* ═══════════════════════════════════
-           RESPONSIVE
-        ═══════════════════════════════════ */
-        @media (max-width: 768px) {
-            .header-nav { display: none; }
-            .hero { min-height: auto; padding: 100px 20px 60px; }
-            .hero h1 { font-size: 2.5rem; letter-spacing: -1px; }
-            .hero-ctas { flex-direction: column; width: 100%; max-width: 360px; }
-            .btn { width: 100%; justify-content: center; }
-            .stats-bar { gap: 24px; }
-            .stat-num { font-size: 2rem; }
-            .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
-            .form-wrapper { padding: 32px 24px; }
-            .section { padding: 60px 16px; }
+        @media (min-width: 768px) {
+            .hero-ctas { flex-direction: row; justify-content: center; }
+            .btn { width: 300px; }
         }
     </style>
 </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17977637656"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17977637656');
-</script>
 <body>
-
-    <!-- BG Effects -->
     <div class="bg-grid"></div>
-    <div class="bg-orb bg-orb--1"></div>
-    <div class="bg-orb bg-orb--2"></div>
 
-    <!-- HEADER -->
     <header>
-        <div class="logo">Clean&Live</div>
-        <nav class="header-nav">
-            <a href="#servicios">Servicios</a>
-            <a href="#testimonios">Clientes</a>
-            <a href="#contacto">Contacto</a>
-            <a href="tel:+50663026080" class="header-cta"><i class="fas fa-phone"></i> 6302-6080</a>
-        </nav>
+        <a href="#" class="logo">CLEAN&LIVE</a>
+        <a href="tel:+50663026080" onclick="return gtag_report_conversion('tel:+50663026080');" class="header-phone">
+            <i class="fas fa-phone"></i> 6302-6080
+        </a>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
-        <div class="hero-badge">
-            <i class="fas fa-shield-halved"></i>
-            20 Años de Experiencia en Fontanería · Costa Rica
+        <div class="hero-badge">🟢 TÉCNICOS DISPONIBLES EN EL GAM</div>
+        <h1>Fontanería Profesional <span>Sin Romper</span></h1>
+        <p>Especialistas en detección de fugas con geófono digital y destaqueos de emergencia. Respuesta inmediata 24/7 en San José, Heredia, Alajuela y Cartago.</p>
+        
+        <div class="hero-ctas">
+            <a href="https://wa.me/50663026080?text=Hola%20Clean%26Live%2C%20necesito%20asistencia%20con%20una%20emergencia" 
+               onclick="return gtag_report_conversion('https://wa.me/50663026080?text=Hola%20Clean%26Live%2C%20necesito%20asistencia%20con%20una%20emergencia');" 
+               class="btn btn--wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp Urgente
+            </a>
+            
+            <a href="tel:+50663026080" 
+               onclick="return gtag_report_conversion('tel:+50663026080');" 
+               class="btn btn--ph">
+                <i class="fas fa-phone-alt"></i> Llamar Ahora
+            </a>
         </div>
 
-        <h1>
-            Fontanería<br>
-            <span class="gradient-text">Fugas  Destaqueos  Reparaciones</span> 24/7
-        </h1>
-
-        <p class="hero-sub">
-            Somos <strong>Clean&Live Costa Rica</strong>. Expertos en detección de fugas sin romper y destaqueos urgentes con respuesta inmediata.
-        </p>
-
-       <div class="hero-ctas">
-    <a href="https://wa.me/50663026080?text=Hola%20Clean%26Live%2C%20necesito%20un%20fontanero%20urgente" 
-       onclick="return gtag_report_conversion('https://wa.me/50663026080?text=Hola%20Clean%26Live%2C%20necesito%20un%20fontanero%20urgente');" 
-       class="btn btn--primary" 
-       target="_blank">
-        <i class="fab fa-whatsapp"></i> WhatsApp Urgente
-    </a>
-
-    <a href="tel:+50663026080" 
-       onclick="return gtag_report_conversion('tel:+50663026080');" 
-       class="btn btn--secondary">
-        <i class="fas fa-phone"></i> Llamar Ahora
-    </a>
-
-    <a href="#servicios" class="btn btn--outline">
-        <i class="fas fa-wrench"></i> Ver Servicios
-    </a>
-</div>
-    </section>
-
-    <!-- STATS -->
-    <div class="stats-bar">
-        <div class="stat">
-            <div class="stat-num">24/7</div>
-            <div class="stat-label">Disponibilidad</div>
-        </div>
-        <div class="stat">
-            <div class="stat-num">500+</div>
-            <div class="stat-label">Trabajos Realizados</div>
-        </div>
-        <div class="stat">
-            <div class="stat-num">15min</div>
-            <div class="stat-label">Tiempo Respuesta</div>
-        </div>
-        <div class="stat">
-            <div class="stat-num">100%</div>
-            <div class="stat-label">Garantizado</div>
-        </div>
-    </div>
-
-    <!-- SERVICES -->
-    <section class="section" id="servicios">
-        <div class="section-header reveal">
-            <h2>Nuestros <span class="gradient-text">Servicios</span></h2>
-            <p>Soluciones profesionales con tecnología de punta y personal certificado.</p>
+        <div class="stats">
+            <div class="stat-item"><b>15 Min</b><span>Respuesta</span></div>
+            <div class="stat-item"><b>20 Años</b><span>Experiencia</span></div>
+            <div class="stat-item"><b>100%</b><span>Garantía</span></div>
         </div>
 
-        <div class="services-grid">
-            <div class="service-card reveal">
-                <div class="service-icon"><i class="fas fa-magnifying-glass"></i></div>
-                <h3>Detección de Fugas</h3>
-                <p>Localización exacta con geófonos digitales y cámaras termográficas. No rompemos si no sabemos dónde está.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Geófonos de última generación</li>
-                    <li><i class="fas fa-check"></i> Cámara termográfica</li>
-                    <li><i class="fas fa-check"></i> Sin romper paredes innecesariamente</li>
-                    <li><i class="fas fa-check"></i> Informe digital del trabajo</li>
-                </ul>
-            </div>
-
-            <div class="service-card reveal">
-                <div class="service-icon"><i class="fas fa-toilet"></i></div>
-                <h3>Destaqueos 24/7</h3>
-                <p>Respuesta inmediata para emergencias en fregaderos, inodoros, cajas de registro y tuberías principales.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Respuesta en menos de 15 min</li>
-                    <li><i class="fas fa-check"></i> Equipos hidro-jet profesionales</li>
-                    <li><i class="fas fa-check"></i> Cámaras de inspección</li>
-                    <li><i class="fas fa-check"></i> Disponible domingos y feriados</li>
-                </ul>
-            </div>
-
-            <div class="service-card reveal">
-                <div class="service-icon"><i class="fas fa-faucet-drip"></i></div>
-                <h3>Reparación General</h3>
-                <p>Instalación y reparación de tuberías, grifería, calentadores y sistemas hidráulicos completos.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Cambio de tuberías PVC/cobre</li>
-                    <li><i class="fas fa-check"></i> Instalación de grifería</li>
-                    <li><i class="fas fa-check"></i> Reparación de calentadores</li>
-                    <li><i class="fas fa-check"></i> Garantía por escrito</li>
-                </ul>
-            </div>
+        <div class="trust-methods">
+            <i class="fab fa-cc-visa" title="Visa"></i>
+            <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+            <i class="fas fa-mobile-alt" title="Sinpe Móvil"></i>
+            <p style="font-size: 0.7rem; margin-top: 10px; color: var(--text-secondary);">Aceptamos todas las tarjetas y Sinpe Móvil</p>
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="section" id="testimonios">
-        <div class="section-header reveal">
-            <h2>Clientes <span class="gradient-text">Satisfechos</span></h2>
-            <p>La confianza de nuestros clientes es nuestra mejor carta de presentación.</p>
-        </div>
-
-        <div class="testimonials-grid">
-            <div class="testimonial reveal">
-                <div class="testimonial-stars">★★★★★</div>
-                <blockquote>"Llegaron a Curridabat en 12 minutos y solucionaron la fuga sin romper nada. Increíble tecnología y muy profesionales."</blockquote>
-                <div class="testimonial-author">— Jorge Mora</div>
-            </div>
-            <div class="testimonial reveal">
-                <div class="testimonial-stars">★★★★★</div>
-                <blockquote>"Domingo a las 10pm se nos tapó el fregadero. Nos atendieron de inmediato. El mejor servicio 24/7 de Costa Rica."</blockquote>
-                <div class="testimonial-author">— Andrea Solano</div>
-            </div>
-            <div class="testimonial reveal">
-                <div class="testimonial-stars">★★★★★</div>
-                <blockquote>"Detectaron una fuga oculta que llevábamos meses buscando. Ahorramos miles en recibo de agua. 100% recomendados."</blockquote>
-                <div class="testimonial-author">— Carlos Rodríguez</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contacto">
-        <div class="form-wrapper reveal">
-            <h3>Solicite su Cotización</h3>
-            <p class="form-sub">Respuesta en menos de 15 minutos</p>
-
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" placeholder="Su nombre completo" required />
-                </div>
-                <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" placeholder="8888-8888" required />
-                </div>
-                <div class="form-group">
-                    <label for="servicio">Servicio</label>
-                    <select id="servicio" required>
-                        <option value="">Seleccione un servicio</option>
-                        <option value="Detección de Fugas">Detección de Fugas</option>
-                        <option value="Destaqueo Urgente">Destaqueo Urgente</option>
-                        <option value="Reparación General">Reparación General</option>
-                        <option value="Otro">Otro</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Descripción</label>
-                    <textarea id="mensaje" placeholder="Describa brevemente su problema..."></textarea>
-                </div>
-                <button type="submit" class="form-submit">
-                    <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
-                </button>
+    <section class="contact-section" id="contacto">
+        <div class="form-container">
+            <h2>Cotización Inmediata</h2>
+            <form id="waForm">
+                <input type="text" id="nombre" placeholder="Su Nombre" required>
+                <input type="tel" id="telefono" placeholder="Su Teléfono" required>
+                <select id="servicio" required>
+                    <option value="" disabled selected>Seleccione Servicio</option>
+                    <option value="Detección de Fugas">Detección de Fugas (Geófono)</option>
+                    <option value="Destaqueos">Destaqueos Urgentes</option>
+                    <option value="Reparaciones">Reparación de Tuberías</option>
+                </select>
+                <textarea id="detalle" placeholder="¿Cuál es el problema? (Ej: Fuga en jardín, fregadero tapado)"></textarea>
+                <button type="submit" class="submit-btn">ENVIAR A WHATSAPP</button>
             </form>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-logo">Clean&Live</div>
-        <p class="footer-tagline">Soluciones Hidráulicas Profesionales · Costa Rica</p>
-        <p class="footer-copy">
-            © 2026 Clean&Live Costa Rica · <a href="tel:+50663026080">6302-6080</a>
-        </p>
-    </footer>
-
-    <!-- FLOATING ISLAND -->
     <div class="floating-island">
-        <a href="https://wa.me/50663026080" target="_blank" class="island-btn island-btn--wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:+50663026080" class="island-btn island-btn--ph" title="Llamar"><i class="fas fa-phone"></i></a>
-        <a href="https://facebook.com" target="_blank" class="island-btn island-btn--fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com" target="_blank" class="island-btn island-btn--ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/50663026080" onclick="return gtag_report_conversion('https://wa.me/50663026080');" class="island-link" style="background: #25d366;" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+50663026080" onclick="return gtag_report_conversion('tel:+50663026080');" class="island-link" style="background: var(--blue-primary);" title="Llamada">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://facebook.com" class="island-link" style="background: #1877f2;" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
     </div>
 
     <script>
-        // Scroll reveal
-        const revealElements = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 100);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-        revealElements.forEach(el => observer.observe(el));
-
-        // Form → WhatsApp
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Lógica para el formulario que envía a WhatsApp y activa Google Ads
+        document.getElementById('waForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
             const nombre = document.getElementById('nombre').value;
-            const telefono = document.getElementById('telefono').value;
             const servicio = document.getElementById('servicio').value;
-            const mensaje = document.getElementById('mensaje').value;
-
-            const text = `🔧 *SOLICITUD CLEAN&LIVE*%0A━━━━━━━━━━━━━━━━━%0A👤 *Nombre:* ${nombre}%0A📞 *Teléfono:* ${telefono}%0A🛠️ *Servicio:* ${servicio}%0A📝 *Detalle:* ${mensaje}`;
-            window.open(`https://wa.me/50663026080?text=${text}`, '_blank');
+            const detalle = document.getElementById('detalle').value;
+            
+            const mensajeFinal = `Hola Clean&Live, soy ${nombre}. Necesito: ${servicio}. Detalle: ${detalle}`;
+            const urlWhatsApp = `https://wa.me/50663026080?text=${encodeURIComponent(mensajeFinal)}`;
+            
+            // Llama a la conversión de Google Ads y redirige
+            gtag_report_conversion(urlWhatsApp);
         });
     </script>
 </body>
