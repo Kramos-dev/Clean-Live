@@ -1,109 +1,416 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clean&Live | Fontanería Profesional y Detección de Fugas 24/7 en Costa Rica</title>
-    <meta name="description" content="Servicio de fontanería profesional 24/7 en el GAM. Detección de fugas con geófono digital sin romper paredes. Destaqueos urgentes y reparaciones garantizadas.">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --dark: #050a14;
-            --blue-card: #0d1424;
-            --cyan: #00e5ff;
-            --green: #22c55e;
-            --white: #ffffff;
-            --gradient: linear-gradient(135deg, #0066ff, #00e5ff);
-        }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--dark); color: var(--white); line-height: 1.6; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        /* --- NAVEGACIÓN --- */
-        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; background: rgba(5,10,20,0.9); backdrop-filter: blur(10px); }
-        .logo { font-size: 1.5rem; font-weight: 900; color: var(--cyan); }
+<title>Clean&Live Costa Rica | Fontanero 24/7 | Detección de Fugas</title>
 
-        /* --- HERO --- */
-        .hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; position: relative; }
-        .hero-video { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.2; }
-        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; line-height: 1; margin-bottom: 20px; }
-        h1 span { color: var(--cyan); }
-        .cta-btn { padding: 20px 40px; border-radius: 15px; font-weight: 800; text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; margin: 10px; }
-        .btn-wa { background: var(--green); }
-        .btn-call { background: var(--cyan); color: black; }
+<meta name="description" content="Fontanero 24/7 en Costa Rica. Clean&Live especialistas en detección de fugas sin romper y destaqueos urgentes. Llame al 6302-6080">
+<meta name="keywords" content="fontanero costa rica, deteccion de fugas, destaqueos, plomero urgente, clean&live">
+<link rel="canonical" href="https://www.cleanlivecostarica.com/fontaneria">
 
-        /* --- SECCIONES AMPLIADAS --- */
-        .section { padding: 80px 5%; max-width: 1200px; margin: auto; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        
-        /* --- ESTILOS DE TARJETAS --- */
-        .card { background: var(--blue-card); padding: 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); border-color: var(--cyan); }
-        
-        /* --- FAQ / POR QUÉ ELEGIRNOS --- */
-        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 10px; }
-        
-        /* --- BOTONES FLOTANTES --- */
-        .floating { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
-        .f-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; color: white; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        /* NOTA: Para llegar a 600 líneas, el CSS se expande con utilidades y media queries */
-        @media (max-width: 768px) { h1 { font-size: 2.5rem; } }
-    </style>
+<!-- Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17977637656"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17977637656');
+
+function gtag_report_conversion(url){
+var callback=function(){ if(url){ window.location=url;} };
+gtag('event','conversion',{
+'send_to':'AW-17977637656/BM3uCOOK2oIcEJj2s_xC',
+'event_callback':callback
+});
+return false;
+}
+</script>
+
+<style>
+
+body{
+font-family:'Inter',sans-serif;
+background:#0a1628;
+color:white;
+margin:0;
+}
+
+header{
+position:sticky;
+top:0;
+background:#0d1f3c;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+.logo{
+font-weight:900;
+font-size:1.4rem;
+background:linear-gradient(135deg,#3d8bff,#00e5ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:600;
+}
+
+.hero{
+text-align:center;
+padding:120px 20px;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.hero span{
+background:linear-gradient(135deg,#3d8bff,#00e5ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+max-width:600px;
+margin:auto;
+opacity:.8;
+}
+
+.btns{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 28px;
+border-radius:12px;
+font-weight:700;
+text-decoration:none;
+display:inline-flex;
+gap:10px;
+align-items:center;
+}
+
+.btn-wa{
+background:#00c853;
+color:white;
+}
+
+.btn-call{
+background:#0066ff;
+color:white;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:40px;
+background:#0d1f3c;
+flex-wrap:wrap;
+}
+
+.stat{
+text-align:center;
+}
+
+.stat h2{
+font-size:2rem;
+color:#00e5ff;
+}
+
+.section{
+padding:80px 20px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:#132744;
+padding:30px;
+border-radius:16px;
+}
+
+.card i{
+font-size:30px;
+color:#00e5ff;
+margin-bottom:15px;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+
+.testimonial{
+background:#132744;
+padding:25px;
+border-radius:16px;
+}
+
+.contact{
+max-width:500px;
+margin:auto;
+background:#132744;
+padding:40px;
+border-radius:16px;
+}
+
+.contact input,
+.contact select,
+.contact textarea{
+width:100%;
+padding:12px;
+margin-bottom:12px;
+border:none;
+border-radius:10px;
+}
+
+.contact button{
+background:#00c853;
+color:white;
+padding:15px;
+border:none;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+width:100%;
+}
+
+footer{
+text-align:center;
+padding:50px;
+background:#0d1f3c;
+}
+
+.floating{
+position:fixed;
+bottom:20px;
+right:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.floating a{
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:22px;
+}
+
+.wa{background:#00c853;}
+.ph{background:#0066ff;}
+
+</style>
 </head>
+
 <body>
 
-    <video class="hero-video" autoplay muted loop playsinline><source src="bg.mp4" type="video/mp4"></video>
+<header>
 
-    <header>
-        <div class="logo">CLEAN&LIVE</div>
-        <a href="tel:+50663026080" class="btn-call" style="padding: 10px 20px; border-radius: 50px;">LLAME AHORA</a>
-    </header>
+<div class="logo">Clean&Live</div>
 
-    <section class="hero">
-        <h1>Fontanería Profesional <br><span>Sin Romper Paredes</span></h1>
-        <p>Expertos en detección de fugas, destaqueos y reparaciones hidráulicas en todo el GAM. Respuesta inmediata 24/7.</p>
-        <div>
-            <a href="https://wa.me/50663026080" class="cta-btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Urgente</a>
-            <a href="tel:+50663026080" class="cta-btn btn-call"><i class="fas fa-phone"></i> Llamar Ahora</a>
-        </div>
-    </section>
+<nav>
+<a href="#servicios">Servicios</a>
+<a href="#testimonios">Clientes</a>
+<a href="#contacto">Contacto</a>
+</nav>
 
-    <section class="section">
-        <h2 class="section-title">Servicios Técnicos Especializados</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Detección de Fugas</h3>
-                <p>Usamos geófono digital de alta fidelidad. Localizamos el punto exacto de la fuga sin necesidad de picar todo el piso.</p>
-            </div>
-            <div class="card">
-                <h3>Destaqueo 24/7</h3>
-                <p>Solución profesional para inodoros, fregaderos y cajas de registro. Equipo de presión industrial para bloqueos difíciles.</p>
-            </div>
-            <div class="card">
-                <h3>Instalaciones Hidráulicas</h3>
-                <p>Expertos en instalación de tanques, bombas de agua y grifería de alta gama con garantía escrita.</p>
-            </div>
-        </div>
-    </section>
+</header>
 
-    <section class="section">
-        <h2 class="section-title">Preguntas Frecuentes</h2>
-        <div class="faq-item"><h3>¿Atienden domingos?</h3><p>Sí, brindamos servicio de emergencia 24/7 en todo el GAM.</p></div>
-        <div class="faq-item"><h3>¿Qué formas de pago aceptan?</h3><p>Aceptamos Sinpe Móvil, tarjetas de crédito y efectivo.</p></div>
-    </section>
+<section class="hero">
 
-    <div class="floating">
-        <a href="https://wa.me/50663026080" class="f-btn" style="background: var(--green);"><i class="fab fa-whatsapp"></i></a>
-    </div>
+<h1>
+Fontanería <br>
+<span>Fugas · Destaqueos · Reparaciones</span>
+</h1>
 
-    <script>
-        console.log("Sistema de conversión cargado.");
-        // Aquí iría el código de tracking de Google Ads (gtag)
-        document.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => alert('Contactando...')));
-    </script>
+<p>
+Clean&Live Costa Rica especialistas en detección de fugas sin romper y destaqueos urgentes 24/7.
+</p>
+
+<div class="btns">
+
+<a href="https://wa.me/50663026080" onclick="return gtag_report_conversion('https://wa.me/50663026080');" class="btn btn-wa">
+<i class="fab fa-whatsapp"></i> WhatsApp
+</a>
+
+<a href="tel:+50663026080" onclick="return gtag_report_conversion('tel:+50663026080');" class="btn btn-call">
+<i class="fas fa-phone"></i> Llamar
+</a>
+
+</div>
+
+</section>
+
+<div class="stats">
+
+<div class="stat">
+<h2>24/7</h2>
+Disponibilidad
+</div>
+
+<div class="stat">
+<h2>500+</h2>
+Trabajos
+</div>
+
+<div class="stat">
+<h2>15min</h2>
+Respuesta
+</div>
+
+</div>
+
+<section class="section" id="servicios">
+
+<h2 style="text-align:center;margin-bottom:40px;">Servicios</h2>
+
+<div class="services">
+
+<div class="card">
+<i class="fas fa-magnifying-glass"></i>
+<h3>Detección de Fugas</h3>
+<p>Geófonos digitales y tecnología avanzada para encontrar fugas sin romper paredes.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-toilet"></i>
+<h3>Destaqueos 24/7</h3>
+<p>Destapamos tuberías, fregaderos e inodoros con equipos profesionales.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-faucet-drip"></i>
+<h3>Reparaciones</h3>
+<p>Instalación de tuberías, grifería y sistemas hidráulicos completos.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="testimonios">
+
+<h2 style="text-align:center;margin-bottom:40px;">Clientes Satisfechos</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+★★★★★  
+"Detectaron una fuga que nadie encontraba. Muy profesionales."
+</div>
+
+<div class="testimonial">
+★★★★★  
+"Domingo por la noche y llegaron rápido. Excelente servicio."
+</div>
+
+<div class="testimonial">
+★★★★★  
+"Servicio muy rápido y limpio. Recomendados."
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="contacto">
+
+<div class="contact">
+
+<h3>Solicitar Cotización</h3>
+
+<form id="form">
+
+<input type="text" id="nombre" placeholder="Nombre" required>
+<input type="tel" id="telefono" placeholder="Teléfono" required>
+
+<select id="servicio">
+<option>Detección de Fugas</option>
+<option>Destaqueo</option>
+<option>Reparación</option>
+</select>
+
+<textarea id="mensaje" placeholder="Describa el problema"></textarea>
+
+<button type="submit">
+<i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<div style="font-weight:900;font-size:1.4rem;">Clean&Live Costa Rica</div>
+
+<p>Fontanería Profesional 24/7</p>
+
+<p>📞 6302-6080</p>
+
+</footer>
+
+<div class="floating">
+
+<a href="https://wa.me/50663026080" class="wa"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+50663026080" class="ph"><i class="fas fa-phone"></i></a>
+
+</div>
+
+<script>
+
+document.getElementById("form").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let nombre=document.getElementById("nombre").value;
+let telefono=document.getElementById("telefono").value;
+let servicio=document.getElementById("servicio").value;
+let mensaje=document.getElementById("mensaje").value;
+
+let text=`Solicitud Clean&Live%0A Nombre: ${nombre}%0A Teléfono: ${telefono}%0A Servicio: ${servicio}%0A Problema: ${mensaje}`;
+
+window.open(`https://wa.me/50663026080?text=${text}`,"_blank");
+
+});
+
+</script>
+
 </body>
 </html>
