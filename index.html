@@ -184,15 +184,38 @@
     .section-subtitle{font-size:1rem;font-weight:500;max-width:600px;margin-bottom:48px;opacity:.7}
     .section-white .section-subtitle,.section-silver .section-subtitle{color:#555}
 
-    /* SERVICES */
+    /* SERVICES PRICING */
     .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
-    .service-card{background:var(--white);border:1px solid #eee;border-radius:var(--radius);overflow:hidden;transition:all var(--transition)}
-    .service-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.08)}
-    .service-card video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-bottom:1px solid #eee}
-    .service-card-body{padding:28px}
-    .service-card-body h3{font-size:1.2rem;margin-bottom:10px;color:var(--dark)}
-    .service-card-body p{font-size:.9rem;color:#666;line-height:1.7}
-    .service-card-body figcaption{font-size:.8rem;color:#999;margin-top:8px;font-style:italic}
+    .price-card{
+        background:linear-gradient(135deg,var(--dark) 0%,#0d1a2e 100%);
+        border:1px solid var(--glass-border);border-radius:var(--radius);
+        overflow:hidden;transition:all var(--transition);padding:40px 32px;text-align:center;
+        position:relative;
+    }
+    .price-card::before{
+        content:'';position:absolute;top:0;left:0;right:0;height:4px;
+        background:linear-gradient(90deg,var(--p3005),var(--p368));
+    }
+    .price-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,119,192,.2);border-color:var(--p3005)}
+    .price-card .price-icon{font-size:3rem;margin-bottom:16px;display:block}
+    .price-card h3{font-size:1.3rem;color:var(--white);margin-bottom:8px}
+    .price-card .price-desc{font-size:.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px}
+    .price-card .price-tag{
+        font-family:'Arial Black','Montserrat',sans-serif;font-weight:900;font-style:normal;
+        font-size:2.2rem;color:var(--p368);margin-bottom:4px;
+        opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;
+    }
+    .price-card .price-tag.visible{opacity:1;transform:translateY(0)}
+    .price-card .price-desde{font-size:.85rem;color:var(--text-muted);font-style:italic;margin-bottom:20px}
+    .price-card .price-cta{
+        display:inline-block;background:var(--p3005);color:var(--white);
+        padding:10px 28px;border-radius:50px;font-weight:700;font-style:normal;
+        font-size:.9rem;transition:all var(--transition);
+    }
+    .price-card .price-cta:hover{background:var(--p368);color:var(--dark);transform:scale(1.05)}
+    .price-card .price-features{list-style:none;text-align:left;margin:16px 0 24px;padding:0}
+    .price-card .price-features li{font-size:.85rem;color:rgba(255,255,255,.7);padding:6px 0;border-bottom:1px solid var(--glass-border);font-style:normal}
+    .price-card .price-features li::before{content:'✓ ';color:var(--p368);font-weight:700}
 
     /* TESTIMONIALS */
     .testimonials{position:relative;z-index:1}
@@ -303,20 +326,20 @@
 <div class="bg-orb bg-orb--accent"></div>
 
 <video id="video-background" autoplay muted loop playsinline>
-    <source src="https://cdn.pixabay.com/video/2024/01/25/198064-906383498_large.mp4" type="video/mp4">
+    <source src="Fontanero_Repara_Fuga_de_Agua.mp4" type="video/mp4">
 </video>
 
 <!-- HEADER -->
 <header class="header">
     <div class="header-left">
-        <img src="https://fontaneroyfugasdeagua.github.io/repositorio/misterplumberlogo.png" alt="Logo Mister Plumber" class="header-logo" loading="lazy">
-        <div class="header-brand">Mister <span>Plumber</span></div>
+        <img src="Clean&Live.ai (Post de Facebook).png" alt="Logo Fontanero Costa rica" class="header-logo" loading="lazy">
+        <div class="header-brand">Costa Rica <span>Fontaneros</span></div>
     </div>
     <nav class="header-nav" id="mainNav">
         <a href="#servicios">Servicios</a>
         <a href="#testimonios">Testimonios</a>
         <a href="#contacto">Contacto</a>
-        <a href="tel:+50663026080" class="header-cta"><i class="fas fa-phone"></i> 6302-6080</a>
+        <a href="tel:+50663026080" class="header-cta"><i class="fas fa-phone"></i> 63026080</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Menú"><i class="fas fa-bars"></i></button>
 </header>
@@ -344,7 +367,7 @@
     </div>
     <a href="https://www.facebook.com/fontaneromisterplumber" target="_blank" class="btn btn--fb reveal" style="margin-top:10px"><i class="fab fa-facebook"></i> Ver videos reales en Facebook</a>
     <div class="hero-phones reveal">
-        <a href="tel:+50663026080"><i class="fas fa-mobile-screen"></i> 6302-6080</a>
+        <a href="tel:+50663026080"><i class="fas fa-mobile-screen"></i> 63026080</a>
         <a href="tel:+50622260504"><i class="fas fa-phone"></i> 2226-0504</a>
     </div>
 </section>
@@ -358,48 +381,54 @@
 </div>
 
 <!-- SERVICES -->
-<section class="section-white" id="servicios">
+<section class="section-dark" id="servicios" style="position:relative">
     <div class="section-orb" style="width:400px;height:400px;background:var(--p3005);top:-100px;right:-100px"></div>
     <div class="container">
         <div class="section-tag section-tag--blue reveal">Nuestros Servicios</div>
-        <h2 class="section-title reveal" style="color:var(--dark)">Servicios de Fontanería<br>en Costa Rica</h2>
-        <p class="section-subtitle reveal">Soluciones profesionales con equipos de última generación.</p>
+        <h2 class="section-title reveal">Servicios de Fontanería<br>en Costa Rica</h2>
+        <p class="section-subtitle reveal" style="color:var(--text-muted)">Soluciones profesionales con equipos de última generación.</p>
         <div class="services-grid">
-            <div class="service-card reveal">
-                <figure>
-                    <video autoplay muted loop playsinline>
-                        <source src="https://fontaneroyfugasdeagua.github.io/repositorio/video1fontanero.mp4" type="video/mp4">
-                    </video>
-                    <figcaption style="padding:8px 28px;font-size:.8rem;color:#999">Video explicativo: detección de fugas en casa</figcaption>
-                </figure>
-                <div class="service-card-body">
-                    <h3>🚰 Detección de Fugas</h3>
-                    <p>20 años luchando contra las fugas en Costa Rica. Localización con equipo profesional — salvamos tu bolsillo y tu casa rápido y seguro.</p>
-                </div>
+            <div class="price-card reveal">
+                <span class="price-icon">🚰</span>
+                <h3>Detección de Fugas de Agua</h3>
+                <p class="price-desc">Localización precisa con geófonos digitales. 20 años de experiencia salvando tu bolsillo y tu casa.</p>
+                <div class="price-tag" id="price1">₡45,000</div>
+                <div class="price-desde">Desde — precio puede variar según complejidad</div>
+                <ul class="price-features">
+                    <li>Inspección con geófonos digitales</li>
+                    <li>Localización exacta de la fuga</li>
+                    <li>Diagnóstico en el acto</li>
+                    <li>Atención urgente 24/7</li>
+                </ul>
+                <a href="https://wa.me/50663026080?text=Hola%20necesito%20detección%20de%20fugas" class="price-cta">Cotizar ahora</a>
             </div>
-            <div class="service-card reveal">
-                <figure>
-                    <video autoplay muted loop playsinline>
-                        <source src="https://fontaneroyfugasdeagua.github.io/repositorio/reel2.mp4" type="video/mp4">
-                    </video>
-                    <figcaption style="padding:8px 28px;font-size:.8rem;color:#999">Destaqueos urgentes 24/7 en Costa Rica</figcaption>
-                </figure>
-                <div class="service-card-body">
-                    <h3>🔧 Destaqueos Urgentes</h3>
-                    <p>Atendemos de inmediato obstrucciones en cañerías, baños, fregaderos y desagües. Servicio profesional las 24 horas.</p>
-                </div>
+            <div class="price-card reveal">
+                <span class="price-icon">🔧</span>
+                <h3>Destaqueos de Cañerías</h3>
+                <p class="price-desc">Destaqueo profesional de inodoros, fregaderos, duchas y cañerías. Servicio inmediato en toda Costa Rica.</p>
+                <div class="price-tag" id="price2">₡45,000</div>
+                <div class="price-desde">Desde — precio puede variar según complejidad</div>
+                <ul class="price-features">
+                    <li>Destaqueo de inodoros y baños</li>
+                    <li>Limpieza de cañerías y desagües</li>
+                    <li>Equipo profesional especializado</li>
+                    <li>Servicio urgente 24/7</li>
+                </ul>
+                <a href="https://wa.me/50663026080?text=Hola%20necesito%20destaqueo%20urgente" class="price-cta">Cotizar ahora</a>
             </div>
-            <div class="service-card reveal">
-                <figure>
-                    <video autoplay muted loop playsinline>
-                        <source src="https://fontaneroyfugasdeagua.github.io/repositorio/reel3.mp4" type="video/mp4">
-                    </video>
-                    <figcaption style="padding:8px 28px;font-size:.8rem;color:#999">Servicios integrales de fontanería profesional</figcaption>
-                </figure>
-                <div class="service-card-body">
-                    <h3>🔧 Fontanería General</h3>
-                    <p>Instalamos, reparamos y damos mantenimiento a todo tipo de sistemas de tuberías, baños, cocinas y redes de agua en toda Costa Rica.</p>
-                </div>
+            <div class="price-card reveal">
+                <span class="price-icon">🏠</span>
+                <h3>Fontanería General</h3>
+                <p class="price-desc">Instalación, reparación y mantenimiento de tuberías, baños, cocinas y redes de agua en toda Costa Rica.</p>
+                <div class="price-tag" id="price3">Consultar</div>
+                <div class="price-desde">Precio según proyecto</div>
+                <ul class="price-features">
+                    <li>Instalación de tuberías nuevas</li>
+                    <li>Reparación de sanitarios</li>
+                    <li>Mantenimiento preventivo</li>
+                    <li>Proyectos residenciales y comerciales</li>
+                </ul>
+                <a href="https://wa.me/50663026080?text=Hola%20necesito%20fontanería%20general" class="price-cta">Cotizar ahora</a>
             </div>
         </div>
     </div>
@@ -413,16 +442,15 @@
         <p class="section-subtitle reveal" style="color:var(--text-muted)">Más de 120 reseñas de 5 estrellas en Costa Rica.</p>
         <div class="swiper mySwiper reveal">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Muy profesional el chico. ¡Gracias  Alvaro!"</p><span>— Hunter. Steven, Sabana</span></div></div>
-                <div class="swiper-slide"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Servicio de alta calidad y amabilidad. Puntuales y confiables."</p><span>— Luis Gamez, San José</span></div></div>
-                <div class="swiper-slide"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Ese muchacho Francisco es brillante y muy guapo."</p><span>— Ashley R, Sabanilla</span></div></div>
+                <div class="swiper-slide"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Detectaron una fuga terrible. ¡Gracias don Alvaro!"</p><span>— Javier, Belén</span></div></div>
+                <div class="swiper-slide"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Servicio de alta calidad y amabilidad. Puntuales y confiables."</p><span>— German R., San José</span></div></div>
+                <div class="swiper-slide"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Un equipo serio, responsable y rápido. Los recomiendo totalmente."</p><span>— Ashley .R, Sabanilla</span></div></div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
     </div>
 </section>
-
 
 <!-- CONTACT -->
 <section class="section-silver" id="contacto">
@@ -436,7 +464,7 @@
                 <h3 style="color:var(--dark)">Comunícate directo</h3>
                 <p>Atención 24/7 en San José, Heredia, Alajuela y Cartago.</p>
                 <div class="contact-links">
-                    <a href="tel:+50663026080" class="contact-link"><i class="fas fa-phone"></i><span class="contact-link-text">+506 6302-6080</span></a>
+                    <a href="tel:+50663026080" class="contact-link"><i class="fas fa-phone"></i><span class="contact-link-text">+506 63026080</span></a>
                     <a href="tel:+50622260504" class="contact-link"><i class="fas fa-phone"></i><span class="contact-link-text">+506 2226-0504</span></a>
                     <a href="https://wa.me/50663026080" target="_blank" class="contact-link"><i class="fab fa-whatsapp" style="color:var(--p361)"></i><span class="contact-link-text">WhatsApp Directo</span></a>
                     <a href="mailto:cleanlivecostarica@gmail.com" class="contact-link"><i class="fas fa-envelope"></i><span class="contact-link-text">cleanlivecostarica@gmail.com</span></a>
@@ -458,7 +486,7 @@
 </section>
 
 <footer class="footer">
-    <p>© 2026 Clean Live Costa Rica · <a href="mailto:cleanlivecostarica@gmail.com">cleanlivecostarica@gmail.com</a></p>
+    <p>© 2026 Clean&Live Costa Rica · <a href="mailto:cleanlivecostarica@gmail.com">cleanlivecostarica@gmail.com</a></p>
 </footer>
 
 <!-- FLOATING ISLAND -->
@@ -526,6 +554,18 @@ document.addEventListener('DOMContentLoaded',()=>{
     },{threshold:.5});
     const hdr=document.querySelector('.header');if(hdr)hObs.observe(hdr);
 
+    // Dynamic price reveal
+    const priceObs=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+            if(e.isIntersecting){
+                const cards=e.target.querySelectorAll('.price-tag');
+                cards.forEach((c,i)=>{setTimeout(()=>{c.classList.add('visible')},i*2000)});
+                priceObs.unobserve(e.target);
+            }
+        });
+    },{threshold:.3});
+    const sg=document.querySelector('.services-grid');if(sg)priceObs.observe(sg);
+
     const click=document.getElementById('clickSound');
     if(click)document.querySelectorAll('a,button').forEach(el=>{
         el.addEventListener('click',()=>{click.currentTime=0;click.play().catch(()=>{})});
@@ -534,7 +574,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 function handleContact(e){
     e.preventDefault();const f=e.target;
-    const msg=`🔧 *MISTER PLUMBER - CONTACTO*%0A👤 ${f.nombre.value}%0A📞 ${f.telefono.value}%0A📧 ${f.email.value}%0A💬 ${f.mensaje.value||'Sin mensaje'}`;
+    const msg=`🔧 *Clean&Live - CONTACTO*%0A👤 ${f.nombre.value}%0A📞 ${f.telefono.value}%0A📧 ${f.email.value}%0A💬 ${f.mensaje.value||'Sin mensaje'}`;
     window.open('https://wa.me/50663026080?text='+msg,'_blank');
 }
 </script>
