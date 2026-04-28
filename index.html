@@ -543,33 +543,71 @@ section{padding:100px 24px}
 .chat-send:hover{background:var(--p2728)}
 
 /* === FLOATING BUTTONS === */
-.floating-btns{
-  position:fixed;bottom:24px;right:24px;z-index:901;
-  display:flex;flex-direction:column;gap:12px;align-items:flex-end;
+.floating-actions{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:999;
 }
-.float-btn{
-  display:flex;align-items:center;gap:10px;
-  border-radius:100px;border:none;cursor:pointer;
-  font-family:var(--font);font-weight:700;font-size:14px;
-  text-decoration:none;
-  transition:var(--transition);
-  box-shadow:0 8px 24px rgba(0,0,0,0.35);
-  min-height:52px;
-}
-.float-wa{
-  background:#25D366;color:#fff;
-  padding:14px 20px 14px 16px;
-}
-.float-wa:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 40px rgba(37,211,102,0.45)}
-.float-call{
-  background:linear-gradient(135deg,var(--p3005),var(--p2728));
-  color:#fff;padding:14px 20px 14px 16px;
-}
-.float-call:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 40px rgba(0,119,192,0.45)}
-.float-icon{font-size:22px;line-height:1}
-.float-label{display:flex;flex-direction:column;line-height:1.2}
-.float-label small{font-size:10px;opacity:0.8;font-weight:500}
 
+/* Base button */
+.fab{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 16px;
+  border-radius:18px;
+  text-decoration:none;
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.08);
+  box-shadow:0 8px 24px rgba(0,0,0,0.2);
+  transition:all .3s ease;
+  color:#fff;
+  min-width:200px;
+}
+
+/* Icon */
+.fab-icon{
+  font-size:18px;
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:rgba(255,255,255,0.12);
+}
+
+/* Text */
+.fab-title{
+  font-size:14px;
+  font-weight:600;
+  display:block;
+}
+
+.fab-sub{
+  font-size:11px;
+  opacity:.7;
+}
+
+/* Hover */
+.fab:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* Call style */
+.fab-call{
+  background:linear-gradient(135deg,#ff7a18,#ffb347);
+}
+
+/* WhatsApp style */
+.fab-wa{
+  background:linear-gradient(135deg,#25D366,#128C7E);
+}
 /* === FOOTER === */
 footer{
   background:#060a12;padding:60px 24px 30px;
@@ -971,18 +1009,45 @@ footer{
 </section>
 
 
-<!-- FLOATING BUTTONS -->
-<div class="floating-btns">
-  <a href="tel:+50663026080" class="float-btn float-call" onclick="trackCall('floating')">
-    
-    <span class="float-label">Llamar ahora<small>+506 6302-6080</small></span>
-  </a>
-  <a href="https://wa.me/50663026080?text=Hola%2C%20necesito%20un%20plomero%20urgente%20en%20mi%20zona" class="float-btn float-wa" onclick="trackWA('floating')" target="_blank">
-    <span class="float-icon">💬</span>
-    <span class="float-label">WhatsApp<small>Respuesta inmediata</small></span>
-  </a>
-</div>
+<!-- FLOATING ACTION BUTTONS 2026 -->
+<div class="floating-actions">
 
+  <!-- CALL BUTTON -->
+  <a href="tel:+50663026080" 
+     class="fab fab-call" 
+     onclick="trackCall('floating')" 
+     aria-label="Llamar ahora">
+
+    <div class="fab-icon">
+      📞
+    </div>
+
+    <div class="fab-content">
+      <span class="fab-title">Llamar ahora</span>
+      <small class="fab-sub">Disponible 24/7</small>
+    </div>
+
+  </a>
+
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/50663026080?text=Hola%2C%20necesito%20un%20plomero%20urgente%20en%20mi%20zona" 
+     class="fab fab-wa" 
+     onclick="trackWA('floating')" 
+     target="_blank"
+     aria-label="Contactar por WhatsApp">
+
+    <div class="fab-icon">
+      ✉️
+    </div>
+
+    <div class="fab-content">
+      <span class="fab-title">WhatsApp</span>
+      <small class="fab-sub">Respuesta inmediata</small>
+    </div>
+
+  </a>
+
+</div>
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
