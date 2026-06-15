@@ -27,6 +27,9 @@ Codigo clean   
   --transition: .35s cubic-bezier(.22,1,.36,1);
   --font: 'Plus Jakarta Sans', sans-serif;
   --font2: 'Space Grotesk', sans-serif;
+  /* Pegá estas variables dentro de :root { ... } en tu CSS existente */
+--fire: #e85d04;
+--fire2: #f48c06;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
@@ -646,6 +649,217 @@ footer{
   .hero-btns{flex-direction:column;align-items:stretch}
   .btn-primary,.btn-secondary{justify-content:center}
 }
+
+
+/* ═══ SOLDADURA ═══ */
+.section-tag.fire {
+  background: rgba(232,93,4,0.12);
+  border-color: rgba(232,93,4,0.25);
+  color: #e85d04;
+}
+.soldadura {
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 30%, rgba(232,93,4,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 70%, rgba(244,140,6,0.08) 0%, transparent 60%),
+    #0d1424;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 24px;
+}
+.soldadura-sparks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.soldadura-sparks::before,
+.soldadura-sparks::after {
+  content: '';
+  position: absolute;
+  width: 2px; height: 2px;
+  background: #f48c06;
+  border-radius: 50%;
+  box-shadow:
+    120px 80px 0 1px rgba(244,140,6,0.6),
+    340px 120px 0 0.5px rgba(232,93,4,0.5),
+    560px 200px 0 1px rgba(244,140,6,0.4),
+    780px 60px 0 0.5px rgba(232,93,4,0.7),
+    900px 300px 0 1px rgba(244,140,6,0.3),
+    200px 350px 0 0.5px rgba(232,93,4,0.5),
+    1050px 180px 0 1px rgba(244,140,6,0.4),
+    450px 420px 0 0.5px rgba(232,93,4,0.6);
+  animation: sparkFloat 8s ease-in-out infinite;
+}
+.soldadura-sparks::after {
+  animation-delay: 4s;
+  animation-direction: reverse;
+}
+@keyframes sparkFloat {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50%       { transform: translateY(-20px) scale(1.5); opacity: 1; }
+}
+.soldadura-inner { position: relative; z-index: 1; }
+.soldadura-header { text-align: center; margin-bottom: 20px; }
+
+/* Bloque emocional */
+.soldadura-emotion {
+  background: linear-gradient(135deg, rgba(232,93,4,0.1), rgba(10,15,26,0.8));
+  border: 1px solid rgba(232,93,4,0.2);
+  border-radius: 24px;
+  padding: 48px 40px;
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.soldadura-emotion::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e85d04, #f48c06, transparent);
+}
+.emotion-headline {
+  font-family: var(--font2);
+  font-size: clamp(22px, 3.5vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.emotion-headline em { font-style: normal; color: #e85d04; }
+.emotion-copy {
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0 auto 28px;
+  line-height: 1.75;
+}
+.emotion-copy strong { color: var(--white); }
+.emotion-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(67,176,42,0.12);
+  border: 1px solid rgba(67,176,42,0.3);
+  color: #43b02a;
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.avail-dot {
+  width: 8px; height: 8px;
+  background: #43b02a;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+.btn-fire {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #e85d04, #f48c06);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 20px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(232,93,4,0.4);
+  transition: var(--transition);
+  min-height: 52px;
+}
+.btn-fire:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(232,93,4,0.6);
+}
+
+/* Cards fuego */
+.service-card.fire-card::before {
+  background: linear-gradient(135deg, rgba(232,93,4,0.1), transparent);
+}
+.service-card.fire-card:hover {
+  border-color: rgba(232,93,4,0.4);
+  box-shadow: 0 20px 60px rgba(232,93,4,0.2);
+}
+.service-icon.fire-icon {
+  background: linear-gradient(135deg, rgba(232,93,4,0.2), rgba(244,140,6,0.2));
+  border: 1px solid rgba(232,93,4,0.25);
+}
+.service-price.fire {
+  color: #e85d04;
+  background: rgba(232,93,4,0.1);
+  border: 1px solid rgba(232,93,4,0.2);
+}
+.service-cta.fire { color: #e85d04; }
+
+/* Galería */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 48px;
+}
+.gallery-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.gallery-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+.gallery-card:hover img { transform: scale(1.05); }
+.gallery-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+  height: 100%;
+}
+.gallery-ph-icon { font-size: 40px; opacity: 0.4; }
+.gallery-ph-label { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+.gallery-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(10,15,26,0.95));
+  padding: 20px 16px 16px;
+  transform: translateY(6px);
+  opacity: 0;
+  transition: var(--transition);
+}
+.gallery-card:hover .gallery-overlay { opacity: 1; transform: translateY(0); }
+.gallery-overlay-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.gallery-overlay-sub { font-size: 12px; color: var(--text-muted); }
+
+@media(max-width:768px) {
+  .soldadura-emotion { padding: 32px 20px; }
+}
+  
 </style>
 </head>
 <body>
@@ -844,6 +1058,177 @@ footer{
   </div>
 </section>
 
+  <!-- ═══ SOLDADURA ═══ -->
+<section class="soldadura" id="soldadura">
+  <div class="soldadura-sparks"></div>
+  <div class="container soldadura-inner">
+
+    <div class="soldadura-header reveal">
+      <div class="section-tag fire">Soldadura Profesional</div>
+      <h2 class="section-title" id="soldadura-title">Soldadura que resiste<br>lo que otros no pueden</h2>
+      <p class="section-sub">Trabajo en acero, hierro, aluminio y acero inoxidable. Residencial, comercial e industrial. Cada punto de soldadura es una promesa.</p>
+    </div>
+
+    <!-- BLOQUE EMOCIONAL -->
+    <div class="soldadura-emotion reveal">
+      <div class="availability-badge">
+        <span class="avail-dot"></span> Técnicos disponibles hoy en toda la GAM
+      </div>
+      <h3 class="emotion-headline">
+        Hay proyectos que no pueden esperar al lunes.<br>
+        <em>Los nuestros tampoco.</em>
+      </h3>
+      <p class="emotion-copy">
+        Una reja rota es una puerta abierta para quien no debería entrar.<br>
+        Una estructura sin soldar es un riesgo que tu familia no merece.<br>
+        <strong>Nosotros llegamos hoy. Soldamos bien. Y garantizamos cada trabajo.</strong><br>
+        Llevamos más de 20 años siendo la empresa que la gente llama cuando el asunto es serio.
+      </p>
+      <div class="emotion-btns">
+        <a href="tel:+50663026080" class="btn-fire" onclick="trackCall('soldadura')">
+          🔥 Solicitar soldador ahora
+        </a>
+        <a href="https://wa.me/50663026080?text=Hola%2C%20necesito%20servicio%20de%20soldadura%20urgente"
+           class="btn-secondary" onclick="trackWA('soldadura')" target="_blank">
+          💬 Cotización por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- SERVICIOS -->
+    <div class="services-grid">
+      <a href="#contacto" class="service-card fire-card reveal" onclick="trackService('Rejas y portones')">
+        <div class="service-icon fire-icon">🚪</div>
+        <div class="service-price fire">Urgente disponible</div>
+        <h3>Rejas y Portones</h3>
+        <p>Reparación e instalación de rejas residenciales y comerciales. Tu seguridad no puede esperar.</p>
+        <div class="service-cta fire">Solicitar <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="#contacto" class="service-card fire-card reveal" onclick="trackService('Soldadura estructural')">
+        <div class="service-icon fire-icon">🏗️</div>
+        <div class="service-price fire">Presupuesto gratis</div>
+        <h3>Soldadura Estructural</h3>
+        <p>Vigas, columnas y estructuras metálicas. Cumplimos normas técnicas y garantizamos cada unión.</p>
+        <div class="service-cta fire">Solicitar <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="#contacto" class="service-card fire-card reveal" onclick="trackService('Escaleras metálicas')">
+        <div class="service-icon fire-icon">🪜</div>
+        <div class="service-price fire">Diseño a medida</div>
+        <h3>Escaleras Metálicas</h3>
+        <p>Fabricamos e instalamos escaleras en acero inoxidable o hierro. Diseño personalizado y acabado de lujo.</p>
+        <div class="service-cta fire">Solicitar <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="#contacto" class="service-card fire-card reveal" onclick="trackService('Pasamanos y barandas')">
+        <div class="service-icon fire-icon">🛡️</div>
+        <div class="service-price fire">Instalación mismo día</div>
+        <h3>Pasamanos y Barandas</h3>
+        <p>Instalamos pasamanos para escaleras, balcones y terrazas. Seguros, elegantes y duraderos.</p>
+        <div class="service-cta fire">Solicitar <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="#contacto" class="service-card fire-card reveal" onclick="trackService('Puertas metálicas')">
+        <div class="service-icon fire-icon">🚧</div>
+        <div class="service-price fire">Fabricación a medida</div>
+        <h3>Puertas Metálicas</h3>
+        <p>Fabricamos puertas en acero de alta seguridad para bodegas, garajes y accesos comerciales.</p>
+        <div class="service-cta fire">Solicitar <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="#contacto" class="service-card fire-card reveal" onclick="trackService('Tanques y depósitos')">
+        <div class="service-icon fire-icon">🛢️</div>
+        <div class="service-price fire">Industrial y residencial</div>
+        <h3>Tanques y Depósitos</h3>
+        <p>Fabricación y reparación de tanques metálicos. Agua, combustible o materiales industriales.</p>
+        <div class="service-cta fire">Solicitar <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="#contacto" class="service-card fire-card reveal" onclick="trackService('Techos metálicos')">
+        <div class="service-icon fire-icon">🏠</div>
+        <div class="service-price fire">Reparación urgente</div>
+        <h3>Techos y Cubiertas Metálicas</h3>
+        <p>Reparamos y construimos estructuras de techo en metal. Larga vida útil y resistencia total.</p>
+        <div class="service-cta fire">Solicitar <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="#contacto" class="service-card fire-card reveal" onclick="trackService('Soldadura industrial')">
+        <div class="service-icon fire-icon">⚙️</div>
+        <div class="service-price fire">Cotizar sin costo</div>
+        <h3>Soldadura Industrial</h3>
+        <p>TIG, MIG y electrodo. Trabajamos en planta o en sitio. Acero inoxidable, aluminio y carbono.</p>
+        <div class="service-cta fire">Solicitar <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+
+    <!-- GALERÍA -->
+    <div style="margin-top:56px">
+      <div style="text-align:center;margin-bottom:32px" class="reveal">
+        <div class="section-tag fire" style="margin-bottom:12px">Galería de Trabajos</div>
+        <h3 style="font-family:var(--font2);font-size:clamp(22px,3vw,32px);font-weight:700">Cada foto es un trabajo real</h3>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card fire-card reveal">
+          <!-- Reemplazá este bloque con: <img src="foto-reja.jpg" alt="Reja instalada"> -->
+          <div class="gallery-placeholder">
+            <div class="gallery-ph-icon">📸</div>
+            <div class="gallery-ph-label">Foto: Reja instalada</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-title">Reja Residencial</div>
+            <div class="gallery-overlay-sub">San José · Trabajo reciente</div>
+          </div>
+        </div>
+        <div class="gallery-card fire-card reveal">
+          <div class="gallery-placeholder">
+            <div class="gallery-ph-icon">📸</div>
+            <div class="gallery-ph-label">Foto: Escalera metálica</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-title">Escalera en Acero</div>
+            <div class="gallery-overlay-sub">Heredia · Diseño a medida</div>
+          </div>
+        </div>
+        <div class="gallery-card fire-card reveal">
+          <div class="gallery-placeholder">
+            <div class="gallery-ph-icon">📸</div>
+            <div class="gallery-ph-label">Foto: Estructura techo</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-title">Cubierta Metálica</div>
+            <div class="gallery-overlay-sub">Alajuela · Construcción nueva</div>
+          </div>
+        </div>
+        <div class="gallery-card fire-card reveal">
+          <div class="gallery-placeholder">
+            <div class="gallery-ph-icon">📸</div>
+            <div class="gallery-ph-label">Foto: Portón</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-title">Portón Automático</div>
+            <div class="gallery-overlay-sub">Cartago · Instalación completa</div>
+          </div>
+        </div>
+        <div class="gallery-card fire-card reveal">
+          <div class="gallery-placeholder">
+            <div class="gallery-ph-icon">📸</div>
+            <div class="gallery-ph-label">Foto: Soldadura industrial</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-title">Soldadura TIG</div>
+            <div class="gallery-overlay-sub">GAM · Acero inoxidable</div>
+          </div>
+        </div>
+        <div class="gallery-card fire-card reveal">
+          <div class="gallery-placeholder">
+            <div class="gallery-ph-icon">📸</div>
+            <div class="gallery-ph-label">Foto: Pasamanos</div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-title">Pasamanos Inoxidable</div>
+            <div class="gallery-overlay-sub">San José · Residencia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonios">
   <div class="container">
@@ -920,6 +1305,7 @@ footer{
     </div>
   </div>
 </section>
+  
 
 <!-- CONTACT -->
 <section class="contact" id="contacto">
