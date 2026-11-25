@@ -2,60 +2,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Página principal -->
   <url>
     <loc>https://www.cleanlivecostarica.com/</loc>
   </url>
 
+  <!-- Servicios de fontanería -->
   <url>
-    <loc>https://www.cleanlivecostarica.com/servicios</loc>
+    <loc>https://www.cleanlivecostarica.com/servicios/fontanero-24-7/</loc>
   </url>
-
-  <url>
-    <loc>https://www.cleanlivecostarica.com/contacto</loc>
-  </url>
-
-  <url>
-    <loc>https://www.cleanlivecostarica.com/nosotros</loc>
-  </url>
-
-  <url>
-    <loc>https://www.cleanlivecostarica.com/testimonios</loc>
-  </url>
-
   <url>
     <loc>https://www.cleanlivecostarica.com/servicios/deteccion-fugas-agua/</loc>
   </url>
-
+  <url>
+    <loc>https://www.cleanlivecostarica.com/servicios/destaqueo-tuberias/</loc>
+  </url>
+  <url>
+    <loc>https://www.cleanlivecostarica.com/servicios/destaqueo-inodoros/</loc>
+  </url>
+  <url>
+    <loc>https://www.cleanlivecostarica.com/servicios/destaqueo-fregaderos/</loc>
+  </url>
+  <url>
+    <loc>https://www.cleanlivecostarica.com/servicios/destaqueo-duchas-lavatorios/</loc>
+  </url>
+  <url>
+    <loc>https://www.cleanlivecostarica.com/servicios/destaqueo-drenajes-exteriores/</loc>
+  </url>
+  <url>
+    <loc>https://www.cleanlivecostarica.com/servicios/hidrolavado-tuberias/</loc>
+  </url>
   <url>
     <loc>https://www.cleanlivecostarica.com/servicios/reparacion-tuberias/</loc>
   </url>
-
   <url>
-    <loc>https://www.cleanlivecostarica.com/servicios/destaqueos-tuberias/</loc>
+    <loc>https://www.cleanlivecostarica.com/servicios/calentadores-agua/</loc>
   </url>
-
   <url>
     <loc>https://www.cleanlivecostarica.com/servicios/remodelacion-banos/</loc>
   </url>
-
   <url>
     <loc>https://www.cleanlivecostarica.com/servicios/reparacion-griferia/</loc>
   </url>
-
   <url>
     <loc>https://www.cleanlivecostarica.com/servicios/baja-presion-agua/</loc>
   </url>
-
   <url>
     <loc>https://www.cleanlivecostarica.com/servicios/reparacion-desagues/</loc>
   </url>
-
   <url>
     <loc>https://www.cleanlivecostarica.com/servicios/fontaneria-comercial/</loc>
   </url>
-
   <url>
     <loc>https://www.cleanlivecostarica.com/servicios/mantenimiento-general/</loc>
+  </url>
+
+  <!-- Cobertura por provincias -->
+  <url>
+    <loc>https://www.cleanlivecostarica.com/zonas/san-jose/</loc>
+  </url>
+  <url>
+    <loc>https://www.cleanlivecostarica.com/zonas/alajuela/</loc>
+  </url>
+  <url>
+    <loc>https://www.cleanlivecostarica.com/zonas/cartago/</loc>
+  </url>
+  <url>
+    <loc>https://www.cleanlivecostarica.com/zonas/heredia/</loc>
+  </url>
+  <url>
+    <loc>https://www.cleanlivecostarica.com/zonas/guanacaste/</loc>
+  </url>
+  <url>
+    <loc>https://www.cleanlivecostarica.com/zonas/puntarenas/</loc>
+  </url>
+  <url>
+    <loc>https://www.cleanlivecostarica.com/zonas/limon/</loc>
   </url>
 
 </urlset>
